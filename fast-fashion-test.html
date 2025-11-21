@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Fashion & Sustainable Textiles Workbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #191919;
+            background-color: white;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            width: 210mm;
+            margin: 0 auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+            body {
+                width: 190mm;
+                padding: 0;
+            }
+            .section-card {
+                page-break-inside: avoid;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .title-underline {
+            border-bottom: 3px solid #0a2351;
+            margin-bottom: 16px;
+        }
+
+        /* Student Info */
+        .student-info-box {
+            background-color: #f8f9fa;
+            border: 2px solid #0a2351;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0a2351;
+            margin-bottom: 5px;
+        }
+
+        .info-line {
+            border-bottom: 1px solid #0a2351;
+            height: 25px;
+        }
+
+        /* Section Cards */
+        .section-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            margin-bottom: 18px;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 0.15em 0 #191919;
+            page-break-inside: avoid;
+            background-color: white;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2351;
+        }
+
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 15px 0 10px 0;
+            color: #0a2351;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 8px;
+        }
+
+        /* Section Color Coding */
+        .section-a { border-left: 5px solid #3b82f6; }
+        .section-b { border-left: 5px solid #10b981; }
+        .section-c { border-left: 5px solid #8b5cf6; }
+        .section-d { border-left: 5px solid #f59e0b; }
+
+        /* Learning Intention Box */
+        .learning-intention-box {
+            background-color: #eff6ff;
+            border: 2px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .learning-intention-box h4 {
+            color: #1d4ed8;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .learning-intention-box p {
+            margin: 0;
+            font-size: 15px;
+            color: #1e40af;
+        }
+
+        /* Success Criteria Box */
+        .success-criteria-box {
+            background-color: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .success-criteria-box h4 {
+            color: #059669;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .success-criteria-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #047857;
+        }
+
+        .success-criteria-box li {
+            margin-bottom: 4px;
+        }
+
+        /* Task Box */
+        .task-box {
+            background-color: #fafafa;
+            border: 2px solid #e5e5e5;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-id {
+            font-weight: 700;
+            color: #3b82f6;
+            font-size: 16px;
+        }
+
+        .task-points {
+            background-color: #3b82f6;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .task-description {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* Placeholder Boxes */
+        .placeholder-box-small {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.02);
+            min-height: 80px;
+        }
+
+        .placeholder-box-medium {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.02);
+            min-height: 125px;
+        }
+
+        .placeholder-box-large {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 30px;
+            background-color: rgba(0,0,0,0.02);
+            min-height: 300px;
+        }
+
+        .placeholder-box-mega {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            min-height: 500px;
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 0.6em;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        /* Checkpoint Header */
+        .checkpoint-header {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 20px;
+            border-radius: 0.6em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checkpoint-header h2 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+        }
+
+        .checkpoint-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        /* Table Styling */
+        .response-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .response-table th, .response-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .response-table th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .response-table td {
+            min-height: 60px;
+            vertical-align: top;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Overview Cards */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .overview-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 0.1em 0 #191919;
+        }
+
+        .overview-card.blue { border-top: 4px solid #3b82f6; }
+        .overview-card.green { border-top: 4px solid #10b981; }
+        .overview-card.purple { border-top: 4px solid #8b5cf6; }
+        .overview-card.orange { border-top: 4px solid #f59e0b; }
+
+        .overview-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 13px;
+            color: #0a2351;
+        }
+
+        .overview-card .points {
+            font-size: 20px;
+            font-weight: 700;
+            color: #191919;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<h1 style="text-align: center;">Fast Fashion & Sustainable Textiles <i class="fas fa-leaf" style="margin-left: 10px; color: #10b981;"></i></h1>
+<div class="title-underline"></div>
+
+<div class="student-info-box">
+    <div class="info-field">
+        <div class="info-label">Student Name:</div>
+        <div class="info-line"></div>
+    </div>
+    <div class="info-field">
+        <div class="info-label">Class:</div>
+        <div class="info-line"></div>
+    </div>
+    <div class="info-field">
+        <div class="info-label">Teacher:</div>
+        <div class="info-line"></div>
+    </div>
+    <div class="info-field">
+        <div class="info-label">Year:</div>
+        <div class="info-line"></div>
+    </div>
+</div>
+
+<!-- Assessment Overview -->
+<div class="section-card">
+    <div class="section-title">Assessment Overview <i class="fas fa-clipboard-list"></i></div>
+
+    <p style="font-size: 15px; margin-bottom: 15px;">
+        This workbook contains formative tasks building toward four summative checkpoints. Complete each section thoroughly to demonstrate your understanding of sustainable fashion design.
+    </p>
+
+    <div class="overview-grid">
+        <div class="overview-card blue">
+            <h4>Checkpoint 1</h4>
+            <p style="font-size: 11px; margin: 5px 0;">Empathise & Define</p>
+            <div class="points">30 pts</div>
+            <p style="font-size: 10px; margin: 5px 0 0 0;">Weeks 1-3</p>
+        </div>
+        <div class="overview-card green">
+            <h4>Checkpoint 2</h4>
+            <p style="font-size: 11px; margin: 5px 0;">Skill Building</p>
+            <div class="points">35 pts</div>
+            <p style="font-size: 10px; margin: 5px 0 0 0;">Weeks 4-7</p>
+        </div>
+        <div class="overview-card purple">
+            <h4>Checkpoint 3</h4>
+            <p style="font-size: 11px; margin: 5px 0;">UX Design</p>
+            <div class="points">25 pts</div>
+            <p style="font-size: 10px; margin: 5px 0 0 0;">Weeks 8-9</p>
+        </div>
+        <div class="overview-card orange">
+            <h4>Checkpoint 4</h4>
+            <p style="font-size: 11px; margin: 5px 0;">Design & Make</p>
+            <div class="points">40 pts</div>
+            <p style="font-size: 10px; margin: 5px 0 0 0;">Weeks 10-15</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 15px; padding: 10px; background-color: #f8f9fa; border-radius: 0.6em;">
+        <strong>Total Points Available: 130</strong>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SECTION A: EMPATHISE & DEFINE -->
+<!-- ============================================== -->
+
+<div class="checkpoint-header page-break">
+    <h2><i class="fas fa-heart" style="margin-right: 10px;"></i>SECTION A: EMPATHISE & DEFINE</h2>
+    <p>Checkpoint 1 — 30 Points Total — Due: End of Week 3</p>
+</div>
+
+<!-- A1: Fast Fashion Investigation -->
+<div class="section-card section-a">
+    <div class="section-title">A1: Fast Fashion Investigation <span style="float: right; font-size: 16px; color: #3b82f6;">10 points</span></div>
+
+    <div class="learning-intention-box">
+        <h4><i class="fas fa-lightbulb"></i> Learning Intention</h4>
+        <p>We are learning to analyse the social, environmental and ethical impacts of fast fashion on people and the planet.</p>
+    </div>
+
+    <div class="success-criteria-box">
+        <h4><i class="fas fa-check-circle"></i> Success Criteria</h4>
+        <ul>
+            <li>I can identify at least three negative impacts of fast fashion</li>
+            <li>I can explain how fast fashion affects different stakeholders (workers, consumers, environment)</li>
+            <li>I can use evidence from research to support my explanations</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Task A1.1 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A1.1: Wardrobe Audit Reflection</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Record your estimates (items owned, items worn regularly, items unworn in 6+ months). Write 2-3 sentences reflecting on what this reveals about consumption habits.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 33%;">Items Owned (estimate)</th>
+            <th style="width: 33%;">Items Worn Regularly</th>
+            <th style="width: 33%;">Items Unworn in 6+ Months</th>
+        </tr>
+        <tr>
+            <td style="height: 50px;"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="subsection-title">Reflection</div>
+    <div class="placeholder-box-medium"></div>
+</div>
+
+<!-- Task A1.2 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A1.2: Documentary Viewing Guide</span>
+            <span class="task-points">3 points</span>
+        </div>
+        <div class="task-description">
+            Complete the viewing guide identifying: (a) 2 environmental impacts, (b) 2 social/human impacts, (c) 1 economic impact shown in the documentary.
+        </div>
+    </div>
+
+    <div class="subsection-title">(a) Environmental Impacts</div>
+    <table class="response-table">
+        <tr>
+            <th>Impact 1</th>
+            <th>Impact 2</th>
+        </tr>
+        <tr>
+            <td style="height: 80px;"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="subsection-title">(b) Social/Human Impacts</div>
+    <table class="response-table">
+        <tr>
+            <th>Impact 1</th>
+            <th>Impact 2</th>
+        </tr>
+        <tr>
+            <td style="height: 80px;"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="subsection-title">(c) Economic Impact</div>
+    <div class="placeholder-box-small"></div>
+</div>
+
+<!-- Task A1.3 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A1.3: Stakeholder Impact Table</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Complete the table explaining how fast fashion affects each stakeholder group. One impact per stakeholder.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 25%;">Stakeholder</th>
+            <th style="width: 75%;">How Fast Fashion Impacts This Group</th>
+        </tr>
+        <tr>
+            <td><strong>Garment Workers</strong></td>
+            <td style="height: 70px;"></td>
+        </tr>
+        <tr>
+            <td><strong>Consumers</strong></td>
+            <td style="height: 70px;"></td>
+        </tr>
+        <tr>
+            <td><strong>Environment</strong></td>
+            <td style="height: 70px;"></td>
+        </tr>
+        <tr>
+            <td><strong>Local Clothing Manufacturers</strong></td>
+            <td style="height: 70px;"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Task A1.4 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A1.4: Infographic</span>
+            <span class="task-points">3 points</span>
+        </div>
+        <div class="task-description">
+            Create a one-page infographic on your assigned fast fashion impact area. Must include at least 3 facts with sources and 1 relevant statistic.
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+        <strong>Requirements:</strong> At least 3 facts with sources • 1 relevant statistic • Clear visual design
+    </div>
+
+    <div class="placeholder-box-mega" style="min-height: 600px;">
+    </div>
+</div>
+
+<!-- A2: Sustainability Research -->
+<div class="section-card section-a page-break">
+    <div class="section-title">A2: Sustainability Research <span style="float: right; font-size: 16px; color: #3b82f6;">8 points</span></div>
+
+    <div class="learning-intention-box">
+        <h4><i class="fas fa-lightbulb"></i> Learning Intention</h4>
+        <p>We are learning to analyse how designers and businesses consider sustainability factors when creating fashion products and services.</p>
+    </div>
+
+    <div class="success-criteria-box">
+        <h4><i class="fas fa-check-circle"></i> Success Criteria</h4>
+        <ul>
+            <li>I can identify strategies that sustainable fashion brands use</li>
+            <li>I can explain how upcycling contributes to sustainability</li>
+            <li>I can compare sustainable approaches to fast fashion practices</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Task A2.1 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A2.1: Sustainable Business Models</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Define each model in your own words and provide one real-world example of each.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 20%;">Model</th>
+            <th style="width: 50%;">Definition (in your own words)</th>
+            <th style="width: 30%;">Real-World Example</th>
+        </tr>
+        <tr>
+            <td><strong>Rental</strong></td>
+            <td style="height: 60px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Repair</strong></td>
+            <td style="height: 60px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Resale</strong></td>
+            <td style="height: 60px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Upcycling</strong></td>
+            <td style="height: 60px;"></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Task A2.2 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A2.2: Designer Case Study</span>
+            <span class="task-points">3 points</span>
+        </div>
+        <div class="task-description">
+            Analyse ONE sustainable fashion brand/designer. Identify: (a) their sustainability strategies, (b) materials they use, (c) how their approach differs from fast fashion.
+        </div>
+    </div>
+
+    <div class="subsection-title">Brand/Designer Name</div>
+    <div class="placeholder-box-small" style="min-height: 40px;"></div>
+
+    <div class="subsection-title">(a) Sustainability Strategies</div>
+    <div class="placeholder-box-medium"></div>
+
+    <div class="subsection-title">(b) Materials Used</div>
+    <div class="placeholder-box-small"></div>
+
+    <div class="subsection-title">(c) Difference from Fast Fashion</div>
+    <div class="placeholder-box-medium"></div>
+</div>
+
+<!-- Task A2.3 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A2.3: Upcycling Definition</span>
+            <span class="task-points">1 point</span>
+        </div>
+        <div class="task-description">
+            In your own words, explain what upcycling means and why it is considered more sustainable than recycling.
+        </div>
+    </div>
+
+    <div class="placeholder-box-medium"></div>
+</div>
+
+<!-- Task A2.4 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A2.4: Sustainability Comparison</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Complete the comparison table contrasting fast fashion vs sustainable fashion across 4 criteria.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 25%;">Criteria</th>
+            <th style="width: 37.5%;">Fast Fashion</th>
+            <th style="width: 37.5%;">Sustainable Fashion</th>
+        </tr>
+        <tr>
+            <td><strong>Materials</strong></td>
+            <td style="height: 70px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Production Speed</strong></td>
+            <td style="height: 70px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>Worker Conditions</strong></td>
+            <td style="height: 70px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>End of Life</strong></td>
+            <td style="height: 70px;"></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<!-- A3: Empathy & Problem Definition -->
+<div class="section-card section-a page-break">
+    <div class="section-title">A3: Empathy & Problem Definition <span style="float: right; font-size: 16px; color: #3b82f6;">12 points</span></div>
+
+    <div class="learning-intention-box">
+        <h4><i class="fas fa-lightbulb"></i> Learning Intention</h4>
+        <p>We are learning to use empathy research to define real-world problems and develop design criteria.</p>
+    </div>
+
+    <div class="success-criteria-box">
+        <h4><i class="fas fa-check-circle"></i> Success Criteria</h4>
+        <ul>
+            <li>I can gather information about user needs through interviews</li>
+            <li>I can create user stories that capture what a user wants and why</li>
+            <li>I can contribute to developing design criteria that include sustainability</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Task A3.1 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.1: Empathy Interview</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Record 5 questions you asked and summarise your interviewee's responses about their clothing habits, frustrations, and what they'd value in an upcycled item.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 40%;">Question Asked</th>
+            <th style="width: 60%;">Response Summary</th>
+        </tr>
+        <tr>
+            <td style="height: 55px;">1.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="height: 55px;">2.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="height: 55px;">3.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="height: 55px;">4.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="height: 55px;">5.</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Task A3.2 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.2: Empathy Map</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Complete the empathy map template (Says, Thinks, Does, Feels) based on your interview.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 50%; background-color: #dbeafe;">SAYS</th>
+            <th style="width: 50%; background-color: #fef3c7;">THINKS</th>
+        </tr>
+        <tr>
+            <td style="height: 150px; vertical-align: top;"></td>
+            <td style="vertical-align: top;"></td>
+        </tr>
+        <tr>
+            <th style="background-color: #dcfce7;">DOES</th>
+            <th style="background-color: #fce7f3;">FEELS</th>
+        </tr>
+        <tr>
+            <td style="height: 150px; vertical-align: top;"></td>
+            <td style="vertical-align: top;"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Task A3.3 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.3: Point of View Statement</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Write a POV statement in the format: "[User] needs [need] because [insight]."
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+        <strong>Example:</strong> "Busy working parents need quick meal solutions because they have limited time but want to provide healthy food for their family."
+    </div>
+
+    <div class="placeholder-box-medium"></div>
+</div>
+
+<!-- Task A3.4 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.4: How Might We Questions</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Write 3 "How Might We" questions that reframe your POV as design opportunities.
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+        <strong>Example:</strong> "How might we make sustainable fashion more accessible to young people?"
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th>HMW Question 1</th>
+        </tr>
+        <tr>
+            <td style="height: 60px;"></td>
+        </tr>
+        <tr>
+            <th>HMW Question 2</th>
+        </tr>
+        <tr>
+            <td style="height: 60px;"></td>
+        </tr>
+        <tr>
+            <th>HMW Question 3</th>
+        </tr>
+        <tr>
+            <td style="height: 60px;"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Task A3.5 -->
+<div class="section-card section-a page-break">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.5: User Story</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            Write a user story for your target user in the format: "As a [user], I want [goal] so that [reason]."
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+        <strong>Example:</strong> "As a teenager who cares about the environment, I want unique clothing that doesn't harm the planet so that I can express my style while living my values."
+    </div>
+
+    <div class="placeholder-box-medium"></div>
+</div>
+
+<!-- Task A3.6 -->
+<div class="section-card section-a">
+    <div class="task-box">
+        <div class="task-header">
+            <span class="task-id">Task A3.6: Design Criteria</span>
+            <span class="task-points">2 points</span>
+        </div>
+        <div class="task-description">
+            List 5 design criteria for your upcycled product. At least 2 must relate to sustainability.
+        </div>
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 10%;">#</th>
+            <th style="width: 70%;">Design Criterion</th>
+            <th style="width: 20%;">Sustainability? <i class="fas fa-leaf" style="color: #10b981;"></i></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td style="height: 45px;"></td>
+            <td style="text-align: center;">☐ Yes ☐ No</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td style="height: 45px;"></td>
+            <td style="text-align: center;">☐ Yes ☐ No</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td style="height: 45px;"></td>
+            <td style="text-align: center;">☐ Yes ☐ No</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td style="height: 45px;"></td>
+            <td style="text-align: center;">☐ Yes ☐ No</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td style="height: 45px;"></td>
+            <td style="text-align: center;">☐ Yes ☐ No</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Checkpoint 1 Self-Assessment -->
+<div class="section-card section-a page-break">
+    <div class="section-title"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 1: Self-Assessment</div>
+
+    <div class="tip-box">
+        <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+        Before submitting, tick the boxes to confirm you have met each success criterion.
+    </div>
+
+    <table class="response-table">
+        <tr>
+            <th style="width: 85%;">Success Criterion</th>
+            <th style="width: 15%; text-align: center;">Achieved?</th>
+        </tr>
+        <tr>
+            <td>I can identify at least three negative impacts of fast fashion</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can explain how fast fashion affects different stakeholders</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can use evidence from research to support my explanations</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can identify strategies that sustainable fashion brands use</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can explain how upcycling contributes to sustainability</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can compare sustainable approaches to fast fashion practices</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can gather information about user needs through interviews</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can create user stories that capture what a user wants and why</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+        <tr>
+            <td>I can contribute to developing design criteria that include sustainability</td>
+            <td style="text-align: center; font-size: 18px;">☐</td>
+        </tr>
+    </table>
+
+    <div class="subsection-title">Teacher Feedback</div>
+    <div class="placeholder-box-large" style="min-height: 200px;"></div>
+
+    <table class="response-table" style="margin-top: 15px;">
+        <tr>
+            <th style="width: 50%;">Points Earned</th>
+            <th style="width: 50%;">Date Assessed</th>
+        </tr>
+        <tr>
+            <td style="height: 40px; text-align: center; font-size: 18px;">______ / 30</td>
+            <td style="text-align: center;"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
