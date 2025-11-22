@@ -5,7 +5,7 @@ This project creates A4 print-friendly HTML educational worksheets that convert 
 ## Quick Start
 
 1. Create worksheets using the HTML template structure in `examples/`
-2. Validate your design using the PDF preview workflow (see [Validation Workflow](#validation-workflow))
+2. Validate your design using browser Print Preview (`Ctrl+P` / `Cmd+P`)
 3. Ensure all content fits within page boundaries before finalizing
 
 ---
@@ -275,74 +275,20 @@ Use dotted borders with grid backgrounds for visual brainstorming:
 
 ## Validation Workflow
 
-### MCP-Based PDF Preview and Validation
+### Browser Print Preview Method
 
-Use the following workflow to validate your worksheet design before finalizing:
+**Always validate your worksheet using browser Print Preview before finalizing:**
 
-#### Step 1: Convert HTML to PDF
+1. Open HTML file in Chrome/Firefox
+2. Press `Ctrl+P` (or `Cmd+P` on Mac)
+3. Review **each page** in print preview
+4. Check for content spillover at page boundaries
+5. Verify section cards don't split across pages
+6. Ensure backgrounds appear (enable "Print backgrounds" if needed)
 
-Use Puppeteer or Playwright to render the HTML and generate a PDF:
+### Self-Evaluation Checklist
 
-```javascript
-// puppeteer-pdf-converter.js
-const puppeteer = require('puppeteer');
-
-async function convertToPDF(htmlPath, outputPath) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-
-    await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
-
-    await page.pdf({
-        path: outputPath,
-        format: 'A4',
-        margin: { top: '8mm', right: '8mm', bottom: '8mm', left: '8mm' },
-        printBackground: true
-    });
-
-    await browser.close();
-    return outputPath;
-}
-```
-
-#### Step 2: Generate Page Screenshots
-
-Capture individual pages for visual inspection:
-
-```javascript
-async function screenshotPages(htmlPath, outputDir) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-
-    // Set viewport to A4 dimensions (96 DPI)
-    await page.setViewport({ width: 794, height: 1123 });
-
-    await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
-
-    // Emulate print media
-    await page.emulateMediaType('print');
-
-    // Get total height and calculate pages
-    const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
-    const pageHeight = 1123; // A4 height at 96 DPI
-    const totalPages = Math.ceil(bodyHeight / pageHeight);
-
-    for (let i = 0; i < totalPages; i++) {
-        await page.evaluate((scrollY) => window.scrollTo(0, scrollY), i * pageHeight);
-        await page.screenshot({
-            path: `${outputDir}/page-${i + 1}.png`,
-            clip: { x: 0, y: 0, width: 794, height: pageHeight }
-        });
-    }
-
-    await browser.close();
-    return totalPages;
-}
-```
-
-#### Step 3: Self-Evaluation Checklist
-
-After generating screenshots, verify:
+When reviewing each page, verify:
 
 - [ ] **No content spillover** - Text/boxes don't cut off at page boundaries
 - [ ] **Consistent margins** - Equal spacing on all sides
@@ -350,37 +296,6 @@ After generating screenshots, verify:
 - [ ] **Clear section breaks** - Each card starts fresh on its page
 - [ ] **Appropriate whitespace** - Not too cramped, not too empty
 - [ ] **Placeholder box sizing** - Matches expected content length
-
-### Browser Print Preview Method
-
-For quick validation without MCP tools:
-
-1. Open HTML file in Chrome/Firefox
-2. Press `Ctrl+P` (or `Cmd+P` on Mac)
-3. Review each page in print preview
-4. Check for content spillover at page boundaries
-5. Verify section cards don't split across pages
-
-### Automated Validation Script
-
-```bash
-#!/bin/bash
-# validate-worksheet.sh
-
-HTML_FILE=$1
-OUTPUT_DIR="./validation-output"
-
-mkdir -p $OUTPUT_DIR
-
-# Generate PDF
-node puppeteer-pdf-converter.js "$HTML_FILE" "$OUTPUT_DIR/worksheet.pdf"
-
-# Generate page screenshots
-node puppeteer-screenshots.js "$HTML_FILE" "$OUTPUT_DIR"
-
-echo "Validation files generated in $OUTPUT_DIR"
-echo "Review screenshots for any layout issues"
-```
 
 ---
 
@@ -412,10 +327,7 @@ echo "Review screenshots for any layout issues"
 ### Print Background Not Showing
 
 **Problem**: Background colors don't appear in PDF
-**Solution**: Enable "Print backgrounds" in print settings or PDF generation:
-```javascript
-await page.pdf({ printBackground: true });
-```
+**Solution**: Enable "Print backgrounds" in browser print settings (usually a checkbox in the print dialog)
 
 ---
 
@@ -425,15 +337,9 @@ await page.pdf({ printBackground: true });
 project/
 ├── CLAUDE.md                    # This file
 ├── examples/
-│   └── yr-6-house-design-worksheet.html
-├── worksheets/
-│   └── [generated-worksheets].html
-├── validation/
-│   ├── puppeteer-pdf-converter.js
-│   └── puppeteer-screenshots.js
-└── output/
-    ├── pdfs/
-    └── screenshots/
+│   └── [example-worksheets].html
+└── worksheets/
+    └── [generated-worksheets].html
 ```
 
 ---
