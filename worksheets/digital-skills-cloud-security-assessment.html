@@ -155,18 +155,6 @@
             height: 3px;
         }
 
-        .concept-card-icon {
-            width: 45px;
-            height: 45px;
-            border: 2px solid #191919;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            box-shadow: 0 0.15em 0 #191919;
-        }
-
         .concept-card-title {
             font-size: 0.85rem;
             font-weight: 700;
@@ -178,22 +166,16 @@
 
         /* Card Themes */
         .card-theme-1::before { background-color: #ec4899; }
-        .card-theme-1 .concept-card-icon { background-color: #ec4899; }
 
         .card-theme-2::before { background-color: #3b82f6; }
-        .card-theme-2 .concept-card-icon { background-color: #3b82f6; }
 
         .card-theme-3::before { background-color: #0ea5e9; }
-        .card-theme-3 .concept-card-icon { background-color: #0ea5e9; }
 
         .card-theme-4::before { background-color: #10b981; }
-        .card-theme-4 .concept-card-icon { background-color: #10b981; }
 
         .card-theme-5::before { background-color: #f59e0b; }
-        .card-theme-5 .concept-card-icon { background-color: #f59e0b; }
 
         .card-theme-6::before { background-color: #8b5cf6; }
-        .card-theme-6 .concept-card-icon { background-color: #8b5cf6; }
 
         /* Content Boxes */
         .tip-box {
@@ -301,26 +283,11 @@
             min-height: 450px;
         }
 
-        .huge-placeholder-box {
-            border: 2px dashed #ccc;
-            border-radius: 0.6em;
-            padding: 60px;
-            background-color: rgba(0,0,0,0.02);
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            margin: 15px 0;
-            min-height: 650px;
-        }
-
         .large-placeholder-box {
             border: 2px dashed #ccc;
             border-radius: 0.6em;
             padding: 40px;
             background-color: rgba(0,0,0,0.02);
-            text-align: center;
-            color: #666;
-            font-style: italic;
             margin: 15px 0;
             min-height: 280px;
         }
@@ -330,9 +297,6 @@
             border-radius: 0.6em;
             padding: 40px;
             background-color: rgba(0,0,0,0.02);
-            text-align: center;
-            color: #666;
-            font-style: italic;
             margin: 15px 0;
             min-height: 360px;
         }
@@ -589,6 +553,33 @@
             vertical-align: top;
             min-height: 60px;
         }
+
+        /* Self Assessment */
+        .self-assessment {
+            background-color: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .self-assessment h4 {
+            color: #065f46;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+
+        .assessment-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 6px 0;
+            font-size: 13px;
+        }
+
+        .assessment-item input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 3px;
+        }
     </style>
 </head>
 <body>
@@ -622,37 +613,23 @@
 
         <div class="concept-cards-container" style="grid-template-columns: repeat(3, 1fr);">
             <div class="concept-card card-theme-2">
-                <div class="concept-card-icon">
-                    <span style="color: white; font-size: 18px;">&#9729;</span>
-                </div>
                 <div class="concept-card-title">Checkpoint 1</div>
                 <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
                     Digital Skills & Cloud
                 </p>
             </div>
             <div class="concept-card card-theme-1">
-                <div class="concept-card-icon">
-                    <span style="color: white; font-size: 18px;">&#128274;</span>
-                </div>
                 <div class="concept-card-title">Checkpoint 2</div>
                 <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
                     Security & Citizenship
                 </p>
             </div>
             <div class="concept-card card-theme-4">
-                <div class="concept-card-icon">
-                    <span style="color: white; font-size: 18px;">&#127909;</span>
-                </div>
                 <div class="concept-card-title">Checkpoint 3</div>
                 <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
                     Group Inquiry Video
                 </p>
             </div>
-        </div>
-
-        <div class="info-box" style="margin-top: 15px; margin-bottom: 0;">
-            <span style="color: #3b82f6; margin-right: 8px;">&#9432;</span>
-            <strong>Total Marks:</strong> 56 points (Checkpoint 1: 16 pts | Checkpoint 2: 15 pts | Checkpoint 3: 25 pts)
         </div>
     </div>
 
@@ -662,7 +639,6 @@
         <p>As soon as you set this document up, <strong>ensure you have shared a link to it and pasted it in your Aidan's Central submission point and/or emailed to your teacher as directed.</strong></p>
         <p>This way, you <strong>do not need to worry about submitting your assessment on the due date.</strong></p>
         <div class="tip-box">
-            <span style="color: #ffc107; margin-right: 8px;">&#128197;</span>
             <strong>Guide:</strong> Click <a href="">here</a> to watch a video on how to get a shared document link.
             <br><br>Ensure you rename your document using this format:
             <p style="margin: 0; font-family: monospace; font-size: 15px; background-color: #e5e7eb; padding: 8px 12px; border-radius: 4px; display: inline-block;">
@@ -680,7 +656,6 @@
             </div>
 
             <div class="warning-box">
-                <span style="color: #ef4444; margin-right: 8px;">&#9888;</span>
                 <strong>IMPORTANT!</strong> You are responsible for ensuring all your work is contained within this file. <strong>Do not download and put work into new files. Rename this document so you can come back to it easily.</strong>
             </div>
         </div>
@@ -691,19 +666,19 @@
     <!-- ============================================ -->
 
     <div class="checkpoint-header page-break">
-        <h2>&#127937; CHECKPOINT 1: Digital Skills & Cloud Infrastructure</h2>
+        <h2>CHECKPOINT 1: Digital Skills & Cloud Infrastructure</h2>
         <p>Total: 16 points</p>
     </div>
 
     <!-- Q1: OneDrive Practical Skills Checklist -->
-    <div class="section-card">
+    <div class="section-card page-break">
         <div class="section-number">Q1</div>
         <div class="section-title">OneDrive Practical Skills Checklist <span class="points-badge">6 pts</span></div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to organise, manage, and share files using cloud storage platforms like OneDrive.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can create a logical nested folder structure in OneDrive</li>
                 <li>I can share documents with specific permissions</li>
@@ -711,23 +686,25 @@
             </ul>
         </div>
 
-        <p>Complete the following tasks and provide screenshot evidence:</p>
+        <p>Complete the following tasks and provide screenshot evidence.</p>
+    </div>
+
+    <!-- Q1 Part A -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Folder Structure Creation <span class="points-badge">2 pts</span></div>
 
         <div class="task-header">
             <span class="task-title">Part A: Folder Structure Creation</span>
-            <span class="points-badge">2 pts</span>
         </div>
 
         <div class="info-box">
-            <span style="color: #3b82f6; margin-right: 8px;">&#128193;</span>
             <strong>Task:</strong> In your OneDrive, create the following nested directory structure:
         </div>
 
-        <div class="directory-box">
-            2026 (main folder)<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&#9472; Technologies (inside 2026)<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&#9472; Term 1 (inside Technologies)
-        </div>
+        <p style="font-size: 15px; margin: 15px 0;">
+            <strong>2026</strong> (main folder) &rarr; <strong>Technologies</strong> (inside 2026) &rarr; <strong>Term 1</strong> (inside Technologies)
+        </p>
 
         <ol>
             <li>Save this assessment document inside the <strong>Term 1</strong> folder</li>
@@ -735,7 +712,6 @@
         </ol>
 
         <div class="info-box">
-            <span style="color: #3b82f6; margin-right: 8px;">&#9000;</span>
             <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
         </div>
 
@@ -743,7 +719,6 @@
             <div style="display: flex; align-items: center; gap: 15px;">
                 <div style="flex: 1;">
                     <p style="margin: 0 0 8px 0; font-size: 14px;">
-                        <span style="color: #8b5cf6; margin-right: 8px;">&#128444;</span>
                         <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
                     </p>
                 </div>
@@ -753,8 +728,9 @@
             </div>
         </div>
 
+        <p>Paste your folder structure screenshot here:</p>
+
         <div class="large-placeholder-box">
-            Paste your folder structure screenshot here
         </div>
     </div>
 
@@ -773,8 +749,9 @@
             <li>Take a screenshot showing the sharing panel with the correct email and permissions displayed</li>
         </ol>
 
+        <p>Paste your sharing permissions screenshot here:</p>
+
         <div class="large-placeholder-box">
-            Paste your sharing permissions screenshot here
         </div>
     </div>
 
@@ -790,10 +767,7 @@
         <p>Write out your complete folder directory structure by filling in the blanks:</p>
 
         <div class="directory-box">
-            <span class="blank"></span>/<br>
-            &#9492;&#9472;&#9472; <span class="blank"></span>/<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&#9472; <span class="blank"></span>/<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9492;&#9472;&#9472; <span class="blank"></span>.docx
+            <span class="blank"></span> &rarr; <span class="blank"></span> &rarr; <span class="blank"></span> &rarr; <span class="blank"></span>.docx
         </div>
 
         <div class="write-box write-box-small" data-label="Fill in the folder structure above:"></div>
@@ -810,9 +784,9 @@
         <div class="section-title">Data Center Physical Location Investigation <span class="points-badge">10 pts</span></div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand what the 'cloud' actually is and investigate the physical infrastructure that stores our data.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can identify the physical hardware that stores cloud data</li>
                 <li>I can explain what the 'cloud' really means in simple terms</li>
@@ -821,7 +795,7 @@
         </div>
 
         <a href="https://datacenters.microsoft.com/tour/" class="link-button azure-button" target="_blank">
-            <span>&#128065;</span> Explore Azure Data Center Virtual Tour
+            Explore Azure Data Center Virtual Tour
         </a>
 
         <p>Independently explore the Azure Data Center virtual tour to find answers for the following questions.</p>
@@ -839,7 +813,6 @@
         <p>Take and paste <strong>ONE screenshot</strong> showing where your data is physically stored when you save a document to OneDrive. Label your screenshot explaining what physical hardware component stores the data.</p>
 
         <div class="info-box">
-            <span style="color: #3b82f6; margin-right: 8px;">&#9000;</span>
             <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
         </div>
 
@@ -847,7 +820,6 @@
             <div style="display: flex; align-items: center; gap: 15px;">
                 <div style="flex: 1;">
                     <p style="margin: 0 0 8px 0; font-size: 14px;">
-                        <span style="color: #8b5cf6; margin-right: 8px;">&#128444;</span>
                         <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
                     </p>
                 </div>
@@ -857,8 +829,9 @@
             </div>
         </div>
 
+        <p>Paste your screenshot here:</p>
+
         <div class="large-placeholder-box">
-            Paste your screenshot here
         </div>
 
         <div class="write-box write-box-small" data-label="What physical hardware component stores your data?"></div>
@@ -875,8 +848,9 @@
 
         <p>Take a moment to explore the data center. Take and paste <strong>ONE screenshot</strong> of something you found interesting in the data center tour. Explain why.</p>
 
+        <p>Paste your interesting screenshot here:</p>
+
         <div class="large-placeholder-box">
-            Paste your interesting screenshot here
         </div>
 
         <div class="write-box write-box-small" data-label="Explain why you found this interesting:"></div>
@@ -890,7 +864,7 @@
         <div class="write-box write-box-medium" data-label="Explain what the 'cloud' really is (2 sentences):"></div>
     </div>
 
-    <!-- Q2 Part D -->
+    <!-- Q2 Part D - First Page -->
     <div class="section-card page-break">
         <div class="section-number">Q2</div>
         <div class="section-title">Data Center Sustainability <span class="points-badge">6 pts</span></div>
@@ -901,8 +875,9 @@
 
         <p>Take and paste <strong>ONE screenshot</strong> showing which part of the data center likely consumes the most power.</p>
 
+        <p>Paste your power consumption screenshot here:</p>
+
         <div class="large-placeholder-box">
-            Paste your power consumption screenshot here
         </div>
 
         <div class="subsection-title">a) Sustainability Challenges (2 pts)</div>
@@ -910,6 +885,12 @@
 
         <div class="write-box write-box-small" data-label="Challenge 1:"></div>
         <div class="write-box write-box-small" data-label="Challenge 2:"></div>
+    </div>
+
+    <!-- Q2 Part D - Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Sustainability (Continued)</div>
 
         <div class="subsection-title">b) Why These Are Problems (2 pts)</div>
         <p>For each challenge, explain <strong>WHY</strong> it is a problem.</p>
@@ -923,24 +904,47 @@
         <div class="write-box write-box-medium" data-label="Describe one solution:"></div>
     </div>
 
+    <!-- Checkpoint 1 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 1: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created the nested folder structure in OneDrive (Q1 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of folder path (Q1 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Shared document with teacher with "Can edit" permissions (Q1 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of sharing panel (Q1 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Filled in folder directory structure (Q1 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained what "nested" folder directory means (Q1 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of data storage hardware (Q2 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Labelled the hardware component (Q2 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of something interesting (Q2 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained the cloud in simple terms (Q2 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of power consumption area (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified two sustainability challenges (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained why each challenge is a problem (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Described one solution to sustainability challenges (Q2 Part D)</div>
+        </div>
+    </div>
+
     <!-- ============================================ -->
     <!-- CHECKPOINT 2: SECURITY & DIGITAL CITIZENSHIP -->
     <!-- ============================================ -->
 
     <div class="checkpoint-header page-break">
-        <h2>&#128274; CHECKPOINT 2: Security & Digital Citizenship</h2>
+        <h2>CHECKPOINT 2: Security & Digital Citizenship</h2>
         <p>Total: 15 points</p>
     </div>
 
     <!-- Q3: Multi-Factor Authentication -->
-    <div class="section-card">
+    <div class="section-card page-break">
         <div class="section-number">Q3</div>
         <div class="section-title">Multi-Factor Authentication <span class="points-badge">3 pts</span></div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand how multi-factor authentication (MFA) protects our digital accounts and data.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can give an example of multi-factor authentication</li>
                 <li>I can explain how MFA protects accounts even when passwords are compromised</li>
@@ -950,17 +954,17 @@
         <p>Watch this short 2 minute video on multi-factor authentication (MFA) and read the article by the Australian Government:</p>
 
         <a href="https://youtube.com/shorts/8kNPu9qTevk?si=AfYMFRWLAZadg5wD" class="link-button youtube-button" target="_blank">
-            <span>&#9658;</span> Watch: What is Multi-Factor Authentication?
+            Watch: What is Multi-Factor Authentication?
         </a>
 
         <a href="https://www.cyber.gov.au/protect-yourself/securing-your-accounts/multi-factor-authentication" class="link-button research-button" target="_blank">
-            <span>&#128279;</span> Read: Australian Government - MFA Guide
+            Read: Australian Government - MFA Guide
         </a>
 
         <div class="write-box write-box-small" data-label="What's one example of multi-factor authentication?"></div>
 
         <div class="scenario-box">
-            <strong>&#128270; Scenario:</strong> Someone discovers your password written on a piece of paper in your bag.
+            <strong>Scenario:</strong> Someone discovers your password written on a piece of paper in your bag.
         </div>
 
         <p>In your own words, explain how multi-factor authentication would protect your OneDrive account from being accessed by this person.</p>
@@ -974,9 +978,9 @@
         <div class="section-title">Phishing Scenario Identification <span class="points-badge">6 pts</span></div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to identify phishing attempts and understand the tactics used by scammers.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can identify whether a communication is a phishing attempt</li>
                 <li>I can explain specific indicators that reveal phishing scams</li>
@@ -1027,22 +1031,22 @@
         <p>Read the information on the page below under the header 'How do I stay secure?' and provide two things you can do regarding links:</p>
 
         <a href="https://www.cyber.gov.au/protect-yourself/spotting-scams" class="link-button research-button" target="_blank">
-            <span>&#128279;</span> Read: Spotting Scams - Australian Government
+            Read: Spotting Scams - Australian Government
         </a>
 
         <div class="write-box write-box-small" data-label="Technique 1:"></div>
         <div class="write-box write-box-small" data-label="Technique 2:"></div>
     </div>
 
-    <!-- Q5: Loss of Control & Data Persistence -->
+    <!-- Q5: Loss of Control & Data Persistence - Part A -->
     <div class="section-card page-break">
         <div class="section-number">Q5</div>
         <div class="section-title">Loss of Control & Data Persistence <span class="points-badge">6 pts</span></div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand digital data persistence and why deleting files doesn't guarantee their removal from the internet.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can identify ways that shared digital content can be permanently copied</li>
                 <li>I can explain why deleting shared files doesn't remove them completely</li>
@@ -1050,7 +1054,7 @@
         </div>
 
         <div class="scenario-box">
-            <strong>&#128270; Scenario:</strong> You create a highlight reel containing photos from your weekend and share it with three friends via a message.
+            <strong>Scenario:</strong> You create a highlight reel containing photos from your weekend and share it with three friends via a message.
         </div>
 
         <div class="task-header">
@@ -1062,8 +1066,14 @@
         <div class="write-box write-box-small" data-label="Action 1:"></div>
         <div class="write-box write-box-small" data-label="Action 2:"></div>
         <div class="write-box write-box-small" data-label="Action 3:"></div>
+    </div>
 
-        <div class="task-header" style="margin-top: 20px;">
+    <!-- Q5: Part B -->
+    <div class="section-card page-break">
+        <div class="section-number">Q5</div>
+        <div class="section-title">Loss of Control & Data Persistence (Continued)</div>
+
+        <div class="task-header">
             <span class="task-title">Part B: Explanation (3 pts)</span>
         </div>
 
@@ -1072,23 +1082,42 @@
         <div class="write-box write-box-large" data-label="Explain why 'delete' doesn't truly remove shared content (50-75 words):"></div>
     </div>
 
+    <!-- Checkpoint 2 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 2: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Watched the MFA video (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Read the Australian Government MFA guide (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Given an example of multi-factor authentication (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained how MFA would protect your account in the scenario (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified phishing status for Scenario 1 with two indicators (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified phishing status for Scenario 2 with two indicators (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Read the Spotting Scams guide (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Provided two techniques for dealing with suspicious links (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified three technical actions for keeping permanent copies (Q5 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained why delete doesn't truly remove shared content (Q5 Part B)</div>
+        </div>
+    </div>
+
     <!-- ============================================ -->
     <!-- CHECKPOINT 3: GROUP INQUIRY VIDEO PROJECT -->
     <!-- ============================================ -->
 
     <div class="checkpoint-header page-break">
-        <h2>&#127909; CHECKPOINT 3: Group Inquiry Video Project</h2>
+        <h2>CHECKPOINT 3: Group Inquiry Video Project</h2>
         <p>Total: 25 points</p>
     </div>
 
     <!-- Project Overview -->
-    <div class="section-card">
+    <div class="section-card page-break">
         <div class="section-title" style="margin-left: 0;">Project Overview</div>
 
         <div class="learning-box">
-            <h4><span style="margin-right: 8px;">&#127891;</span>Learning Intention</h4>
+            <h4>Learning Intention</h4>
             <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to research, collaborate, and communicate complex technical concepts through video presentation.</p>
-            <h4><span style="margin-right: 8px;">&#9989;</span>Success Criteria</h4>
+            <h4>Success Criteria</h4>
             <ul>
                 <li>I can research and explain how the internet, encryption, and AI technologies work</li>
                 <li>I can work collaboratively in a group and maintain a progress journal</li>
@@ -1098,19 +1127,19 @@
 
         <div class="two-column-grid">
             <div>
-                <div class="subsection-title">&#128101; Group Size</div>
+                <div class="subsection-title">Group Size</div>
                 <p>2-3 students</p>
             </div>
             <div>
-                <div class="subsection-title">&#9201; Duration</div>
+                <div class="subsection-title">Duration</div>
                 <p>3-5 minutes</p>
             </div>
         </div>
 
-        <div class="subsection-title">&#127916; Format</div>
+        <div class="subsection-title">Format</div>
         <p>Video presentation (filmed explanation, screen recording with voiceover, or animated presentation)</p>
 
-        <div class="subsection-title">&#128230; Deliverables</div>
+        <div class="subsection-title">Deliverables</div>
         <ul>
             <li>Video file submitted via OneDrive</li>
             <li>Completed research workbook</li>
@@ -1123,14 +1152,18 @@
         <div class="section-title" style="margin-left: 0;">Group Progress Journal</div>
 
         <div class="info-box">
-            <span style="color: #3b82f6; margin-right: 8px;">&#128221;</span>
             <strong>Instructions:</strong> Create a document (OneNote or Word) that you will use and maintain as a journal of your group progress. Ensure your group members all have access to this document and contribute to it each lesson.
         </div>
 
         <p>Each group member will contribute to the document in their own table. Use the following structure:</p>
 
+        <div class="tip-box">
+            <strong>Note:</strong> The table below is an example only. You need to create this table in your journal document.
+        </div>
+
         <table class="journal-table">
             <tr>
+                <th>Date</th>
                 <th>Name</th>
                 <th>What I did today</th>
                 <th>What I need to do next</th>
@@ -1141,15 +1174,18 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
-            <tr>
-                <td style="height: 80px;"></td>
-                <td></td>
-                <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td style="height: 80px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="height: 80px;"></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -1164,11 +1200,10 @@
         <div class="section-title" style="margin-left: 0;">Research Topics</div>
 
         <div class="tip-box">
-            <span style="color: #ffc107; margin-right: 8px;">&#128218;</span>
             <strong>Note:</strong> Your video must address the following five topics in a logical sequence. A planning guide is provided to you in a different document for greater guidance.
         </div>
 
-        <div class="subsection-title">&#128225; Topic 1: How the Internet Works</div>
+        <div class="subsection-title">Topic 1: How the Internet Works</div>
         <p>Research and explain:</p>
         <ul>
             <li>How data travels in packets across the internet</li>
@@ -1177,7 +1212,7 @@
             <li>How WiFi transmits data wirelessly</li>
         </ul>
 
-        <div class="subsection-title">&#128272; Topic 2: Encryption & Data Security</div>
+        <div class="subsection-title">Topic 2: Encryption & Data Security</div>
         <p>Research and explain:</p>
         <ul>
             <li>What encryption is and why it's necessary</li>
@@ -1185,7 +1220,7 @@
             <li>Real-world example of where encryption is used (e.g., HTTPS)</li>
         </ul>
 
-        <div class="subsection-title">&#129302; Topic 3: AI Hardware - CPUs vs GPUs</div>
+        <div class="subsection-title">Topic 3: AI Hardware - CPUs vs GPUs</div>
         <p>Research and explain:</p>
         <ul>
             <li>What CPUs and GPUs do</li>
@@ -1198,7 +1233,7 @@
     <div class="section-card page-break">
         <div class="section-title" style="margin-left: 0;">Research Topics (Continued)</div>
 
-        <div class="subsection-title">&#129504; Topic 4: What is AI & How is it Trained?</div>
+        <div class="subsection-title">Topic 4: What is AI & How is it Trained?</div>
         <p>Research and explain:</p>
         <ul>
             <li>Basic definition of artificial intelligence</li>
@@ -1206,7 +1241,7 @@
             <li>Examples of where AI is used in everyday life</li>
         </ul>
 
-        <div class="subsection-title">&#127758; Topic 5: AI Impacts - Ethics, Sustainability & Future</div>
+        <div class="subsection-title">Topic 5: AI Impacts - Ethics, Sustainability & Future</div>
         <p>Research and discuss:</p>
         <ul>
             <li>Environmental impact of AI data centers (energy, water, cooling)</li>
@@ -1221,15 +1256,34 @@
         <div class="section-title" style="margin-left: 0;">Video Submission</div>
 
         <div class="success-box">
-            <span style="color: #10b981; margin-right: 8px;">&#128249;</span>
             <strong>Final Step:</strong> Upload your group's video to OneDrive and provide a shared link below.
         </div>
 
         <div class="write-box write-box-medium" data-label="Paste your OneDrive video link here:"></div>
 
         <div class="tip-box">
-            <span style="color: #ffc107; margin-right: 8px;">&#9888;</span>
             <strong>Remember:</strong> Make sure your video link has sharing permissions set so your teacher can access it!
+        </div>
+    </div>
+
+    <!-- Checkpoint 3 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 3: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created a shared group journal document</div>
+            <div class="assessment-item"><input type="checkbox"> Pasted link to group journal in this document</div>
+            <div class="assessment-item"><input type="checkbox"> Contributed to the journal each lesson with date, work completed, and evidence</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 1: How the Internet Works</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 2: Encryption & Data Security</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 3: AI Hardware - CPUs vs GPUs</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 4: What is AI & How is it Trained?</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 5: AI Impacts - Ethics, Sustainability & Future</div>
+            <div class="assessment-item"><input type="checkbox"> Created video presentation (3-5 minutes)</div>
+            <div class="assessment-item"><input type="checkbox"> Uploaded video to OneDrive</div>
+            <div class="assessment-item"><input type="checkbox"> Set sharing permissions on video</div>
+            <div class="assessment-item"><input type="checkbox"> Pasted video link in this document</div>
         </div>
     </div>
 
