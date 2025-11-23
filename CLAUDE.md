@@ -13,6 +13,7 @@ This project creates A4 print-friendly HTML educational worksheets that convert 
 ## Design Principles
 
 ### Core Philosophy
+- **No icons or emojis** - Do not use Font Awesome icons, Unicode emojis, or any other icons in worksheets. Use text labels only.
 - **Each section needs its own card frame** - Never continue content from one `.section-card` to another
 - **When in doubt, add a page break** - It's better to have extra whitespace than content spilling over
 - **Size content appropriately** - Match writing area size to expected response length
@@ -137,11 +138,11 @@ Replace plain URL text boxes with styled, clickable buttons:
 
 ### Button Types
 
-| Type | Color Scheme | Icon | Use Case |
-|------|--------------|------|----------|
-| YouTube | Red gradient | `fab fa-youtube` | Video links |
-| Google Maps | Blue gradient | `fas fa-map-marker-alt` | Location links |
-| Research | Green gradient | `fas fa-external-link-alt` | General research links |
+| Type | Color Scheme | Use Case |
+|------|--------------|----------|
+| YouTube | Red gradient | Video links |
+| Google Maps | Blue gradient | Location links |
+| Research | Green gradient | General research links |
 
 ### CSS Implementation
 
@@ -199,7 +200,6 @@ When activities span multiple pages, add info boxes with navigation:
 
 ```html
 <div class="info-box">
-    <i class="fas fa-arrow-right"></i>
     <strong>Continued on next page...</strong>
 </div>
 ```
@@ -234,7 +234,6 @@ Use dotted borders with grid backgrounds for visual brainstorming:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Worksheet Title]</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Include standard CSS here */
     </style>
@@ -249,10 +248,9 @@ Use dotted borders with grid backgrounds for visual brainstorming:
 
 ```html
 <div class="section-card">
-    <div class="section-title">Section Title <i class="fas fa-icon"></i></div>
+    <div class="section-title">Section Title</div>
 
     <div class="tip-box">
-        <i class="fas fa-info-circle"></i>
         <strong>Instructions:</strong> [Instructions text]
     </div>
 
@@ -346,16 +344,16 @@ project/
 
 ## Design Process Cards Reference
 
-Use these colored cards for design process overviews:
+Use these colored cards for design process overviews (text labels only, no icons):
 
-| Stage | Color | Icon |
-|-------|-------|------|
-| Project Planning | Purple `#8b5cf6` | `fa-calendar-days` |
-| Empathy | Rose `#f43f5e` | `fa-heart` |
-| Define | Green `#10b981` | `fa-bullseye` |
-| Ideate | Amber `#f59e0b` | `fa-lightbulb` |
-| Prototype | Sky `#0ea5e9` | `fa-hammer` |
-| Evaluate | Indigo `#6366f1` | `fa-clipboard-check` |
+| Stage | Color |
+|-------|-------|
+| Project Planning | Purple `#8b5cf6` |
+| Empathy | Rose `#f43f5e` |
+| Define | Green `#10b981` |
+| Ideate | Amber `#f59e0b` |
+| Prototype | Sky `#0ea5e9` |
+| Evaluate | Indigo `#6366f1` |
 
 ---
 
