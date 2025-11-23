@@ -494,95 +494,35 @@
             margin: 5px 0;
         }
 
-        /* Sketch Grid */
-        .sketch-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        /* Word Bank */
+        .word-bank {
+            background-color: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 0.6em;
+            padding: 12px 15px;
             margin: 15px 0;
         }
 
-        .sketch-box {
-            border: 2px dashed #ccc;
-            border-radius: 0.6em;
-            padding: 15px;
-            background-color: rgba(0,0,0,0.02);
-            min-height: 200px;
-            position: relative;
-        }
-
-        .sketch-box-label {
-            position: absolute;
-            top: 8px;
-            left: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #666;
-            background: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        /* SCAMPER Table */
-        .scamper-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-
-        .scamper-table th {
-            background-color: #0a2351;
-            color: white;
-            padding: 8px 10px;
-            text-align: left;
-            font-size: 13px;
-        }
-
-        .scamper-table td {
-            padding: 8px 10px;
-            border: 1px solid #e0e0e0;
-            font-size: 13px;
-            vertical-align: top;
-        }
-
-        .scamper-table td:first-child {
-            font-weight: 600;
-            width: 120px;
-            background-color: #f8faff;
-        }
-
-        .scamper-table td:last-child {
-            min-height: 50px;
-            background-color: #fafafa;
-        }
-
-        /* Criteria Box */
-        .criteria-box {
-            border: 2px solid #10b981;
-            border-radius: 0.6em;
-            padding: 12px;
-            margin: 10px 0;
-            background-color: #f0fdf4;
-        }
-
-        .criteria-number {
+        .word-bank-title {
             font-weight: 700;
-            color: #065f46;
-            margin-right: 8px;
-        }
-
-        .criteria-input {
-            border-bottom: 1px dashed #10b981;
-            min-height: 25px;
-            margin-top: 5px;
-        }
-
-        .criteria-prefilled {
-            background-color: #d1fae5;
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-top: 5px;
+            color: #0369a1;
             font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .word-bank-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .word-bank-word {
+            background-color: white;
+            border: 1px solid #0ea5e9;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 12px;
+            color: #0369a1;
         }
 
         /* Empathy Card */
@@ -660,63 +600,65 @@
         </div>
     </div>
 
-    <!-- Journey Overview -->
-    <div class="section-card">
-        <div class="section-title" style="margin-left: 0;">Your Journey</div>
-
-        <div class="concept-cards-container" style="grid-template-columns: repeat(4, 1fr);">
-            <div class="concept-card card-theme-2">
-                <div class="concept-card-title">Investigate</div>
-                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
-                    Clock Mechanics
-                </p>
-            </div>
-            <div class="concept-card card-theme-1">
-                <div class="concept-card-title">Empathy & Define</div>
-                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
-                    Research & Criteria
-                </p>
-            </div>
-            <div class="concept-card card-theme-5">
-                <div class="concept-card-title">Ideate</div>
-                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
-                    Generate Ideas
-                </p>
-            </div>
-            <div class="concept-card card-theme-3">
-                <div class="concept-card-title">Prototype</div>
-                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
-                    Make Your Clock
-                </p>
-            </div>
-        </div>
-    </div>
-
     <!-- ======================= -->
     <!-- PART A: ENGINEERING     -->
     <!-- ======================= -->
 
-    <div class="checkpoint-header">
+    <div class="checkpoint-header page-break">
         <h2>Part A: Engineering Investigation</h2>
         <p>Exploring Force, Energy, and Motion</p>
     </div>
 
-    <!-- Section 1: Clock Disassembly -->
+    <!-- Section A1: Gantt Chart -->
     <div class="section-card">
-        <div class="section-number">1</div>
+        <div class="section-number">A1</div>
+        <div class="section-title">Project Gantt Chart <span class="points-badge">5 pts</span></div>
+
+        <div class="tip-box">
+            <strong>Guide:</strong> A Gantt chart helps you plan your project timeline. Look through the whole assessment to identify all the major tasks you need to complete.
+        </div>
+
+        <p>Create a Gantt chart showing your project timeline. Include all major phases and key milestones.</p>
+        <div class="mega-placeholder-box">
+        </div>
+
+        <div class="subsection-title">Key Milestones</div>
+        <div class="write-box write-box-small" data-label="List 2-3 important deadlines or milestones that you think you will need to be careful to successfully meet"></div>
+    </div>
+
+    <!-- Section A2: Clock Disassembly -->
+    <div class="section-card page-break">
+        <div class="section-number">A2</div>
         <div class="section-title">Clock Disassembly & Parts <span class="points-badge">10 pts</span></div>
 
         <p>Carefully disassemble the quartz clock kit. Identify and label each part in the space below, including the <strong>energy source</strong> (battery).</p>
 
-        <div class="tip-box">
-            <strong>Task:</strong> Take a photo of the disassembled clock parts arranged neatly. Paste the image below and add labels to identify each component.
+        <div class="word-bank">
+            <div class="word-bank-title">Word Bank - Use these terms to label your diagram:</div>
+            <div class="word-bank-words">
+                <span class="word-bank-word">Battery (Energy Source)</span>
+                <span class="word-bank-word">Quartz Crystal</span>
+                <span class="word-bank-word">Electromagnetic Coil</span>
+                <span class="word-bank-word">Gear Train</span>
+                <span class="word-bank-word">Hour Hand</span>
+                <span class="word-bank-word">Minute Hand</span>
+                <span class="word-bank-word">Second Hand</span>
+                <span class="word-bank-word">Clock Face Mount</span>
+                <span class="word-bank-word">Circuit Board</span>
+            </div>
         </div>
 
+        <p>Paste a photo of the disassembled clock parts arranged neatly. Add labels to identify each component using the word bank above.</p>
         <div class="large-placeholder-box">
-            Paste your labelled photo of disassembled clock parts here
         </div>
+    </div>
 
-        <div class="subsection-title">Key Components to Identify</div>
+    <!-- Section A2A: Component Functions -->
+    <div class="section-card page-break">
+        <div class="section-number">A2</div>
+        <div class="section-title">Clock Components (Continued)</div>
+
+        <div class="subsection-title">Key Components - What do they do?</div>
         <table class="data-table">
             <tr>
                 <th style="width: 35%;">Component</th>
@@ -745,9 +687,9 @@
         </table>
     </div>
 
-    <!-- Section 2: Solenoid Experiment -->
+    <!-- Section A3: Solenoid Experiment -->
     <div class="section-card page-break">
-        <div class="section-number">2</div>
+        <div class="section-number">A3</div>
         <div class="section-title">Solenoid Experiment <span class="points-badge">15 pts</span></div>
 
         <p>A solenoid is a coil of wire that creates a magnetic field when electricity flows through it. This is how the clock mechanism converts electrical energy into motion.</p>
@@ -757,16 +699,15 @@
         </div>
 
         <div class="subsection-title">Your Solenoid Photo</div>
+        <p>Paste a photo of your solenoid experiment here (showing the copper wire coil and compass positioning).</p>
         <div class="mega-placeholder-box">
-            Paste a photo of your solenoid experiment here<br>
-            (showing the copper wire coil and compass positioning)
         </div>
     </div>
 
-    <!-- Section 2A: Solenoid Observations -->
+    <!-- Section A3A: Solenoid Observations -->
     <div class="section-card page-break">
-        <div class="section-number">2A</div>
-        <div class="section-title">Solenoid Observations <span class="points-badge">(continued)</span></div>
+        <div class="section-number">A3</div>
+        <div class="section-title">Solenoid Observations (Continued)</div>
 
         <div class="subsection-title">Observations</div>
         <table class="data-table">
@@ -803,9 +744,9 @@
         </div>
     </div>
 
-    <!-- Section 3: Gear Ratios -->
+    <!-- Section A4: Gear Ratios -->
     <div class="section-card page-break">
-        <div class="section-number">3</div>
+        <div class="section-number">A4</div>
         <div class="section-title">Gear Ratio Exploration <span class="points-badge">15 pts</span></div>
 
         <p>Gears transfer motion and change speed. The clock uses gear ratios to make the hour, minute, and second hands move at different speeds from a single motor.</p>
@@ -844,10 +785,10 @@
         </div>
     </div>
 
-    <!-- Section 3A: More Gear Experiments -->
+    <!-- Section A4A: More Gear Experiments -->
     <div class="section-card page-break">
-        <div class="section-number">3A</div>
-        <div class="section-title">Gear Ratio Exploration (continued)</div>
+        <div class="section-number">A4</div>
+        <div class="section-title">Gear Ratio Exploration (Continued)</div>
 
         <div class="subsection-title">Gear Experiment 2: Different Sized Gears</div>
         <p>Create two gears with <strong>different numbers of teeth</strong> (e.g., 10 teeth and 40 teeth).</p>
@@ -873,10 +814,16 @@
                 <div class="write-box write-box-medium" data-label="Which gear spins faster? Why do you think this happens?"></div>
             </div>
         </div>
+    </div>
+
+    <!-- Section A4B: Screenshot and Connection -->
+    <div class="section-card page-break">
+        <div class="section-number">A4</div>
+        <div class="section-title">Gear Ratio Exploration (Continued)</div>
 
         <div class="subsection-title">Screenshot of Your Gear Simulation</div>
+        <p>Paste a screenshot of your gear simulation from Gear Generator here.</p>
         <div class="large-placeholder-box">
-            Paste a screenshot of your gear simulation from Gear Generator here
         </div>
 
         <div class="subsection-title">Connecting to Clocks</div>
@@ -892,9 +839,9 @@
         <p>Creating a Clock as a Gift</p>
     </div>
 
-    <!-- Section 4: Empathy -->
+    <!-- Section B1: Empathy -->
     <div class="section-card">
-        <div class="section-number">4</div>
+        <div class="section-number">B1</div>
         <div class="section-title">Empathy: Know Your Recipient <span class="points-badge">10 pts</span></div>
 
         <p>Great designs start with understanding the person you're designing for. Complete the research below about the person who will receive your clock.</p>
@@ -945,157 +892,240 @@
         </div>
     </div>
 
-    <!-- Section 5: Define - Design Criteria -->
+    <!-- Section B2: Define - Design Criteria Info -->
     <div class="section-card page-break">
-        <div class="section-number">5</div>
+        <div class="section-number">B2</div>
         <div class="section-title">Define: Design Criteria <span class="points-badge">15 pts</span></div>
 
-        <p>Based on your empathy research, create 5 design criteria that your clock must meet. These will guide your design decisions.</p>
-
-        <div class="warning-box">
-            <strong>Important:</strong> Measure the clock insert mechanism. Your clock face must have a hole that fits this size exactly!
-        </div>
-
-        <div class="criteria-box">
-            <span class="criteria-number">1.</span> <strong>Size Constraint (Measure and complete):</strong>
-            <div class="criteria-prefilled">
-                The clock face must have a centre hole of <span style="border-bottom: 1px solid #065f46; padding: 0 20px;">______</span> mm diameter to fit the clock insert mechanism.
-            </div>
-        </div>
-
-        <div class="criteria-box">
-            <span class="criteria-number">2.</span> <strong>Sustainability Criteria:</strong>
-            <div class="criteria-input"></div>
-            <p style="font-size: 11px; color: #666; margin: 5px 0 0 0;">Consider: materials, waste reduction, durability, or environmental impact</p>
-        </div>
-
-        <div class="criteria-box">
-            <span class="criteria-number">3.</span> <strong>Design Criteria:</strong>
-            <div class="criteria-input"></div>
-        </div>
-
-        <div class="criteria-box">
-            <span class="criteria-number">4.</span> <strong>Design Criteria:</strong>
-            <div class="criteria-input"></div>
-        </div>
-
-        <div class="criteria-box">
-            <span class="criteria-number">5.</span> <strong>Design Criteria:</strong>
-            <div class="criteria-input"></div>
-        </div>
-    </div>
-
-    <!-- Section 6: Mood Board -->
-    <div class="section-card page-break">
-        <div class="section-number">6</div>
-        <div class="section-title">Ideate: Mood Board <span class="points-badge">10 pts</span></div>
-
-        <p>Collect images of existing clock designs that inspire you. Look for colours, shapes, materials, and styles that might suit your recipient.</p>
-
-        <div class="tip-box">
-            <strong>Tip:</strong> Search for images online and paste them below. Include a variety of styles - you might combine elements from different designs!
-        </div>
-
-        <div class="mega-placeholder-box">
-            Paste your mood board images here<br>
-            (aim for 6-10 inspiring clock designs)
-        </div>
-    </div>
-
-    <!-- Section 7: Initial Sketches -->
-    <div class="section-card page-break">
-        <div class="section-number">7</div>
-        <div class="section-title">Ideate: Initial Sketches <span class="points-badge">15 pts</span></div>
-
-        <p>Generate 5 different clock design ideas. At this stage, focus on variety - try different shapes, styles, and concepts. Quick sketches are fine!</p>
-
-        <div class="sketch-grid">
-            <div class="sketch-box">
-                <div class="sketch-box-label">Idea 1</div>
-            </div>
-            <div class="sketch-box">
-                <div class="sketch-box-label">Idea 2</div>
-            </div>
-            <div class="sketch-box">
-                <div class="sketch-box-label">Idea 3</div>
-            </div>
-            <div class="sketch-box">
-                <div class="sketch-box-label">Idea 4</div>
-            </div>
-        </div>
-
-        <div class="sketch-box" style="min-height: 180px;">
-            <div class="sketch-box-label">Idea 5</div>
-        </div>
-    </div>
-
-    <!-- Section 8: SCAMPER -->
-    <div class="section-card page-break">
-        <div class="section-number">8</div>
-        <div class="section-title">Ideate: SCAMPER <span class="points-badge">15 pts</span></div>
-
-        <p>Use the SCAMPER technique to push your favourite idea further. Choose your best sketch and apply each prompt to improve it.</p>
-
         <div class="info-box">
-            <strong>Selected Design:</strong> I am developing Idea #<span style="border-bottom: 1px solid #3b82f6; padding: 0 15px;">____</span> from my initial sketches.
+            <strong>What are design criteria?</strong> These are the rules your final product must follow. You'll use these to guide your design AND evaluate your finished clock.
         </div>
 
-        <table class="scamper-table">
+        <div class="subsection-title">Criteria Categories</div>
+
+        <table class="data-table" style="font-size: 13px;">
             <tr>
-                <th style="width: 25%;">SCAMPER</th>
-                <th>Apply to Your Clock Design</th>
+                <th style="width: 22%;">Category</th>
+                <th style="width: 28%;">What it means</th>
+                <th style="width: 50%;">Example criteria</th>
             </tr>
             <tr>
-                <td><strong>S</strong>ubstitute<br><span style="font-weight: 400; font-size: 11px;">What materials or parts could you swap?</span></td>
-                <td class="input-cell"></td>
+                <td><strong>Function</strong></td>
+                <td>How well does it work?</td>
+                <td><em>"Clock insert must fit securely in the centre hole"</em></td>
             </tr>
             <tr>
-                <td><strong>C</strong>ombine<br><span style="font-weight: 400; font-size: 11px;">What ideas could you merge together?</span></td>
-                <td class="input-cell"></td>
+                <td><strong>Aesthetic</strong></td>
+                <td>How does it look?</td>
+                <td><em>"Must match the recipient's favourite colour scheme"</em></td>
             </tr>
             <tr>
-                <td><strong>A</strong>dapt<br><span style="font-weight: 400; font-size: 11px;">What could you borrow from other designs?</span></td>
-                <td class="input-cell"></td>
+                <td><strong>Sustainability</strong></td>
+                <td>Environmental impact?</td>
+                <td><em>"Must use sustainably sourced or recycled materials"</em></td>
             </tr>
             <tr>
-                <td><strong>M</strong>odify<br><span style="font-weight: 400; font-size: 11px;">What could you make bigger, smaller, or change?</span></td>
-                <td class="input-cell"></td>
-            </tr>
-            <tr>
-                <td><strong>P</strong>ut to other use<br><span style="font-weight: 400; font-size: 11px;">Could it serve another purpose too?</span></td>
-                <td class="input-cell"></td>
-            </tr>
-            <tr>
-                <td><strong>E</strong>liminate<br><span style="font-weight: 400; font-size: 11px;">What could you remove or simplify?</span></td>
-                <td class="input-cell"></td>
-            </tr>
-            <tr>
-                <td><strong>R</strong>earrange<br><span style="font-weight: 400; font-size: 11px;">What if you changed the layout or order?</span></td>
-                <td class="input-cell"></td>
+                <td><strong>User Need</strong></td>
+                <td>Does it suit your user?</td>
+                <td><em>"Must be appropriate size for their bedroom wall"</em></td>
             </tr>
         </table>
+
+        <div class="warning-box">
+            <strong>Requirements:</strong>
+            <ul style="margin: 8px 0 0 0; font-size: 13px;">
+                <li>At least <strong>1 of your 5 criteria</strong> must relate to sustainability</li>
+                <li>You must <strong>measure the clock insert</strong> and include this as a size constraint</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Section 9: Technical Sketch -->
+    <!-- Section B2A: My Design Criteria -->
     <div class="section-card page-break">
-        <div class="section-number">9</div>
-        <div class="section-title">Ideate: Technical Sketch <span class="points-badge">20 pts</span></div>
+        <div class="section-number">B2</div>
+        <div class="section-title">My Design Criteria</div>
 
-        <p>Create a detailed technical drawing of your final clock design. Include measurements, labels, and material notes.</p>
+        <p>Write 5 criteria for your clock design. Make sure they connect back to your empathy research.</p>
+
+        <div class="subsection-title">Criterion 1 <span style="color: #3b82f6;">(Size Constraint - Measure the clock insert!)</span></div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="The clock face must have a centre hole of _____ mm diameter to fit the clock insert"></div>
+            <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 0.6em; padding: 8px; text-align: center; font-size: 13px; font-weight: 600; color: #1d4ed8;">Function</div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+
+        <div class="subsection-title">Criterion 2 <span style="color: #10b981;">(Sustainability)</span></div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My clock must..."></div>
+            <div style="background: #d1fae5; border: 2px solid #10b981; border-radius: 0.6em; padding: 8px; text-align: center; font-size: 13px; font-weight: 600; color: #065f46;">Sustainability</div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+
+        <div class="subsection-title">Criterion 3</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My clock must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+    </div>
+
+    <!-- Section B2B: My Design Criteria Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">B2</div>
+        <div class="section-title">My Design Criteria (Continued)</div>
+
+        <div class="subsection-title">Criterion 4</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My clock must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+
+        <div class="subsection-title">Criterion 5</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My clock must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+
+        <div class="success-box">
+            <strong>Check your empathy research:</strong> Read your recipient research again. Do your criteria actually address what would make this clock meaningful for them?
+        </div>
+    </div>
+
+    <!-- Section B3: Mood Board -->
+    <div class="section-card page-break">
+        <div class="section-number">B3</div>
+        <div class="section-title">Mood Board <span class="points-badge">10 pts</span></div>
 
         <div class="tip-box">
-            <strong>Include:</strong> Overall dimensions, hole size for clock insert, material choices, any decorative elements, and colour notes.
+            <strong>Aesthetics:</strong> Ensure your mood board gives insight into a consistent design aesthetic or idea that suits your recipient.
         </div>
 
+        <p>Include a mood board here. Search for images of existing clock designs that inspire you. Look for colours, shapes, materials, and styles that might suit your recipient. Aim for 6-10 inspiring images.</p>
         <div class="huge-placeholder-box">
-            Draw or paste your detailed technical sketch here<br>
-            (include measurements and labels)
         </div>
     </div>
 
-    <!-- Section 10: SVG Design -->
+    <!-- Section B4: Brainstorm Sketches -->
     <div class="section-card page-break">
-        <div class="section-number">10</div>
+        <div class="section-number">B4</div>
+        <div class="section-title">Brainstorm Sketches <span class="points-badge">15 pts</span></div>
+
+        <div class="tip-box">
+            <strong>Quantity over quality!</strong> Get as many ideas out as possible. Try different shapes, themes, and styles.
+        </div>
+
+        <p>Sketch as many different ideas as possible here. Aim for at least 5 quick concepts.</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Section B5: SCAMPER -->
+    <div class="section-card page-break">
+        <div class="section-number">B5</div>
+        <div class="section-title">SCAMPER Development <span class="points-badge">15 pts</span></div>
+
+        <div class="info-box">
+            <strong>SCAMPER</strong> is a creative thinking technique to help you develop and improve your ideas.
+        </div>
+        <p>Do some quick sketches to experiment with new ideas. <strong>You do not need to commit to making one of these changes</strong>, but you are being assessed on your ability to experiment with a variety of approaches and concepts.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px;">
+            <div style="border: 2px solid #ec4899; border-radius: 0.6em; padding: 10px; background: #fdf2f8;">
+                <h4 style="color: #be185d; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>S</strong> - Substitute
+                </h4>
+                <p style="font-size: 11px; color: #9d174d; margin: 0 0 8px 0;">What materials or components could you swap?</p>
+                <div style="border: 2px dashed #ec4899; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+
+            <div style="border: 2px solid #f59e0b; border-radius: 0.6em; padding: 10px; background: #fffbeb;">
+                <h4 style="color: #b45309; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>C</strong> - Combine
+                </h4>
+                <p style="font-size: 11px; color: #92400e; margin: 0 0 8px 0;">What ideas or features could you merge?</p>
+                <div style="border: 2px dashed #f59e0b; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+
+            <div style="border: 2px solid #10b981; border-radius: 0.6em; padding: 10px; background: #ecfdf5;">
+                <h4 style="color: #047857; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>A</strong> - Adapt
+                </h4>
+                <p style="font-size: 11px; color: #065f46; margin: 0 0 8px 0;">What could you adjust or borrow from other designs?</p>
+                <div style="border: 2px dashed #10b981; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+
+            <div style="border: 2px solid #3b82f6; border-radius: 0.6em; padding: 10px; background: #eff6ff;">
+                <h4 style="color: #1d4ed8; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>M</strong> - Modify
+                </h4>
+                <p style="font-size: 11px; color: #1e40af; margin: 0 0 8px 0;">What could you make bigger, smaller, or change?</p>
+                <div style="border: 2px dashed #3b82f6; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section B5A: SCAMPER Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">B5</div>
+        <div class="section-title">SCAMPER Development (Continued)</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div style="border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 10px; background: #f5f3ff;">
+                <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>P</strong> - Put to Another Use
+                </h4>
+                <p style="font-size: 11px; color: #5b21b6; margin: 0 0 8px 0;">Could it serve a different purpose or context?</p>
+                <div style="border: 2px dashed #8b5cf6; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+            </div>
+
+            <div style="border: 2px solid #ef4444; border-radius: 0.6em; padding: 10px; background: #fef2f2;">
+                <h4 style="color: #b91c1c; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>E</strong> - Eliminate
+                </h4>
+                <p style="font-size: 11px; color: #991b1b; margin: 0 0 8px 0;">What could you remove or simplify?</p>
+                <div style="border: 2px dashed #ef4444; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+
+        <div style="border: 2px solid #0ea5e9; border-radius: 0.6em; padding: 10px; margin-top: 12px; background: #f0f9ff;">
+            <h4 style="color: #0369a1; margin: 0 0 5px 0; font-size: 13px;">
+                <strong>R</strong> - Rearrange / Reverse
+            </h4>
+            <p style="font-size: 11px; color: #075985; margin: 0 0 8px 0;">What if you changed the order, layout, or flipped it around?</p>
+            <div style="border: 2px dashed #0ea5e9; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+        </div>
+    </div>
+
+    <!-- Section B6: Technical Sketch -->
+    <div class="section-card page-break">
+        <div class="section-number">B6</div>
+        <div class="section-title">Technical Sketch <span class="points-badge">20 pts</span></div>
+
+        <div class="info-box">
+            A <strong>TECHNICAL SKETCH</strong> is a professionally done sketch which clearly outlines your final design. Another designer should theoretically be able to replicate your design by following all the information in your technical sketch.
+        </div>
+
+        <div class="info-box">
+            <strong>Requirements:</strong> Your technical sketch must include:
+            <ul style="margin: 8px 0 0 0; font-size: 13px;">
+                <li><strong>Measurements</strong> (dimensions in cm or mm)</li>
+                <li><strong>Labels</strong> for all key parts and features</li>
+                <li><strong>Materials</strong> noted for each component</li>
+                <li><strong>Centre hole size</strong> for the clock insert</li>
+                <li><strong>Colour notes</strong> if applicable</li>
+            </ul>
+        </div>
+
+        <p>Draw your detailed technical sketch here with all measurements, labels, materials, and construction notes.</p>
+        <div class="mega-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Section B7: SVG Design -->
+    <div class="section-card page-break">
+        <div class="section-number">B7</div>
         <div class="section-title">Prototype: SVG Design for Laser Cutting <span class="points-badge">15 pts</span></div>
 
         <p>Using xTool Creative Space, create the SVG file for your clock design that will be laser cut.</p>
@@ -1109,21 +1139,21 @@
         </div>
 
         <div class="subsection-title">Screenshot of Your SVG Design</div>
+        <p>Paste a screenshot of your SVG design from xTool here.</p>
         <div class="mega-placeholder-box">
-            Paste a screenshot of your SVG design from xTool here
         </div>
     </div>
 
-    <!-- Section 11: Assembly -->
+    <!-- Section B8: Assembly -->
     <div class="section-card page-break">
-        <div class="section-number">11</div>
+        <div class="section-number">B8</div>
         <div class="section-title">Prototype: Assembly Documentation <span class="points-badge">10 pts</span></div>
 
         <p>Document the assembly of your finished clock with photos and notes.</p>
 
         <div class="subsection-title">Finished Clock Photo</div>
+        <p>Paste a photo of your completed clock here.</p>
         <div class="large-placeholder-box">
-            Paste a photo of your completed clock here
         </div>
 
         <div class="subsection-title">Assembly Notes</div>
@@ -1145,11 +1175,6 @@
                 <td class="input-cell-large"></td>
             </tr>
         </table>
-
-        <div class="success-box">
-            <strong>Reflection:</strong> What would you do differently if you made another clock?
-            <div class="write-box write-box-medium" style="margin-top: 10px; margin-bottom: 0;" data-label="Your reflection"></div>
-        </div>
     </div>
 
 </body>
