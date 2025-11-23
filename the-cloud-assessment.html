@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cloud - Assessment Workbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    <style>
+        /* =================================
+           CORE A4 PRINT-FRIENDLY TEMPLATE
+           ================================= */
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #191919;
+            background-color: white;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            width: 210mm;
+            margin: 0 auto;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                width: 190mm;
+                padding: 0;
+            }
+
+            .section-card {
+                page-break-inside: avoid;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .title-underline {
+            border-bottom: 3px solid #0a2351;
+            margin-bottom: 16px;
+        }
+
+        .section-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            margin-bottom: 18px;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 0.15em 0 #191919;
+            page-break-inside: avoid;
+            background-color: white;
+        }
+
+        .section-number {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a2351;
+        }
+
+        .section-title {
+            margin-left: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2351;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 18px 0 12px 0;
+            color: #0a2351;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 6px;
+            page-break-after: avoid;
+        }
+
+        .student-info-box {
+            background-color: #f8f9fa;
+            border: 2px solid #0a2351;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0a2351;
+            margin-bottom: 5px;
+        }
+
+        .info-line {
+            border-bottom: 1px solid #0a2351;
+            height: 25px;
+        }
+
+        /* Content Boxes */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .success-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .learning-box {
+            background-color: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .learning-box h4 {
+            color: #8b5cf6;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .learning-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .learning-box li {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        /* Writing Areas */
+        .write-box {
+            border: 2px dotted #999;
+            border-radius: 0.6em;
+            background-color: #fafafa;
+            margin: 15px 0;
+            position: relative;
+            min-height: 60px;
+        }
+
+        .write-box::before {
+            content: attr(data-label);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: white;
+            padding: 0 8px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .write-box-small {
+            min-height: 70px;
+            padding: 12px;
+        }
+
+        .write-box-medium {
+            min-height: 120px;
+            padding: 15px;
+        }
+
+        .write-box-large {
+            min-height: 280px;
+            padding: 20px;
+        }
+
+        .placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 180px;
+        }
+
+        .large-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 280px;
+        }
+
+        .mega-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 450px;
+        }
+
+        .huge-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 650px;
+        }
+
+        /* Link Buttons */
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a2351 0%, #1e40af 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(10, 35, 81, 0.3);
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .link-button-azure {
+            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+            box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+        }
+
+        /* Points Badge */
+        .points-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .checkpoint-header {
+            background-color: #0a2351;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 0.6em;
+            margin: 25px 0 18px 0;
+            text-align: center;
+        }
+
+        .checkpoint-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .checkpoint-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* Overview Card */
+        .overview-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #0a2351;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+            border-radius: 0.6em;
+        }
+
+        .overview-header {
+            margin: -20px -20px 15px -20px;
+            padding: 15px 20px;
+            background-color: #0a2351;
+            border-radius: 0.4em 0.4em 0 0;
+        }
+
+        .overview-header h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        /* Task Header */
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-title {
+            font-weight: 700;
+            color: #0a2351;
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            font-size: 14px;
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Checklist styles */
+        .task-checklist {
+            margin: 15px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 12px;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 3px;
+            width: 18px;
+            height: 18px;
+            accent-color: #0a2351;
+        }
+
+        .checklist-item-content {
+            flex: 1;
+        }
+
+        .checklist-item-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .checklist-item-marks {
+            font-size: 12px;
+            color: #10b981;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* Marking criteria box */
+        .marking-criteria {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 12px;
+        }
+
+        .marking-criteria strong {
+            color: #0369a1;
+        }
+
+        /* Component response structure */
+        .component-response {
+            background-color: #fafafa;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+
+        .component-label {
+            font-weight: 600;
+            color: #0a2351;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .component-line {
+            border-bottom: 1px dotted #999;
+            min-height: 25px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <h1 style="text-align: center;">The Cloud <span style="margin-left: 10px;">☁️</span></h1>
+    <div class="title-underline"></div>
+
+    <!-- Student Information -->
+    <div class="student-info-box">
+        <div class="info-field">
+            <div class="info-label">Student Name:</div>
+            <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+            <div class="info-label">Class:</div>
+            <div class="info-line"></div>
+        </div>
+    </div>
+
+    <!-- Unit Overview -->
+    <div class="overview-card">
+        <div class="overview-header">
+            <h2>☁️ Assessment Overview</h2>
+        </div>
+
+        <p style="font-size: 15px; margin-bottom: 15px;">
+            In this assessment, you will demonstrate your understanding of how "the cloud" actually works - from the physical data centers that store your files, to how data travels across the internet, to the implications of storing information online.
+        </p>
+
+        <div class="info-box" style="margin-bottom: 0;">
+            <span style="color: #3b82f6; margin-right: 8px;">ℹ️</span>
+            <strong>Total Marks: 50</strong> | This assessment is weighted lower in your overall grade as per the unit scope.
+        </div>
+    </div>
+
+    <!-- Assessment Structure -->
+    <div class="section-card">
+        <div class="section-title" style="margin-left: 0;">Assessment Structure</div>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <tr style="background-color: #0a2351; color: white;">
+                <th style="padding: 10px; text-align: left;">Section</th>
+                <th style="padding: 10px; text-align: left;">Topic</th>
+                <th style="padding: 10px; text-align: center;">Marks</th>
+            </tr>
+            <tr style="background-color: #f8faff;">
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">1</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">Data Centers & Physical Infrastructure</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0; text-align: center;">12</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">2</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">Data Transmission</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0; text-align: center;">18</td>
+            </tr>
+            <tr style="background-color: #f8faff;">
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">3</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">Digital Footprint & Data Permanence</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0; text-align: center;">10</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">4</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">Practical Application</td>
+                <td style="padding: 10px; border-bottom: 1px solid #e0e0e0; text-align: center;">10</td>
+            </tr>
+            <tr style="background-color: #0a2351; color: white;">
+                <td style="padding: 10px;" colspan="2"><strong>Total</strong></td>
+                <td style="padding: 10px; text-align: center;"><strong>50</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: DATA CENTERS & PHYSICAL INFRASTRUCTURE -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2><span style="margin-right: 10px;">🏢</span>SECTION 1: Data Centers & Physical Infrastructure</h2>
+        <p>Total: 12 marks</p>
+    </div>
+
+    <!-- Section 1 Introduction -->
+    <div class="section-card">
+        <div class="section-number">1</div>
+        <div class="section-title">Data Centers & Physical Infrastructure <span class="points-badge">12 marks</span></div>
+
+        <div class="learning-box">
+            <h4><span style="margin-right: 8px;">🎓</span>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand that "the cloud" is made up of physical infrastructure and to identify the key components and sustainability challenges of data centers.</p>
+            <h4><span style="margin-right: 8px;">✅</span>Success Criteria</h4>
+            <ul>
+                <li>I can identify key physical components of a data center</li>
+                <li>I can explain the purpose of different data center components</li>
+                <li>I can identify sustainability challenges faced by data centers</li>
+                <li>I can describe solutions that address these sustainability challenges</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <span style="color: #3b82f6; margin-right: 8px;">ℹ️</span>
+            <strong>Getting Started:</strong> Use the Microsoft Azure Data Center virtual tour below to explore a real data center and complete the questions in this section.
+        </div>
+
+        <a href="https://datacenters.microsoft.com/globe/explore/datacenter/" class="link-button link-button-azure" target="_blank">
+            <span>🌐</span> Microsoft Azure Data Center Virtual Tour
+        </a>
+    </div>
+
+    <!-- Question 1: Screenshot Evidence -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Screenshot Evidence <span class="points-badge">3 marks</span></div>
+
+        <p>Using the Microsoft Azure Data Center virtual tour, take and paste three screenshots showing the items below. Each screenshot must be clearly labelled with what it shows.</p>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 1: A Server Rack (1 mark)</div>
+        <div class="placeholder-box">
+            Paste your screenshot of a server rack here
+        </div>
+        <div class="write-box write-box-small" data-label="Label: What does this screenshot show?"></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 2: Where Data is Physically Stored/Hosted (1 mark)</div>
+        <div class="placeholder-box">
+            Paste your screenshot showing where data is physically stored here
+        </div>
+        <div class="write-box write-box-small" data-label="Label: What does this screenshot show?"></div>
+    </div>
+
+    <!-- Question 1 Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Screenshot Evidence (Continued)</div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 3: Where Most Power is Consumed (1 mark)</div>
+        <div class="placeholder-box">
+            Paste your screenshot showing where the most power is likely consumed here
+        </div>
+        <div class="write-box write-box-small" data-label="Label: What does this screenshot show?"></div>
+    </div>
+
+    <!-- Question 2: Data Center Components -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Components <span class="points-badge">3 marks</span></div>
+
+        <p>Based on your exploration of the Azure data center, identify and briefly explain the purpose of <strong>three key components</strong> you observed.</p>
+
+        <div class="tip-box">
+            <span style="color: #ffc107; margin-right: 8px;">💡</span>
+            <strong>Example response structure:</strong><br>
+            Component 1: [Name] - [Purpose in 1 sentence]
+        </div>
+
+        <div class="component-response">
+            <div class="component-label">Component 1: (1 mark)</div>
+            <div class="write-box write-box-small" data-label="Name and purpose"></div>
+        </div>
+
+        <div class="component-response">
+            <div class="component-label">Component 2: (1 mark)</div>
+            <div class="write-box write-box-small" data-label="Name and purpose"></div>
+        </div>
+
+        <div class="component-response">
+            <div class="component-label">Component 3: (1 mark)</div>
+            <div class="write-box write-box-small" data-label="Name and purpose"></div>
+        </div>
+    </div>
+
+    <!-- Question 3: Sustainability Challenges -->
+    <div class="section-card page-break">
+        <div class="section-number">Q3</div>
+        <div class="section-title">Sustainability Challenges <span class="points-badge">6 marks</span></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">a)</span>Identify TWO sustainability challenges that data centers face (2 marks)</div>
+
+        <div class="write-box write-box-small" data-label="Challenge 1:"></div>
+        <div class="write-box write-box-small" data-label="Challenge 2:"></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">b)</span>For each challenge, explain WHY it is a problem (2 marks - 1 mark each)</div>
+
+        <div class="write-box write-box-medium" data-label="Why is Challenge 1 a problem?"></div>
+        <div class="write-box write-box-medium" data-label="Why is Challenge 2 a problem?"></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">c)</span>Describe ONE solution that data center designers/engineers use to address these sustainability challenges (2 marks)</div>
+
+        <div class="write-box write-box-medium" data-label="Describe the solution and how it helps:"></div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> Specific challenges identified, clear explanations, realistic solution described
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: DATA TRANSMISSION -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2><span style="margin-right: 10px;">📡</span>SECTION 2: Data Transmission</h2>
+        <p>Total: 18 marks</p>
+    </div>
+
+    <!-- Section 2 Introduction -->
+    <div class="section-card">
+        <div class="section-number">2</div>
+        <div class="section-title">Data Transmission <span class="points-badge">18 marks</span></div>
+
+        <div class="learning-box">
+            <h4><span style="margin-right: 8px;">🎓</span>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand how data travels across the internet, including how files are broken into packets, transmitted, and reassembled, and how encryption protects our data.</p>
+            <h4><span style="margin-right: 8px;">✅</span>Success Criteria</h4>
+            <ul>
+                <li>I can create a diagram showing how data travels from my device to the cloud</li>
+                <li>I can explain why files are broken into packets for transmission</li>
+                <li>I can define encryption and explain why it is important</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Question 4: Packet Transmission Diagram -->
+    <div class="section-card page-break">
+        <div class="section-number">Q4</div>
+        <div class="section-title">Packet Transmission Diagram <span class="points-badge">12 marks</span></div>
+
+        <p>Draw and annotate a diagram showing what happens when you upload a document to OneDrive.</p>
+
+        <div class="info-box">
+            <span style="color: #3b82f6; margin-right: 8px;">ℹ️</span>
+            <strong>Your diagram must include these six elements</strong> (2 marks each):
+        </div>
+
+        <ol>
+            <li>Your device (laptop/iPad) with the original file</li>
+            <li>The file being broken into packets</li>
+            <li>Packets travelling through the network/internet</li>
+            <li>Encryption being applied to packets</li>
+            <li>OneDrive/Microsoft servers receiving the packets</li>
+            <li>Packets being reassembled into the complete file</li>
+        </ol>
+
+        <div class="tip-box">
+            <span style="color: #ffc107; margin-right: 8px;">💡</span>
+            <strong>Tips:</strong> Use arrows to show the flow of data. Label each part clearly. You can draw this by hand and take a photo, or create it digitally.
+        </div>
+    </div>
+
+    <!-- Question 4 Diagram Space -->
+    <div class="section-card page-break">
+        <div class="section-number">Q4</div>
+        <div class="section-title">Packet Transmission Diagram (Drawing Space)</div>
+
+        <div class="huge-placeholder-box">
+            Draw or paste your packet transmission diagram here
+        </div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> All 6 elements present and correctly labelled, logical flow shown, clear presentation
+        </div>
+    </div>
+
+    <!-- Question 5: Understanding Packets -->
+    <div class="section-card page-break">
+        <div class="section-number">Q5</div>
+        <div class="section-title">Understanding Packets <span class="points-badge">3 marks</span></div>
+
+        <p>Explain in your own words why files are broken into packets for transmission across the internet rather than being sent as one complete file.</p>
+
+        <div class="warning-box">
+            <span style="color: #ef4444; margin-right: 8px;">⚠️</span>
+            <strong>Important:</strong> Give at least <strong>TWO reasons</strong> in your response.
+        </div>
+
+        <div class="write-box write-box-large" data-label="Your explanation (50-100 words):"></div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> Two valid reasons provided, demonstration of understanding, clear explanation
+        </div>
+    </div>
+
+    <!-- Question 6: Encryption -->
+    <div class="section-card">
+        <div class="section-number">Q6</div>
+        <div class="section-title">Encryption <span class="points-badge">3 marks</span></div>
+
+        <p>Explain what encryption is and why it's important when uploading files to cloud storage like OneDrive.</p>
+
+        <div class="write-box write-box-large" data-label="Your explanation (40-75 words):"></div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> Correct definition of encryption, valid reason for importance, clear communication
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: DIGITAL FOOTPRINT & DATA PERMANENCE -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2><span style="margin-right: 10px;">👣</span>SECTION 3: Digital Footprint & Data Permanence</h2>
+        <p>Total: 10 marks</p>
+    </div>
+
+    <!-- Section 3 Introduction -->
+    <div class="section-card">
+        <div class="section-number">3</div>
+        <div class="section-title">Digital Footprint & Data Permanence <span class="points-badge">10 marks</span></div>
+
+        <div class="learning-box">
+            <h4><span style="margin-right: 8px;">🎓</span>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand that data stored online has physical locations and that once shared, we lose control over our digital information.</p>
+            <h4><span style="margin-right: 8px;">✅</span>Success Criteria</h4>
+            <ul>
+                <li>I can explain where my data is physically stored when I save to the cloud</li>
+                <li>I can describe what happens when data is "deleted" from cloud storage</li>
+                <li>I can identify ways we lose control of information once it is shared online</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Question 7: Physical Storage & Digital Footprint -->
+    <div class="section-card page-break">
+        <div class="section-number">Q7</div>
+        <div class="section-title">Physical Storage & Digital Footprint <span class="points-badge">4 marks</span></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">a)</span>When you save a document to OneDrive, where is your data physically located? (1 mark)</div>
+
+        <div class="write-box write-box-small" data-label="Your answer:"></div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">b)</span>When you "delete" a file from OneDrive, does it disappear immediately and completely? Explain what actually happens. (3 marks)</div>
+
+        <div class="write-box write-box-large" data-label="Your explanation:"></div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> Correct identification of physical servers/data centers, understanding of backups and data persistence
+        </div>
+    </div>
+
+    <!-- Question 8: Loss of Control -->
+    <div class="section-card page-break">
+        <div class="section-number">Q8</div>
+        <div class="section-title">Loss of Control <span class="points-badge">6 marks</span></div>
+
+        <p>Imagine you create a Word document with personal information and share it with a classmate via OneDrive.</p>
+
+        <div class="info-box">
+            <span style="color: #3b82f6; margin-right: 8px;">ℹ️</span>
+            <strong>Task:</strong> Explain <strong>THREE ways</strong> that you lose control of that information once it's been shared. Consider screenshots, copies, and sharing.
+        </div>
+
+        <div class="write-box write-box-small" data-label="Way 1:"></div>
+        <div class="write-box write-box-small" data-label="Way 2:"></div>
+        <div class="write-box write-box-small" data-label="Way 3:"></div>
+
+        <div class="write-box write-box-medium" data-label="Explain your three points in more detail (75-125 words total):"></div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> Three distinct valid points, demonstrates understanding of data permanence and copying, real-world awareness
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: PRACTICAL APPLICATION -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2><span style="margin-right: 10px;">💻</span>SECTION 4: Practical Application</h2>
+        <p>Total: 10 marks</p>
+    </div>
+
+    <!-- Section 4 Introduction -->
+    <div class="section-card">
+        <div class="section-number">4</div>
+        <div class="section-title">Practical Application <span class="points-badge">10 marks</span></div>
+
+        <div class="learning-box">
+            <h4><span style="margin-right: 8px;">🎓</span>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to demonstrate practical skills in using cloud storage services, including creating, sharing, and managing files in OneDrive.</p>
+            <h4><span style="margin-right: 8px;">✅</span>Success Criteria</h4>
+            <ul>
+                <li>I can create and save a document to OneDrive</li>
+                <li>I can share a document with specific permissions</li>
+                <li>I can access my documents through the OneDrive web interface</li>
+                <li>I can provide screenshot evidence of completed tasks</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Question 9: OneDrive Practical Skills -->
+    <div class="section-card page-break">
+        <div class="section-number">Q9</div>
+        <div class="section-title">OneDrive Practical Skills Checklist <span class="points-badge">10 marks</span></div>
+
+        <p>Complete the following practical tasks and provide screenshot evidence below.</p>
+
+        <div class="task-checklist">
+            <div class="checklist-item">
+                <input type="checkbox">
+                <div class="checklist-item-content">
+                    <span class="checklist-item-text">Create a new Word document and save it to OneDrive</span>
+                    <span class="checklist-item-marks">(2 marks)</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox">
+                <div class="checklist-item-content">
+                    <span class="checklist-item-text">Share the document with your teacher with "Can edit" permissions</span>
+                    <span class="checklist-item-marks">(3 marks)</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox">
+                <div class="checklist-item-content">
+                    <span class="checklist-item-text">Take a screenshot showing the sharing settings/permissions panel</span>
+                    <span class="checklist-item-marks">(2 marks)</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <input type="checkbox">
+                <div class="checklist-item-content">
+                    <span class="checklist-item-text">Demonstrate you can locate and open the document from OneDrive web interface</span>
+                    <span class="checklist-item-marks">(3 marks)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span style="color: #ffc107; margin-right: 8px;">💡</span>
+            <strong>Tip:</strong> Make sure your screenshots clearly show the relevant information. Crop or annotate if needed to highlight the important parts.
+        </div>
+    </div>
+
+    <!-- Question 9 Screenshot Evidence -->
+    <div class="section-card page-break">
+        <div class="section-number">Q9</div>
+        <div class="section-title">Screenshot Evidence</div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 1: Document saved to OneDrive (2 marks)</div>
+        <div class="placeholder-box">
+            Paste screenshot showing your document saved in OneDrive
+        </div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 2: Sharing settings with "Can edit" permissions (3 marks)</div>
+        <div class="placeholder-box">
+            Paste screenshot showing the sharing panel with correct permissions
+        </div>
+    </div>
+
+    <!-- Question 9 Screenshot Evidence Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">Q9</div>
+        <div class="section-title">Screenshot Evidence (Continued)</div>
+
+        <div class="subsection-title"><span style="margin-right: 8px;">📸</span>Screenshot 3: Document located in OneDrive web interface (3 marks)</div>
+        <div class="large-placeholder-box">
+            Paste screenshot showing your document accessible from the OneDrive web interface (onedrive.com)
+        </div>
+
+        <div class="marking-criteria">
+            <strong>Marking criteria:</strong> All tasks completed successfully, correct permissions applied, clear evidence provided
+        </div>
+    </div>
+
+    <!-- End of Assessment -->
+    <div class="section-card">
+        <div class="section-title" style="margin-left: 0; text-align: center;">End of Assessment</div>
+
+        <div class="success-box">
+            <span style="color: #10b981; margin-right: 8px;">✓</span>
+            <strong>Checklist before submitting:</strong>
+            <ul style="margin: 10px 0 0 0;">
+                <li>All questions answered</li>
+                <li>All required screenshots included and labelled</li>
+                <li>Diagram in Question 4 includes all 6 required elements</li>
+                <li>Document shared with your teacher</li>
+            </ul>
+        </div>
+
+        <p style="text-align: center; color: #666; font-size: 13px; margin-top: 15px;">
+            Total marks available: <strong>50</strong>
+        </p>
+    </div>
+
+</body>
+</html>
