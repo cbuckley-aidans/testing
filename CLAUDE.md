@@ -131,17 +131,40 @@ Section 4A: Ideate (Page 2)
 
 ---
 
+## Icon Usage
+
+### IMPORTANT: Do NOT use Font Awesome
+
+**Never use Font Awesome icons** in worksheets. Font Awesome requires external CDN dependencies and may not render properly in print or PDF exports.
+
+### Use Inline SVG Icons Instead
+
+All icons should be implemented as inline SVG elements. This ensures:
+- No external dependencies
+- Consistent rendering across browsers
+- Proper print/PDF output
+- Better accessibility
+
+Example SVG icon usage:
+```html
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+    <path d="..."/>
+</svg>
+```
+
+---
+
 ## Link Button Styling
 
 Replace plain URL text boxes with styled, clickable buttons:
 
 ### Button Types
 
-| Type | Color Scheme | Icon | Use Case |
-|------|--------------|------|----------|
-| YouTube | Red gradient | `fab fa-youtube` | Video links |
-| Google Maps | Blue gradient | `fas fa-map-marker-alt` | Location links |
-| Research | Green gradient | `fas fa-external-link-alt` | General research links |
+| Type | Color Scheme | Use Case |
+|------|--------------|----------|
+| YouTube | Red gradient | Video links |
+| Google Maps | Blue gradient | Location links |
+| Research | Green gradient | General research links |
 
 ### CSS Implementation
 
@@ -199,7 +222,7 @@ When activities span multiple pages, add info boxes with navigation:
 
 ```html
 <div class="info-box">
-    <i class="fas fa-arrow-right"></i>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><!-- arrow-right SVG path --></svg>
     <strong>Continued on next page...</strong>
 </div>
 ```
@@ -233,9 +256,11 @@ Use dotted borders with grid backgrounds for visual brainstorming:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Worksheet Title]</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- No external font or icon libraries needed -->
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         /* Include standard CSS here */
     </style>
 </head>
@@ -249,10 +274,10 @@ Use dotted borders with grid backgrounds for visual brainstorming:
 
 ```html
 <div class="section-card">
-    <div class="section-title">Section Title <i class="fas fa-icon"></i></div>
+    <div class="section-title">Section Title <svg><!-- icon SVG --></svg></div>
 
     <div class="tip-box">
-        <i class="fas fa-info-circle"></i>
+        <svg><!-- info-circle SVG --></svg>
         <strong>Instructions:</strong> [Instructions text]
     </div>
 
@@ -348,14 +373,14 @@ project/
 
 Use these colored cards for design process overviews:
 
-| Stage | Color | Icon |
-|-------|-------|------|
-| Project Planning | Purple `#8b5cf6` | `fa-calendar-days` |
-| Empathy | Rose `#f43f5e` | `fa-heart` |
-| Define | Green `#10b981` | `fa-bullseye` |
-| Ideate | Amber `#f59e0b` | `fa-lightbulb` |
-| Prototype | Sky `#0ea5e9` | `fa-hammer` |
-| Evaluate | Indigo `#6366f1` | `fa-clipboard-check` |
+| Stage | Color | Icon (use SVG) |
+|-------|-------|----------------|
+| Project Planning | Purple `#8b5cf6` | calendar |
+| Empathy | Rose `#f43f5e` | heart |
+| Define | Green `#10b981` | bullseye/target |
+| Ideate | Amber `#f59e0b` | lightbulb |
+| Prototype | Sky `#0ea5e9` | hammer |
+| Evaluate | Indigo `#6366f1` | clipboard-check |
 
 ---
 
