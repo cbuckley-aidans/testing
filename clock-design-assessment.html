@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Design: Engineering & Design Thinking - Assessment Workbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    <!-- No icon libraries - using text-only labels -->
+    <style>
+        /* =================================
+           CORE A4 PRINT-FRIENDLY TEMPLATE
+           ================================= */
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #191919;
+            background-color: white;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            width: 210mm;
+            margin: 0 auto;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                width: 190mm;
+                padding: 0;
+            }
+
+            .section-card {
+                page-break-inside: avoid;
+            }
+
+            .concept-cards-container {
+                page-break-inside: avoid;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .title-underline {
+            border-bottom: 3px solid #0a2351;
+            margin-bottom: 16px;
+        }
+
+        .section-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            margin-bottom: 18px;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 0.15em 0 #191919;
+            page-break-inside: avoid;
+            background-color: white;
+        }
+
+        .section-number {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a2351;
+        }
+
+        .section-title {
+            margin-left: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2351;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 18px 0 12px 0;
+            color: #0a2351;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 6px;
+            page-break-after: avoid;
+        }
+
+        .student-info-box {
+            background-color: #f8f9fa;
+            border: 2px solid #0a2351;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0a2351;
+            margin-bottom: 5px;
+        }
+
+        .info-line {
+            border-bottom: 1px solid #0a2351;
+            height: 25px;
+        }
+
+        /* Concept Cards */
+        .concept-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+            page-break-inside: avoid;
+        }
+
+        .concept-card {
+            background-color: white;
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            padding: 12px;
+            box-shadow: 0 0.15em 0 #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .concept-card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            text-align: center;
+            color: #191919;
+            line-height: 1.2;
+            margin-top: 8px;
+        }
+
+        /* Card Themes */
+        .card-theme-1::before { background-color: #ec4899; }
+        .card-theme-2::before { background-color: #3b82f6; }
+        .card-theme-3::before { background-color: #0ea5e9; }
+        .card-theme-4::before { background-color: #10b981; }
+        .card-theme-5::before { background-color: #f59e0b; }
+        .card-theme-6::before { background-color: #8b5cf6; }
+
+        /* Content Boxes */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .success-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .learning-box {
+            background-color: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .learning-box h4 {
+            color: #8b5cf6;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .learning-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .learning-box li {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        /* Writing Areas */
+        .write-box {
+            border: 2px dotted #999;
+            border-radius: 0.6em;
+            background-color: #fafafa;
+            margin: 15px 0;
+            position: relative;
+            min-height: 60px;
+        }
+
+        .write-box::before {
+            content: attr(data-label);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: white;
+            padding: 0 8px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .write-box-small {
+            min-height: 70px;
+            padding: 12px;
+        }
+
+        .write-box-medium {
+            min-height: 120px;
+            padding: 15px;
+        }
+
+        .write-box-large {
+            min-height: 280px;
+            padding: 20px;
+        }
+
+        .placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 180px;
+        }
+
+        .large-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 280px;
+        }
+
+        .larger-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 360px;
+        }
+
+        .mega-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 450px;
+        }
+
+        .huge-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 650px;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            background-color: #0a2351;
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8faff;
+        }
+
+        .data-table .input-cell {
+            min-height: 60px;
+            height: 60px;
+            padding: 10px 8px;
+            vertical-align: top;
+            background-color: #fafafa;
+        }
+
+        .data-table .input-cell-large {
+            min-height: 80px;
+            height: 80px;
+            padding: 15px 10px;
+            vertical-align: top;
+            background-color: #fafafa;
+        }
+
+        /* Link Buttons */
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a2351 0%, #1e40af 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(10, 35, 81, 0.3);
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .link-button-research {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .link-button-xtool {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        /* Points Badge */
+        .points-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .checkpoint-header {
+            background-color: #0a2351;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 0.6em;
+            margin: 25px 0 18px 0;
+            text-align: center;
+        }
+
+        .checkpoint-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .checkpoint-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* Overview Card */
+        .overview-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #0a2351;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+            border-radius: 0.6em;
+        }
+
+        .overview-header {
+            margin: -20px -20px 15px -20px;
+            padding: 15px 20px;
+            background-color: #0a2351;
+            border-radius: 0.4em 0.4em 0 0;
+        }
+
+        .overview-header h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .three-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Task Header */
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-title {
+            font-weight: 700;
+            color: #0a2351;
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            font-size: 14px;
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Sketch Grid */
+        .sketch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .sketch-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.02);
+            min-height: 200px;
+            position: relative;
+        }
+
+        .sketch-box-label {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            background: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* SCAMPER Table */
+        .scamper-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .scamper-table th {
+            background-color: #0a2351;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .scamper-table td {
+            padding: 8px 10px;
+            border: 1px solid #e0e0e0;
+            font-size: 13px;
+            vertical-align: top;
+        }
+
+        .scamper-table td:first-child {
+            font-weight: 600;
+            width: 120px;
+            background-color: #f8faff;
+        }
+
+        .scamper-table td:last-child {
+            min-height: 50px;
+            background-color: #fafafa;
+        }
+
+        /* Criteria Box */
+        .criteria-box {
+            border: 2px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #f0fdf4;
+        }
+
+        .criteria-number {
+            font-weight: 700;
+            color: #065f46;
+            margin-right: 8px;
+        }
+
+        .criteria-input {
+            border-bottom: 1px dashed #10b981;
+            min-height: 25px;
+            margin-top: 5px;
+        }
+
+        .criteria-prefilled {
+            background-color: #d1fae5;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 13px;
+        }
+
+        /* Empathy Card */
+        .empathy-field {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 8px 0;
+            background-color: #fafafa;
+        }
+
+        .empathy-label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #0a2351;
+            margin-bottom: 8px;
+        }
+
+        .empathy-input {
+            border-bottom: 1px dashed #ccc;
+            min-height: 25px;
+        }
+
+        .empathy-input-large {
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            min-height: 60px;
+            padding: 8px;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <h1 style="text-align: center;">Clock Design: Engineering & Design Thinking</h1>
+    <div class="title-underline"></div>
+
+    <!-- Student Information -->
+    <div class="student-info-box">
+        <div class="info-field">
+            <div class="info-label">Student Name:</div>
+            <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+            <div class="info-label">Class:</div>
+            <div class="info-line"></div>
+        </div>
+    </div>
+
+    <!-- Unit Overview -->
+    <div class="overview-card">
+        <div class="overview-header">
+            <h2>Your Design Challenge</h2>
+        </div>
+
+        <p style="font-size: 15px; margin-bottom: 15px;">
+            In this project, you will explore the <strong>engineering principles</strong> behind how a quartz clock works,
+            then use the <strong>design thinking process</strong> to create a personalised clock as a meaningful gift for someone special.
+        </p>
+
+        <div class="two-column-grid">
+            <div class="concept-card card-theme-2">
+                <div class="concept-card-title">Part A: Engineering Investigation</div>
+                <p style="font-size: 12px; text-align: center; margin: 8px 0 0 0; color: #666;">
+                    Explore force, energy, and motion in clock mechanisms
+                </p>
+            </div>
+            <div class="concept-card card-theme-4">
+                <div class="concept-card-title">Part B: Design Process</div>
+                <p style="font-size: 12px; text-align: center; margin: 8px 0 0 0; color: #666;">
+                    Create a custom clock for someone you care about
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journey Overview -->
+    <div class="section-card">
+        <div class="section-title" style="margin-left: 0;">Your Journey</div>
+
+        <div class="concept-cards-container" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="concept-card card-theme-2">
+                <div class="concept-card-title">Investigate</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Clock Mechanics
+                </p>
+            </div>
+            <div class="concept-card card-theme-1">
+                <div class="concept-card-title">Empathy & Define</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Research & Criteria
+                </p>
+            </div>
+            <div class="concept-card card-theme-5">
+                <div class="concept-card-title">Ideate</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Generate Ideas
+                </p>
+            </div>
+            <div class="concept-card card-theme-3">
+                <div class="concept-card-title">Prototype</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Make Your Clock
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= -->
+    <!-- PART A: ENGINEERING     -->
+    <!-- ======================= -->
+
+    <div class="checkpoint-header">
+        <h2>Part A: Engineering Investigation</h2>
+        <p>Exploring Force, Energy, and Motion</p>
+    </div>
+
+    <!-- Section 1: Clock Disassembly -->
+    <div class="section-card">
+        <div class="section-number">1</div>
+        <div class="section-title">Clock Disassembly & Parts <span class="points-badge">10 pts</span></div>
+
+        <p>Carefully disassemble the quartz clock kit. Identify and label each part in the space below, including the <strong>energy source</strong> (battery).</p>
+
+        <div class="tip-box">
+            <strong>Task:</strong> Take a photo of the disassembled clock parts arranged neatly. Paste the image below and add labels to identify each component.
+        </div>
+
+        <div class="large-placeholder-box">
+            Paste your labelled photo of disassembled clock parts here
+        </div>
+
+        <div class="subsection-title">Key Components to Identify</div>
+        <table class="data-table">
+            <tr>
+                <th style="width: 35%;">Component</th>
+                <th>What does it do?</th>
+            </tr>
+            <tr>
+                <td>Battery (Energy Source)</td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td>Quartz Crystal</td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td>Electromagnetic Coil (Solenoid)</td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td>Gear Train</td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td>Clock Hands</td>
+                <td class="input-cell"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 2: Solenoid Experiment -->
+    <div class="section-card page-break">
+        <div class="section-number">2</div>
+        <div class="section-title">Solenoid Experiment <span class="points-badge">15 pts</span></div>
+
+        <p>A solenoid is a coil of wire that creates a magnetic field when electricity flows through it. This is how the clock mechanism converts electrical energy into motion.</p>
+
+        <div class="info-box">
+            <strong>Your Task:</strong> Build your own solenoid by wrapping copper wire around a core. Apply electricity and use compasses to observe the magnetic field you create.
+        </div>
+
+        <div class="subsection-title">Your Solenoid Photo</div>
+        <div class="mega-placeholder-box">
+            Paste a photo of your solenoid experiment here<br>
+            (showing the copper wire coil and compass positioning)
+        </div>
+    </div>
+
+    <!-- Section 2A: Solenoid Observations -->
+    <div class="section-card page-break">
+        <div class="section-number">2A</div>
+        <div class="section-title">Solenoid Observations <span class="points-badge">(continued)</span></div>
+
+        <div class="subsection-title">Observations</div>
+        <table class="data-table">
+            <tr>
+                <th style="width: 40%;">Question</th>
+                <th>Your Answer</th>
+            </tr>
+            <tr>
+                <td>What happened to the compasses when you applied electricity?</td>
+                <td class="input-cell-large"></td>
+            </tr>
+            <tr>
+                <td>How does the number of wire coils affect the magnetic field strength?</td>
+                <td class="input-cell-large"></td>
+            </tr>
+            <tr>
+                <td>How does this relate to how a quartz clock works?</td>
+                <td class="input-cell-large"></td>
+            </tr>
+        </table>
+
+        <div class="learning-box">
+            <h4>Energy Transformation in Your Clock</h4>
+            <p style="font-size: 13px; margin: 0;">Complete the energy chain:</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px; padding: 10px; background: white; border-radius: 0.4em;">
+                <div style="text-align: center; padding: 8px 12px; background: #fef3c7; border-radius: 4px; font-weight: 600;">Chemical Energy<br><span style="font-weight: 400; font-size: 11px;">(Battery)</span></div>
+                <div style="font-size: 20px;">→</div>
+                <div style="text-align: center; padding: 8px 12px; background: #fafafa; border: 1px dashed #ccc; border-radius: 4px; min-width: 80px;">?</div>
+                <div style="font-size: 20px;">→</div>
+                <div style="text-align: center; padding: 8px 12px; background: #fafafa; border: 1px dashed #ccc; border-radius: 4px; min-width: 80px;">?</div>
+                <div style="font-size: 20px;">→</div>
+                <div style="text-align: center; padding: 8px 12px; background: #dbeafe; border-radius: 4px; font-weight: 600;">Kinetic Energy<br><span style="font-weight: 400; font-size: 11px;">(Moving Hands)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Gear Ratios -->
+    <div class="section-card page-break">
+        <div class="section-number">3</div>
+        <div class="section-title">Gear Ratio Exploration <span class="points-badge">15 pts</span></div>
+
+        <p>Gears transfer motion and change speed. The clock uses gear ratios to make the hour, minute, and second hands move at different speeds from a single motor.</p>
+
+        <div class="info-box">
+            <strong>Your Task:</strong> Use the Gear Generator tool to experiment with different gear ratios. Take screenshots of your experiments and record your observations.
+        </div>
+
+        <a href="https://geargenerator.com/" target="_blank" class="link-button link-button-research" style="display: block; margin: 15px 0;">
+            Open Gear Generator Tool
+        </a>
+
+        <div class="subsection-title">Gear Experiment 1: Equal Sized Gears</div>
+        <p>Create two gears with the <strong>same number of teeth</strong> (e.g., 20 teeth each).</p>
+
+        <div class="two-column-grid">
+            <div>
+                <p style="font-size: 13px; margin-bottom: 5px;"><strong>Settings Used:</strong></p>
+                <div class="empathy-field">
+                    <div class="empathy-label">Gear 1 Teeth:</div>
+                    <div class="empathy-input"></div>
+                </div>
+                <div class="empathy-field">
+                    <div class="empathy-label">Gear 2 Teeth:</div>
+                    <div class="empathy-input"></div>
+                </div>
+                <div class="empathy-field">
+                    <div class="empathy-label">RPM Setting:</div>
+                    <div class="empathy-input"></div>
+                </div>
+            </div>
+            <div>
+                <p style="font-size: 13px; margin-bottom: 5px;"><strong>Observation:</strong></p>
+                <div class="write-box write-box-medium" data-label="What do you notice about the speed of each gear?"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3A: More Gear Experiments -->
+    <div class="section-card page-break">
+        <div class="section-number">3A</div>
+        <div class="section-title">Gear Ratio Exploration (continued)</div>
+
+        <div class="subsection-title">Gear Experiment 2: Different Sized Gears</div>
+        <p>Create two gears with <strong>different numbers of teeth</strong> (e.g., 10 teeth and 40 teeth).</p>
+
+        <div class="two-column-grid">
+            <div>
+                <p style="font-size: 13px; margin-bottom: 5px;"><strong>Settings Used:</strong></p>
+                <div class="empathy-field">
+                    <div class="empathy-label">Small Gear Teeth:</div>
+                    <div class="empathy-input"></div>
+                </div>
+                <div class="empathy-field">
+                    <div class="empathy-label">Large Gear Teeth:</div>
+                    <div class="empathy-input"></div>
+                </div>
+                <div class="empathy-field">
+                    <div class="empathy-label">RPM Setting:</div>
+                    <div class="empathy-input"></div>
+                </div>
+            </div>
+            <div>
+                <p style="font-size: 13px; margin-bottom: 5px;"><strong>Observation:</strong></p>
+                <div class="write-box write-box-medium" data-label="Which gear spins faster? Why do you think this happens?"></div>
+            </div>
+        </div>
+
+        <div class="subsection-title">Screenshot of Your Gear Simulation</div>
+        <div class="large-placeholder-box">
+            Paste a screenshot of your gear simulation from Gear Generator here
+        </div>
+
+        <div class="subsection-title">Connecting to Clocks</div>
+        <div class="write-box write-box-medium" data-label="How do gear ratios help the clock hands move at different speeds?"></div>
+    </div>
+
+    <!-- ======================= -->
+    <!-- PART B: DESIGN PROCESS  -->
+    <!-- ======================= -->
+
+    <div class="checkpoint-header page-break">
+        <h2>Part B: Design Process</h2>
+        <p>Creating a Clock as a Gift</p>
+    </div>
+
+    <!-- Section 4: Empathy -->
+    <div class="section-card">
+        <div class="section-number">4</div>
+        <div class="section-title">Empathy: Know Your Recipient <span class="points-badge">10 pts</span></div>
+
+        <p>Great designs start with understanding the person you're designing for. Complete the research below about the person who will receive your clock.</p>
+
+        <div class="two-column-grid">
+            <div class="empathy-field">
+                <div class="empathy-label">Who is this clock for?</div>
+                <div class="empathy-input"></div>
+            </div>
+            <div class="empathy-field">
+                <div class="empathy-label">What is your relationship to them?</div>
+                <div class="empathy-input"></div>
+            </div>
+        </div>
+
+        <div class="subsection-title">About Your Recipient</div>
+
+        <div class="two-column-grid">
+            <div class="empathy-field">
+                <div class="empathy-label">Their favourite colours:</div>
+                <div class="empathy-input"></div>
+            </div>
+            <div class="empathy-field">
+                <div class="empathy-label">Their hobbies/interests:</div>
+                <div class="empathy-input"></div>
+            </div>
+        </div>
+
+        <div class="two-column-grid">
+            <div class="empathy-field">
+                <div class="empathy-label">Their personal style (modern, classic, quirky, minimalist):</div>
+                <div class="empathy-input"></div>
+            </div>
+            <div class="empathy-field">
+                <div class="empathy-label">Where will they display the clock?</div>
+                <div class="empathy-input"></div>
+            </div>
+        </div>
+
+        <div class="empathy-field">
+            <div class="empathy-label">What would make this clock special or meaningful to them?</div>
+            <div class="empathy-input-large"></div>
+        </div>
+
+        <div class="empathy-field">
+            <div class="empathy-label">Any symbols, themes, or imagery that represents them or something they love:</div>
+            <div class="empathy-input-large"></div>
+        </div>
+    </div>
+
+    <!-- Section 5: Define - Design Criteria -->
+    <div class="section-card page-break">
+        <div class="section-number">5</div>
+        <div class="section-title">Define: Design Criteria <span class="points-badge">15 pts</span></div>
+
+        <p>Based on your empathy research, create 5 design criteria that your clock must meet. These will guide your design decisions.</p>
+
+        <div class="warning-box">
+            <strong>Important:</strong> Measure the clock insert mechanism. Your clock face must have a hole that fits this size exactly!
+        </div>
+
+        <div class="criteria-box">
+            <span class="criteria-number">1.</span> <strong>Size Constraint (Measure and complete):</strong>
+            <div class="criteria-prefilled">
+                The clock face must have a centre hole of <span style="border-bottom: 1px solid #065f46; padding: 0 20px;">______</span> mm diameter to fit the clock insert mechanism.
+            </div>
+        </div>
+
+        <div class="criteria-box">
+            <span class="criteria-number">2.</span> <strong>Sustainability Criteria:</strong>
+            <div class="criteria-input"></div>
+            <p style="font-size: 11px; color: #666; margin: 5px 0 0 0;">Consider: materials, waste reduction, durability, or environmental impact</p>
+        </div>
+
+        <div class="criteria-box">
+            <span class="criteria-number">3.</span> <strong>Design Criteria:</strong>
+            <div class="criteria-input"></div>
+        </div>
+
+        <div class="criteria-box">
+            <span class="criteria-number">4.</span> <strong>Design Criteria:</strong>
+            <div class="criteria-input"></div>
+        </div>
+
+        <div class="criteria-box">
+            <span class="criteria-number">5.</span> <strong>Design Criteria:</strong>
+            <div class="criteria-input"></div>
+        </div>
+    </div>
+
+    <!-- Section 6: Mood Board -->
+    <div class="section-card page-break">
+        <div class="section-number">6</div>
+        <div class="section-title">Ideate: Mood Board <span class="points-badge">10 pts</span></div>
+
+        <p>Collect images of existing clock designs that inspire you. Look for colours, shapes, materials, and styles that might suit your recipient.</p>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Search for images online and paste them below. Include a variety of styles - you might combine elements from different designs!
+        </div>
+
+        <div class="mega-placeholder-box">
+            Paste your mood board images here<br>
+            (aim for 6-10 inspiring clock designs)
+        </div>
+    </div>
+
+    <!-- Section 7: Initial Sketches -->
+    <div class="section-card page-break">
+        <div class="section-number">7</div>
+        <div class="section-title">Ideate: Initial Sketches <span class="points-badge">15 pts</span></div>
+
+        <p>Generate 5 different clock design ideas. At this stage, focus on variety - try different shapes, styles, and concepts. Quick sketches are fine!</p>
+
+        <div class="sketch-grid">
+            <div class="sketch-box">
+                <div class="sketch-box-label">Idea 1</div>
+            </div>
+            <div class="sketch-box">
+                <div class="sketch-box-label">Idea 2</div>
+            </div>
+            <div class="sketch-box">
+                <div class="sketch-box-label">Idea 3</div>
+            </div>
+            <div class="sketch-box">
+                <div class="sketch-box-label">Idea 4</div>
+            </div>
+        </div>
+
+        <div class="sketch-box" style="min-height: 180px;">
+            <div class="sketch-box-label">Idea 5</div>
+        </div>
+    </div>
+
+    <!-- Section 8: SCAMPER -->
+    <div class="section-card page-break">
+        <div class="section-number">8</div>
+        <div class="section-title">Ideate: SCAMPER <span class="points-badge">15 pts</span></div>
+
+        <p>Use the SCAMPER technique to push your favourite idea further. Choose your best sketch and apply each prompt to improve it.</p>
+
+        <div class="info-box">
+            <strong>Selected Design:</strong> I am developing Idea #<span style="border-bottom: 1px solid #3b82f6; padding: 0 15px;">____</span> from my initial sketches.
+        </div>
+
+        <table class="scamper-table">
+            <tr>
+                <th style="width: 25%;">SCAMPER</th>
+                <th>Apply to Your Clock Design</th>
+            </tr>
+            <tr>
+                <td><strong>S</strong>ubstitute<br><span style="font-weight: 400; font-size: 11px;">What materials or parts could you swap?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>C</strong>ombine<br><span style="font-weight: 400; font-size: 11px;">What ideas could you merge together?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>A</strong>dapt<br><span style="font-weight: 400; font-size: 11px;">What could you borrow from other designs?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>M</strong>odify<br><span style="font-weight: 400; font-size: 11px;">What could you make bigger, smaller, or change?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>P</strong>ut to other use<br><span style="font-weight: 400; font-size: 11px;">Could it serve another purpose too?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>E</strong>liminate<br><span style="font-weight: 400; font-size: 11px;">What could you remove or simplify?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td><strong>R</strong>earrange<br><span style="font-weight: 400; font-size: 11px;">What if you changed the layout or order?</span></td>
+                <td class="input-cell"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Section 9: Technical Sketch -->
+    <div class="section-card page-break">
+        <div class="section-number">9</div>
+        <div class="section-title">Ideate: Technical Sketch <span class="points-badge">20 pts</span></div>
+
+        <p>Create a detailed technical drawing of your final clock design. Include measurements, labels, and material notes.</p>
+
+        <div class="tip-box">
+            <strong>Include:</strong> Overall dimensions, hole size for clock insert, material choices, any decorative elements, and colour notes.
+        </div>
+
+        <div class="huge-placeholder-box">
+            Draw or paste your detailed technical sketch here<br>
+            (include measurements and labels)
+        </div>
+    </div>
+
+    <!-- Section 10: SVG Design -->
+    <div class="section-card page-break">
+        <div class="section-number">10</div>
+        <div class="section-title">Prototype: SVG Design for Laser Cutting <span class="points-badge">15 pts</span></div>
+
+        <p>Using xTool Creative Space, create the SVG file for your clock design that will be laser cut.</p>
+
+        <a href="https://www.xtool.com/pages/software" target="_blank" class="link-button link-button-xtool" style="display: block; margin: 15px 0;">
+            Access xTool Training Modules
+        </a>
+
+        <div class="warning-box">
+            <strong>Remember:</strong> Your design must include the correctly-sized centre hole for the clock mechanism!
+        </div>
+
+        <div class="subsection-title">Screenshot of Your SVG Design</div>
+        <div class="mega-placeholder-box">
+            Paste a screenshot of your SVG design from xTool here
+        </div>
+    </div>
+
+    <!-- Section 11: Assembly -->
+    <div class="section-card page-break">
+        <div class="section-number">11</div>
+        <div class="section-title">Prototype: Assembly Documentation <span class="points-badge">10 pts</span></div>
+
+        <p>Document the assembly of your finished clock with photos and notes.</p>
+
+        <div class="subsection-title">Finished Clock Photo</div>
+        <div class="large-placeholder-box">
+            Paste a photo of your completed clock here
+        </div>
+
+        <div class="subsection-title">Assembly Notes</div>
+        <table class="data-table">
+            <tr>
+                <th style="width: 40%;">Question</th>
+                <th>Your Response</th>
+            </tr>
+            <tr>
+                <td>What materials did you use?</td>
+                <td class="input-cell"></td>
+            </tr>
+            <tr>
+                <td>Did you face any challenges during assembly? How did you solve them?</td>
+                <td class="input-cell-large"></td>
+            </tr>
+            <tr>
+                <td>How well does your final clock meet your design criteria?</td>
+                <td class="input-cell-large"></td>
+            </tr>
+        </table>
+
+        <div class="success-box">
+            <strong>Reflection:</strong> What would you do differently if you made another clock?
+            <div class="write-box write-box-medium" style="margin-top: 10px; margin-bottom: 0;" data-label="Your reflection"></div>
+        </div>
+    </div>
+
+</body>
+</html>
