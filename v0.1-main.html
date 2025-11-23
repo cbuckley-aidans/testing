@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcycled Fashion: From Fast to Future - Assessment Workbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* =================================
+           CORE A4 PRINT-FRIENDLY TEMPLATE
+           ================================= */
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #191919;
+            background-color: white;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            width: 210mm;
+            margin: 0 auto;
+        }
+        
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+            
+            body {
+                width: 190mm;
+                padding: 0;
+            }
+            
+            .section-card {
+                page-break-inside: avoid;
+            }
+            
+            .concept-cards-container {
+                page-break-inside: avoid;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .title-underline {
+            border-bottom: 3px solid #0a2351;
+            margin-bottom: 16px;
+        }
+        
+        .section-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            margin-bottom: 18px;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 0.15em 0 #191919;
+            page-break-inside: avoid;
+            background-color: white;
+        }
+        
+        .section-number {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a2351;
+        }
+        
+        .section-title {
+            margin-left: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2351;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 18px 0 12px 0;
+            color: #0a2351;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 6px;
+            page-break-after: avoid;
+        }
+        
+        .student-info-box {
+            background-color: #f8f9fa;
+            border: 2px solid #0a2351;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0a2351;
+            margin-bottom: 5px;
+        }
+
+        .info-line {
+            border-bottom: 1px solid #0a2351;
+            height: 25px;
+        }
+        
+        /* Concept Cards */
+        .concept-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+            page-break-inside: avoid;
+        }
+
+        .concept-card {
+            background-color: white;
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            padding: 12px;
+            box-shadow: 0 0.15em 0 #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .concept-card-icon {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #191919;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            box-shadow: 0 0.15em 0 #191919;
+        }
+
+        .concept-card-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .concept-card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            text-align: center;
+            color: #191919;
+            line-height: 1.2;
+        }
+
+        /* Card Themes */
+        .card-theme-1::before { background-color: #ec4899; }
+        .card-theme-1 .concept-card-icon { background-color: #ec4899; }
+        
+        .card-theme-2::before { background-color: #3b82f6; }
+        .card-theme-2 .concept-card-icon { background-color: #3b82f6; }
+        
+        .card-theme-3::before { background-color: #0ea5e9; }
+        .card-theme-3 .concept-card-icon { background-color: #0ea5e9; }
+        
+        .card-theme-4::before { background-color: #10b981; }
+        .card-theme-4 .concept-card-icon { background-color: #10b981; }
+        
+        .card-theme-5::before { background-color: #f59e0b; }
+        .card-theme-5 .concept-card-icon { background-color: #f59e0b; }
+        
+        .card-theme-6::before { background-color: #8b5cf6; }
+        .card-theme-6 .concept-card-icon { background-color: #8b5cf6; }
+        
+        /* Content Boxes */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .success-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .learning-box {
+            background-color: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .learning-box h4 {
+            color: #8b5cf6;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+        
+        .learning-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .learning-box li {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+        
+        /* Writing Areas */
+        .write-box {
+            border: 2px dotted #999;
+            border-radius: 0.6em;
+            background-color: #fafafa;
+            margin: 15px 0;
+            position: relative;
+            min-height: 60px;
+        }
+        
+        .write-box::before {
+            content: attr(data-label);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: white;
+            padding: 0 8px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .write-box-small {
+            min-height: 70px;
+            padding: 12px;
+        }
+        
+        .write-box-medium {
+            min-height: 120px;
+            padding: 15px;
+        }
+        
+        .write-box-large {
+            min-height: 280px;
+            padding: 20px;
+        }
+        
+        .mega-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 450px;
+        }
+
+        .huge-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 650px;
+        }
+
+        .large-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 280px;
+        }
+
+        .larger-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 360px;
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        
+        .data-table th {
+            background-color: #0a2351;
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f8faff;
+        }
+        
+        .data-table .input-cell {
+            min-height: 50px;
+            background-color: #fafafa;
+        }
+
+        .data-table .input-cell-large {
+            min-height: 80px;
+            background-color: #fafafa;
+        }
+
+        .data-table .input-cell {
+    min-height: 80px;
+    height: 80px;
+    padding: 15px 10px;
+    vertical-align: top;
+}
+        
+        /* Link Buttons */
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a2351 0%, #1e40af 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(10, 35, 81, 0.3);
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .link-button i {
+            margin-right: 8px;
+        }
+
+        .youtube-button {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        }
+        
+        /* Points Badge */
+        .points-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .checkpoint-header {
+            background-color: #0a2351;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 0.6em;
+            margin: 25px 0 18px 0;
+            text-align: center;
+        }
+        
+        .checkpoint-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .checkpoint-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        /* Overview Card */
+        .overview-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #0a2351;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+            border-radius: 0.6em;
+        }
+        
+        .overview-header {
+            margin: -20px -20px 15px -20px;
+            padding: 15px 20px;
+            background-color: #0a2351;
+            border-radius: 0.4em 0.4em 0 0;
+        }
+        
+        .overview-header h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Safety Checklist */
+        .safety-checklist {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin: 10px 0;
+        }
+        
+        .safety-item {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+        
+        .safety-item input[type="checkbox"] {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Self Assessment */
+        .self-assessment {
+            background-color: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .self-assessment h4 {
+            color: #065f46;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+        
+        .assessment-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 6px 0;
+            font-size: 13px;
+        }
+        
+        .assessment-item input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 3px;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Task Header */
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .task-title {
+            font-weight: 700;
+            color: #0a2351;
+            font-size: 15px;
+        }
+        
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        ul, ol {
+            font-size: 14px;
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        .minimal-container {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            background: white;
+        }
+        
+        .minimal-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .minimal-icon {
+            width: 40px;
+            height: 40px;
+            background: #0a2351;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .minimal-title {
+            margin: 0;
+            font-size: 16px;
+            color: #0a2351;
+        }
+        
+        .minimal-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .minimal-skills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .minimal-skill {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .minimal-skill input {
+            width: 20px;
+            height: 20px;
+            accent-color: #0a2351;
+        }
+        
+        .minimal-skill-icon {
+            width: 35px;
+            height: 35px;
+            background: #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .minimal-skill-text {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .minimal-signoff {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .minimal-field label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .minimal-line {
+            border-bottom: 2px solid #e5e7eb;
+            height: 35px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <h1 style="text-align: center;">Upcycled Fashion: From Fast to Future <i class="fas fa-recycle" style="margin-left: 10px;"></i></h1>
+    <div class="title-underline"></div>
+    
+    <!-- Student Information -->
+    <div class="student-info-box">
+        <div class="info-field">
+            <div class="info-label">Student Name:</div>
+            <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+            <div class="info-label">Class:</div>
+            <div class="info-line"></div>
+        </div>
+    </div>
+
+    <!-- Unit Overview -->
+    <div class="overview-card">
+        <div class="overview-header">
+            <h2>🎯 Your Design Challenge: Shark Tank Pitch</h2>
+        </div>
+        
+        <p style="font-size: 15px; margin-bottom: 15px;">
+            Fast fashion is destroying our planet. Your challenge is to develop a 
+            <strong>two-part solution</strong> that tackles this problem, then pitch 
+            your idea like you are on the TV show Shark Tank.
+        </p>
+        
+        <div class="two-column-grid">
+            <div class="concept-card card-theme-4">
+                <div class="concept-card-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="concept-card-title">Physical Product</div>
+                <p style="font-size: 12px; text-align: center; margin: 8px 0 0 0; color: #666;">
+                    An upcycled fashion item made from secondhand textiles
+                </p>
+            </div>
+            <div class="concept-card card-theme-2">
+                <div class="concept-card-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="concept-card-title">App Proposal</div>
+                <p style="font-size: 12px; text-align: center; margin: 8px 0 0 0; color: #666;">
+                    A sustainable fashion app design concept
+                </p>
+            </div>
+        </div>
+        
+        <div class="tip-box" style="margin-top: 15px; margin-bottom: 0;">
+            <i class="fas fa-link" style="color: #ffc107; margin-right: 8px;"></i>
+            Your two solutions must connect. For example, if your 
+            app teaches upcycling tutorials, your physical product demonstrates what users 
+            could create by using your application. Both of your designs will be showcased together on exhibition to the wider school community in Eunice Plaza.
+        </div>
+    </div>
+
+    <!-- Journey Overview -->
+    <div class="section-card" style="margin-top: 20px;">
+        <div class="section-title" style="margin-left: 0;">
+            <i class="fas fa-map" style="margin-right: 10px;"></i>Your Journey
+        </div>
+        
+        <div class="concept-cards-container" style="grid-template-columns: repeat(5, 1fr);">
+    <div class="concept-card card-theme-6">
+        <div class="concept-card-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="concept-card-title">Checkpoint 1</div>
+        <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+            Research & Define
+        </p>
+    </div>
+    <div class="concept-card card-theme-5">
+        <div class="concept-card-icon">
+            <i class="fas fa-tools"></i>
+        </div>
+        <div class="concept-card-title">Checkpoint 2</div>
+        <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+            Build Skills
+        </p>
+    </div>
+    <div class="concept-card card-theme-3">
+        <div class="concept-card-icon">
+            <i class="fas fa-pencil-ruler"></i>
+        </div>
+        <div class="concept-card-title">Checkpoint 3</div>
+        <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+            Design App UX
+        </p>
+    </div>
+    <div class="concept-card card-theme-1">
+        <div class="concept-card-icon">
+            <i class="fas fa-hammer"></i>
+        </div>
+        <div class="concept-card-title">Checkpoint 4</div>
+        <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+            Make & Evaluate
+        </p>
+    </div>
+    <div class="concept-card card-theme-4">
+        <div class="concept-card-icon">
+            <i class="fas fa-video"></i>
+        </div>
+        <div class="concept-card-title">Checkpoint 5</div>
+        <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+            Pitch & Exhibit
+        </p>
+    </div>
+</div>
+        
+        <div class="info-box" style="margin-top: 15px; margin-bottom: 0;">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>You will submit:</strong> An upcycled fashion item, a sustainable fashion app design proposal, a video pitch, and a Shark Tank-inspired physical exhibition to put it all together. 
+        </div>
+    </div>
+    
+    <!-- Assessment Overview -->
+    <div class="section-card">
+        <div class="section-title" style="margin-left: 0;">Document Setup</div>
+        <p>As soon as you set this document up, <strong>ensure you have shared a link to it and pasted it in your Aidan's Central submission point and/or emailed to your teacher as directed.</strong></p>
+        <p>This way, you <strong>do not need to worry about submitting your assessment on the due date.</strong></p>
+        <div class="tip-box">
+            <i class="fas fa-calendar-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Guide:</strong> Click <a href="">here</a> to watch a video on how to get a shared document link.
+            <br><br>Ensure you rename your document using this format:
+            <p style="margin: 0; font-family: monospace; font-size: 15px; background-color: #e5e7eb; padding: 8px 12px; border-radius: 4px; display: inline-block;">
+                Firstname-Lastname-ClassLetter-TECH-Term1
+            </p>
+            <p style="margin: 8px 0 0 0; font-size: 13px; color: #666;">
+                Example: <code style="background-color: #e5e7eb; padding: 2px 6px; border-radius: 4px;">Sarah-Smith-7A-TECH-Term1</code>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 15px 0;">
+            <div style="display: inline-block; border: 2px dashed #ccc; border-radius: 0.6em; padding: 15px; background-color: #fafafa;">
+                <img src="shared document.png" alt="Screenshot showing how to share document link" style="max-width: 100%; height: auto; display: block;">
+                <p style="color: #666; font-size: 12px; font-style: italic; margin: 10px 0 0 0;">Always look for this icon at the top near the file name to see if you are working on a shared document.</p>
+            </div>
+
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+                <strong>IMPORTANT!</strong> You are responsible for ensuring all your work is contained within this file. <strong>Do not download and put work into new files. Rename this document so you can come back to it easily.</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 1: EMPATHISE & DEFINE -->
+    <!-- ============================================ -->
+    
+    <div class="checkpoint-header page-break">
+        <h2><i class="fas fa-flag-checkered" style="margin-right: 10px;"></i>CHECKPOINT 1: Empathise & Define</h2>
+        <p>Total: 34 points</p>
+    </div>
+    
+    <!-- A1: Fast Fashion Investigation -->
+    <div class="section-card page-break">
+        <div class="section-number">A1</div>
+        <div class="section-title">Fast Fashion Investigation <span class="points-badge">12 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to analyse the social, environmental and ethical impacts of fast fashion on people and the planet.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can identify at least three negative impacts of fast fashion</li>
+                <li>I can explain how fast fashion affects different stakeholders</li>
+                <li>I can use evidence from research to support my explanations</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task A1.1: Wardrobe Audit Reflection</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Roughly how many items of clothing do you think you own?:"></div>
+        
+        <div class="write-box write-box-small" data-label="How many of these items do you wear regularly (weekly)?"></div>
+        <div class="write-box write-box-small" data-label="How many of these do you think you have not worn for 6+ months?"></div>
+        <div class="write-box write-box-medium" data-label="What do you think this says about your consumption habits? (2-3 sentences)"></div>
+    </div>
+    
+    <!-- A1.2: Documentary Note-Taking -->
+    <div class="section-card page-break">
+        <div class="section-number">A1.2</div>
+        <div class="section-title">Documentary Note-Taking <span class="points-badge">4 pts</span></div>
+        <div class="subsection-title">Documentary Video</div>
+
+        <a href="https://www.youtube.com/watch?v=9NCwLjpY3tw" class="link-button youtube-button" target="_blank">
+            <i class="fab fa-youtube"></i>Fashion Waste Scheme - Behind the News
+        </a>
+        
+        <div class="tip-box">
+            <i class="fas fa-pencil-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Instructions:</strong> Use this page to take rough notes DURING the video. You'll organise these notes on the next page.
+        </div>
+        
+        <div class="subsection-title">Statistics I heard:</div>
+        <div class="write-box write-box-medium" data-label="Write down any numbers, percentages, or data mentioned"></div>
+        
+        <div class="subsection-title">Quotes that stood out:</div>
+        <div class="write-box write-box-small" data-label="Key phrases or statements from the documentary"></div>
+        
+        <div class="subsection-title">Questions I have:</div>
+        <div class="write-box write-box-small" data-label="Things you want to learn more about"></div>
+    </div>
+    
+    <!-- A1.3: Stakeholder Impact -->
+    <div class="section-card page-break">
+        <div class="section-number">A1.3</div>
+        <div class="section-title">Stakeholder Impact Analysis <span class="points-badge">2 pts</span></div>
+        
+        <p>Analyse how fast fashion affects different groups of people and the environment. Rewatch the video as many times as you need to support your answers here.</p>
+        
+        <div class="subsection-title"><i class="fas fa-hard-hat" style="margin-right: 8px;"></i>Garment Workers</div>
+        <div class="write-box write-box-medium" data-label="How does fast fashion affect garment workers?"></div>
+        
+        <div class="subsection-title"><i class="fas fa-shopping-bag" style="margin-right: 8px;"></i>Consumers</div>
+        <div class="write-box write-box-medium" data-label="How does fast fashion affect consumers?"></div>
+
+        <div class="subsection-title"><i class="fas fa-globe" style="margin-right: 8px;"></i>Environment</div>
+        <div class="write-box write-box-medium" data-label="How does fast fashion affect the environment?"></div>
+
+        <div class="subsection-title"><i class="fas fa-industry" style="margin-right: 8px;"></i>Local Manufacturers</div>
+        <div class="write-box write-box-medium" data-label="How does fast fashion affect local Australian manufacturers?"></div>
+    </div>
+    
+    <!-- A1.4: Linear vs Circular Model -->
+    <div class="section-card page-break">
+        <div class="section-number">A1.4</div>
+        <div class="section-title">Linear vs Circular Model Diagram <span class="points-badge">4 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Task:</strong> Complete both diagrams and annotate each stage with problems (linear) or benefits (circular).
+        </div>
+        <p>Draw or paste your linear model diagram here. Annotate each stage with the problems it creates.</p>
+        <div class="subsection-title">Linear Model: Take → Make → Use → Dispose</div>
+        <div class="mega-placeholder-box">
+        </div>
+    </div>
+    
+    <div class="section-card page-break">
+        <div class="section-number">A1.4</div>
+        <div class="section-title">Circular Model Diagram (Continued)</div>
+        
+        <div class="subsection-title">Circular Model: Rethink → Reduce → Reuse → Recycle → Remake</div>
+        <p>Draw or paste your circular model diagram here. Annotate each stage with the benefits it provides.</p>
+        <div class="mega-placeholder-box">
+        </div>
+        <a href="https://www.seamlessaustralia.com/news/2024-australian-clothing-benchmark" class="link-button" target="_blank" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+            <i class="fas fa-book-open"></i>Read about the Seamless Initiative
+        </a>
+        
+        <div class="write-box write-box-medium" data-label="Explain why the fashion industry needs to shift from a linear to circular model. Reference the Seamless initiative in your response. (3-4 sentences)"></div>
+    </div>
+    
+    <!-- A2: Material Properties Investigation -->
+    <div class="section-card page-break">
+        <div class="section-number">A2</div>
+        <div class="section-title">Material Properties Investigation <span class="points-badge">8 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to investigate and compare properties of textile materials through a burn test.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can conduct/observe a burn test safely and record accurate observations</li>
+                <li>I can identify fabric composition based on burn test results</li>
+                <li>I can explain why material properties matter for upcycling projects</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task A2.1: Burn Test Experiment</span>
+            <span class="points-badge">5 pts</span>
+        </div>
+        
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+            <strong>Safety First!</strong> Do not try this at home unsupervised. Before we do this, we need to ensure the following:
+        </div>
+        
+        <div class="safety-checklist">
+            <div class="safety-item"><input type="checkbox"> Safety glasses on</div>
+            <div class="safety-item"><input type="checkbox"> Hair tied back</div>
+            <div class="safety-item"><input type="checkbox"> Workspace clear and ventilated</div>
+            <div class="safety-item"><input type="checkbox"> Water nearby</div>
+            <div class="safety-item"><input type="checkbox"> Teacher supervision</div>
+            <div class="safety-item"><input type="checkbox"> Fire-safe surface</div>
+        </div>
+
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>How it works:</strong> You will receive 3 unknown fabric samples. Your task is to predict how each will behave, then test and observe the actual results to identify the fibre content.
+        </div>
+
+        <p>If you are absent or unable to participate in the experiment in class, here is a video you can watch:</p>
+
+        <a href="https://www.youtube.com/watch?v=mWVP06sVRsA" class="link-button youtube-button" target="_blank">
+            <i class="fab fa-youtube"></i>Fabric Burn Test
+        </a>
+    </div>
+
+    <!-- A2.1: Pre-Test Predictions -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.1</div>
+        <div class="section-title">Pre-Test Predictions</div>
+        
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Before testing:</strong> Examine each sample visually and by touch. Based on your observations, predict how each sample might behave in the burn test.
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-question-circle" style="margin-right: 8px;"></i>Sample 1 Prediction</div>
+        <div class="write-box write-box-small" data-label="Visual/touch observations (shiny, matte, soft, stiff, etc.):"></div>
+        <div class="write-box write-box-small" data-label="I predict this sample will... (burn quickly/slowly, melt, smell like...):"></div>
+        <div class="write-box write-box-small" data-label="I think this sample might be made of:"></div>
+        
+        <div class="subsection-title"><i class="fas fa-question-circle" style="margin-right: 8px;"></i>Sample 2 Prediction</div>
+        <div class="write-box write-box-small" data-label="Visual/touch observations (shiny, matte, soft, stiff, etc.):"></div>
+        <div class="write-box write-box-small" data-label="I predict this sample will... (burn quickly/slowly, melt, smell like...):"></div>
+        <div class="write-box write-box-small" data-label="I think this sample might be made of:"></div>
+    </div>
+
+    <!-- A2.1: Pre-Test Predictions Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.1</div>
+        <div class="section-title">Pre-Test Predictions (Continued)</div>
+        
+        <div class="subsection-title"><i class="fas fa-question-circle" style="margin-right: 8px;"></i>Sample 3 Prediction</div>
+        <div class="write-box write-box-small" data-label="Visual/touch observations (shiny, matte, soft, stiff, etc.):"></div>
+        <div class="write-box write-box-small" data-label="I predict this sample will... (burn quickly/slowly, melt, smell like...):"></div>
+        <div class="write-box write-box-small" data-label="I think this sample might be made of:"></div>
+    </div>
+    
+    <!-- A2.1 Continued: Burn Test Results -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.1</div>
+        <div class="section-title">Burn Test Results</div>
+        
+        <div class="subsection-title"><i class="fas fa-flask" style="margin-right: 8px;"></i>Sample 1</div>
+        <div class="write-box write-box-small" data-label="In flame (How does it burn? Speed? Colour of flame?):"></div>
+        <div class="write-box write-box-small" data-label="Removed from flame (Continue burning? Self-extinguish?):"></div>
+        <div class="write-box write-box-small" data-label="Odour (What does the smoke smell like?):"></div>
+        <div class="write-box write-box-small" data-label="Residue (Ash? Hard bead? Powdery?):"></div>
+        <div class="write-box write-box-small" data-label="Conclusion (Likely fibre content):"></div>
+    </div>
+    
+    <!-- A2.1 Continued: Sample 2 -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.1</div>
+        <div class="section-title">Burn Test Results (Continued)</div>
+        
+        <div class="subsection-title"><i class="fas fa-flask" style="margin-right: 8px;"></i>Sample 2</div>
+        <div class="write-box write-box-small" data-label="In flame (How does it burn? Speed? Colour of flame?):"></div>
+        <div class="write-box write-box-small" data-label="Removed from flame (Continue burning? Self-extinguish?):"></div>
+        <div class="write-box write-box-small" data-label="Odour (What does the smoke smell like?):"></div>
+        <div class="write-box write-box-small" data-label="Residue (Ash? Hard bead? Powdery?):"></div>
+        <div class="write-box write-box-small" data-label="Conclusion (Likely fibre content):"></div>
+    </div>
+    
+    <!-- A2.1 Continued: Sample 3 -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.1</div>
+        <div class="section-title">Burn Test Results (Continued)</div>
+        
+        <div class="subsection-title"><i class="fas fa-flask" style="margin-right: 8px;"></i>Sample 3</div>
+        <div class="write-box write-box-small" data-label="In flame (How does it burn? Speed? Colour of flame?):"></div>
+        <div class="write-box write-box-small" data-label="Removed from flame (Continue burning? Self-extinguish?):"></div>
+        <div class="write-box write-box-small" data-label="Odour (What does the smoke smell like?):"></div>
+        <div class="write-box write-box-small" data-label="Residue (Ash? Hard bead? Powdery?):"></div>
+        <div class="write-box write-box-small" data-label="Conclusion (Likely fibre content):"></div>
+    </div>
+    
+    <!-- A2.2: Material Comparison -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.2</div>
+        <div class="section-title">Material Comparison <span class="points-badge">3 pts</span></div>
+        
+        <p>Choose two different textile materials to research and compare.</p>
+        
+        <div class="subsection-title"><i class="fas fa-tshirt" style="margin-right: 8px;"></i>Material 1</div>
+        <div class="write-box write-box-small" data-label="Material name:"></div>
+        
+        <div class="subsection-title">How is it made?</div>
+        <div class="write-box write-box-small" data-label="What is this material made from? Describe how it is manufactured (natural/synthetic process)."></div>
+        
+        <div class="subsection-title">Lifespan</div>
+        <div class="write-box write-box-small" data-label="How long does this material typically last? What factors affect its durability?"></div>
+        
+        <div class="subsection-title">Disposal</div>
+        <div class="write-box write-box-small" data-label="How is this material usually disposed of? Is it biodegradable, recyclable, or destined for landfill?"></div>
+        
+        <div class="subsection-title">Suitability for Decoration Techniques</div>
+        <div class="write-box write-box-small" data-label="Heat transfer vinyl - Is this material suitable? Why or why not?"></div>
+        <div class="write-box write-box-small" data-label="Sublimation ink - Is this material suitable? Why or why not?"></div>
+    </div>
+
+    <!-- A2.2: Material Comparison Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">A2.2</div>
+        <div class="section-title">Material Comparison (Continued)</div>
+        
+        <div class="subsection-title"><i class="fas fa-tshirt" style="margin-right: 8px;"></i>Material 2</div>
+        <div class="write-box write-box-small" data-label="Material name:"></div>
+        
+        <div class="subsection-title">How is it made?</div>
+        <div class="write-box write-box-small" data-label="What is this material made from? Describe how it is manufactured (natural/synthetic process)."></div>
+        
+        <div class="subsection-title">Lifespan</div>
+        <div class="write-box write-box-small" data-label="How long does this material typically last? What factors affect its durability?"></div>
+        
+        <div class="subsection-title">Disposal</div>
+        <div class="write-box write-box-small" data-label="How is this material usually disposed of? Is it biodegradable, recyclable, or destined for landfill?"></div>
+        
+        <div class="subsection-title">Suitability for Decoration Techniques</div>
+        <div class="write-box write-box-small" data-label="Heat transfer vinyl - Is this material suitable? Why or why not?"></div>
+        <div class="write-box write-box-small" data-label="Sublimation ink - Is this material suitable? Why or why not?"></div>
+    </div>
+
+    <!-- A3: Aesthetic Exploration -->
+    <div class="section-card page-break">
+        <div class="section-number">A3</div>
+        <div class="section-title">Aesthetic Exploration <span class="points-badge">4 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to research and analyse fashion aesthetics to inform our design direction and develop visual communication skills through mood board creation.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can identify and describe the key characteristics of a fashion aesthetic</li>
+                <li>I can create a mood board that communicates a cohesive visual direction</li>
+                <li>I can share and learn from peers who researched different aesthetics</li>
+                <li>I can reflect on how aesthetic research will inform my upcycling project</li>
+            </ul>
+        </div>
+        </div>
+        <div class="section-card page-break">
+        <div class="info-box">
+            <i class="fas fa-users" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Instructions:</strong> You'll research a fashion aesthetic, create a mood board, then share your findings with classmates who researched different aesthetics. This helps you discover design directions for your upcycling project.
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task A3.1: Fashion Aesthetic Research</span>
+            <span class="points-badge">1 pt</span>
+        </div>
+        
+        <p>Research and select ONE fashion aesthetic to become an expert on. Some options include:</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;">
+            <span style="background: #fdf2f8; border: 1px solid #ec4899; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Minimalist</span>
+            <span style="background: #eff6ff; border: 1px solid #3b82f6; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Streetwear</span>
+            <span style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Vintage/Retro</span>
+            <span style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Bohemian</span>
+            <span style="background: #f5f3ff; border: 1px solid #8b5cf6; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Punk/Grunge</span>
+            <span style="background: #fef2f2; border: 1px solid #ef4444; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Cottagecore</span>
+            <span style="background: #f0f9ff; border: 1px solid #0ea5e9; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Y2K</span>
+            <span style="background: #f8fafc; border: 1px solid #64748b; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Other (specify)</span>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="My chosen aesthetic:"></div>
+        
+        <p>Research your aesthetic and identify its defining features.</p>
+        
+        <div class="write-box write-box-small" data-label="Typical colours and colour palettes:"></div>
+        <div class="write-box write-box-small" data-label="Common textures and materials:"></div>
+        <div class="write-box write-box-small" data-label="Signature silhouettes or clothing items:"></div>
+        <div class="write-box write-box-small" data-label="How could this aesthetic be achieved through upcycling?"></div>
+    </div>
+    </div>
+
+    <!-- A3.2: Mood Board -->
+    <div class="section-card page-break">
+        <div class="section-number">A3.2</div>
+        <div class="section-title">Mood Board <span class="points-badge">1 pt</span></div>
+        
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Include:</strong> 5-6 images that capture your aesthetic's essence. Think about colours, textures, styling, and overall vibe.
+        </div>
+        <p>Create a mood board. You can use Canva, Word, PowerPoint, or any other software that allows easy pasting of images. Paste an image of your mood board below.</p>
+        <div class="info-box">
+            <i class="fas fa-keyboard" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
+        </div>
+        
+        <div style="background-color: #faf5ff; border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 12px; margin: 12px 0;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="flex: 1;">
+                    <p style="margin: 0 0 8px 0; font-size: 14px;">
+                        <i class="fas fa-image" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
+                    </p>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <img src="move-images.png" alt="How to wrap image behind text" style="max-width: 360px; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+        <div class="larger-placeholder-box">
+        </div>
+    </div>
+
+    <!-- A3.3: Peer Sharing -->
+    <div class="section-card page-break">
+        <div class="section-number">A3.3</div>
+        <div class="section-title">Peer Sharing <span class="points-badge">1 pt</span></div>
+            
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Instructions:</strong> Find 3 classmates who researched DIFFERENT aesthetics.
+        </div>
+        
+        <div style="border: 2px solid #ec4899; border-radius: 0.6em; padding: 10px; margin: 15px 0; background: #fdf2f8;">
+            <h4 style="color: #be185d; margin: 0 0 10px 0; font-size: 14px;">
+                <i class="fas fa-user" style="margin-right: 8px;"></i>Classmate 1
+            </h4>
+            <div class="write-box write-box-small" data-label="Their name and aesthetic:" style="background: white;"></div>
+            <div class="write-box write-box-small" data-label="Key characteristics I noticed from their mood board:" style="background: white;"></div>
+        </div>
+        
+        <div style="border: 2px solid #3b82f6; border-radius: 0.6em; padding: 10px; margin: 15px 0; background: #eff6ff;">
+            <h4 style="color: #1d4ed8; margin: 0 0 10px 0; font-size: 14px;">
+                <i class="fas fa-user" style="margin-right: 8px;"></i>Classmate 2
+            </h4>
+            <div class="write-box write-box-small" data-label="Their name and aesthetic:" style="background: white;"></div>
+            <div class="write-box write-box-small" data-label="Key characteristics I noticed from their mood board:" style="background: white;"></div>
+        </div>
+        
+        <div style="border: 2px solid #10b981; border-radius: 0.6em; padding: 10px; margin: 15px 0; background: #ecfdf5;">
+            <h4 style="color: #047857; margin: 0 0 10px 0; font-size: 14px;">
+                <i class="fas fa-user" style="margin-right: 8px;"></i>Classmate 3
+            </h4>
+            <div class="write-box write-box-small" data-label="Their name and aesthetic:" style="background: white;"></div>
+            <div class="write-box write-box-small" data-label="Key characteristics I noticed from their mood board:" style="background: white;"></div>
+        </div>
+    </div>
+
+    <!-- A3.4: Reflection -->
+    <div class="section-card page-break">
+        <div class="section-number">A3.4</div>
+        <div class="section-title">Aesthetic Reflection <span class="points-badge">1 pt</span></div>
+        
+        <div class="subsection-title"><i class="fas fa-lightbulb" style="margin-right: 8px;"></i>Personal Reflection</div>
+        
+        <div class="write-box write-box-medium" data-label="Which aesthetic(s) resonated with you most? Why?"></div>
+        
+        <div class="write-box write-box-medium" data-label="How might you incorporate elements from these aesthetics into your upcycling project?"></div>
+    </div>
+
+    <!-- A4: Empathy & Problem Definition -->
+    <div class="section-card page-break">
+        <div class="section-number">A4</div>
+        <div class="section-title">Empathy & Problem Definition <span class="points-badge">10 pts</span></div>
+        
+        <div class="info-box" style="background-color: #f0fdf4; border-left-color: #10b981;">
+            <h4 style="color: #065f46; margin: 0 0 8px 0;">
+                <i class="fas fa-project-diagram" style="margin-right: 8px;"></i>Your Design Challenge
+            </h4>
+            <p style="margin: 0 0 10px 0; font-size: 14px;">
+                In this unit, you will create <strong>two designed solutions</strong> that address 
+                the problem of fast fashion:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                <div style="background: white; padding: 12px; border-radius: 8px; border: 2px solid #10b981;">
+                    <p style="margin: 0; font-weight: 700; color: #065f46;">
+                        <i class="fas fa-tshirt" style="margin-right: 6px;"></i>Physical Product
+                    </p>
+                    <p style="margin: 5px 0 0 0; font-size: 13px;">
+                        An upcycled fashion item (bag, accessory, or clothing modification) 
+                        ideally made from secondhand textiles
+                    </p>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; border: 2px solid #3b82f6;">
+                    <p style="margin: 0; font-weight: 700; color: #1e40af;">
+                        <i class="fas fa-mobile-alt" style="margin-right: 6px;"></i>Digital Solution
+                    </p>
+                    <p style="margin: 5px 0 0 0; font-size: 13px;">
+                        A design proposal for a sustainable fashion mobile application
+                    </p>
+                </div>
+            </div>
+            <p style="margin: 10px 0 0 0; font-size: 13px; font-style: italic;">
+                <i class="fas fa-arrow-right" style="margin-right: 6px;"></i>
+                Before we start creating, we need to conduct empathy research to help us understand what our potential users want and need in a solution.
+            </p>
+        </div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to use empathy research to define real-world problems, develop design criteria, and plan our project timeline.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can gather information about user needs through interviews</li>
+                <li>I can create user stories that capture what a user wants and why</li>
+                <li>I can develop design criteria that include sustainability considerations</li>
+                <li>I can create a project timeline using a Gantt chart</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- A4.1: Empathy Interview Question Preparation -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.1</div>
+        <div class="section-title">Empathy Interview Question Preparation <span class="points-badge">2 pts</span></div>
+        <p>In this section, you are going to prepare some purposeful questions that you can use in an interview. You are going to explore how your interviewee thinks and feels about fast fashion.</p>
+        <p>This could be anyone that you think could give you some useful information; a peer, someone in a different year level, a sibling, or a parent.</p>
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Good empathy questions are OPEN-ENDED</strong> (can't be answered with yes/no) and help you understand the person's experiences, feelings, and needs.
+        </div>
+        
+        <p>Write <strong>ONE question</strong> for each category:</p>
+        
+        <div style="border: 2px solid #0a2351; border-radius: 0.6em; margin-bottom: 15px; overflow: hidden;">
+            <div style="background-color: #0a2351; color: white; padding: 10px 15px;">
+                <strong><i class="fas fa-calendar-check" style="margin-right: 8px;"></i>HABITS:</strong> Ask about their current clothing behaviours
+            </div>
+            <div style="padding: 12px 15px; background-color: #f8faff; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 13px; color: #666;"><em>Example starters:</em> "Can you walk me through..." / "Tell me about..."</span>
+            </div>
+            <div style="padding: 15px; min-height: 50px; background-color: white;">
+                <span style="font-size: 12px; color: #999;">Your question:</span>
+            </div>
+        </div>
+
+        <div style="border: 2px solid #0a2351; border-radius: 0.6em; margin-bottom: 15px; overflow: hidden;">
+            <div style="background-color: #0a2351; color: white; padding: 10px 15px;">
+                <strong><i class="fas fa-frown" style="margin-right: 8px;"></i>FRUSTRATIONS:</strong> Ask about problems or annoyances
+            </div>
+            <div style="padding: 12px 15px; background-color: #f8faff; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 13px; color: #666;"><em>Example starters:</em> "What's the most frustrating thing about..." / "What challenges do you face when..."</span>
+            </div>
+            <div style="padding: 15px; min-height: 50px; background-color: white;">
+                <span style="font-size: 12px; color: #999;">Your question:</span>
+            </div>
+        </div>
+
+        <div style="border: 2px solid #0a2351; border-radius: 0.6em; margin-bottom: 15px; overflow: hidden;">
+            <div style="background-color: #0a2351; color: white; padding: 10px 15px;">
+                <strong><i class="fas fa-gem" style="margin-right: 8px;"></i>VALUES:</strong> Ask what matters to them
+            </div>
+            <div style="padding: 12px 15px; background-color: #f8faff; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 13px; color: #666;"><em>Example starters:</em> "What's important to you when..." / "How do you decide..."</span>
+            </div>
+            <div style="padding: 15px; min-height: 50px; background-color: white;">
+                <span style="font-size: 12px; color: #999;">Your question:</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- A4.1: Empathy Interview Question Preparation Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.1</div>
+        <div class="section-title">Empathy Interview Question Preparation (Continued)</div>
+        
+        <div style="border: 2px solid #0a2351; border-radius: 0.6em; margin-bottom: 15px; overflow: hidden;">
+            <div style="background-color: #0a2351; color: white; padding: 10px 15px;">
+                <strong><i class="fas fa-heart" style="margin-right: 8px;"></i>FEELINGS:</strong> Ask about emotions connected to clothing/fashion
+            </div>
+            <div style="padding: 12px 15px; background-color: #f8faff; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 13px; color: #666;"><em>Example starters:</em> "How do you feel when..." / "What emotions come up when..."</span>
+            </div>
+            <div style="padding: 15px; min-height: 50px; background-color: white;">
+                <span style="font-size: 12px; color: #999;">Your question:</span>
+            </div>
+        </div>
+        
+        <div style="border: 2px solid #0a2351; border-radius: 0.6em; margin-bottom: 15px; overflow: hidden;">
+            <div style="background-color: #0a2351; color: white; padding: 10px 15px;">
+                <strong><i class="fas fa-star" style="margin-right: 8px;"></i>WISHES:</strong> Ask about ideal scenarios or desires
+            </div>
+            <div style="padding: 12px 15px; background-color: #f8faff; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 13px; color: #666;"><em>Example starters:</em> "If you could change one thing about..." / "What would make it easier to..."</span>
+            </div>
+            <div style="padding: 15px; min-height: 50px; background-color: white;">
+                <span style="font-size: 12px; color: #999;">Your question:</span>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <i class="fas fa-clipboard-check" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Before your interview,</strong> check each of your questions against these criteria.
+        </div>
+        
+        <table class="data-table">
+            <tr>
+                <th style="width: 50%;">Quality Criteria</th>
+                <th style="width: 10%; text-align: center;">Q1</th>
+                <th style="width: 10%; text-align: center;">Q2</th>
+                <th style="width: 10%; text-align: center;">Q3</th>
+                <th style="width: 10%; text-align: center;">Q4</th>
+                <th style="width: 10%; text-align: center;">Q5</th>
+            </tr>
+            <tr>
+                <td>Is it open-ended (not yes/no)?</td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Does it ask about experiences, feelings, or reasons (not just facts)?</td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Is it neutral (not leading them to a particular answer)?</td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Will it help you understand what they NEED from an upcycled product?</td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+            </tr>
+        </table>
+        <div class="warning-box" style="margin-top: 20px;">
+            <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+            <strong>If any question has unchecked boxes, revise it below:</strong>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Revised question(s) (if needed):"></div>
+    </div>
+
+    <!-- A4.1 Continued: Interview Summary -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.1</div>
+        <div class="section-title">Empathy Interview Summary</div>
+        <p>Write down the results of your interview and any relevant notes/transcriptions here:</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- A4.2: Empathy Map -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.2</div>
+        <div class="section-title">Empathy Map <span class="points-badge">2 pts</span></div>
+        
+        <p>Synthesise your interview findings into an empathy map.</p>
+        
+        <div style="text-align: center; margin: 10px 0;">
+            <strong>User Description:</strong>
+            <div style="border: 2px solid #0a2351; border-radius: 0.6em; padding: 10px; margin: 10px auto; max-width: 300px; min-height: 30px; background: #f8faff;"></div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div>
+                <div class="subsection-title" style="text-align: center;"><i class="fas fa-comment" style="margin-right: 8px;"></i>SAYS</div>
+                <div class="write-box write-box-large" data-label="Quotes and phrases they used"></div>
+            </div>
+            <div>
+                <div class="subsection-title" style="text-align: center;"><i class="fas fa-brain" style="margin-right: 8px;"></i>THINKS</div>
+                <div class="write-box write-box-large" data-label="What they might believe about fashion/sustainability"></div>
+            </div>
+            <div>
+                <div class="subsection-title" style="text-align: center;"><i class="fas fa-walking" style="margin-right: 8px;"></i>DOES</div>
+                <div class="write-box write-box-large" data-label="Actions they take when buying/disposing of clothes"></div>
+            </div>
+            <div>
+                <div class="subsection-title" style="text-align: center;"><i class="fas fa-heart" style="margin-right: 8px;"></i>FEELS</div>
+                <div class="write-box write-box-large" data-label="Emotions that came through in the interview"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- A4.3: Problem Definition -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.3</div>
+        <div class="section-title">Problem Definition <span class="points-badge">2 pts</span></div>
+        
+        <div class="subsection-title">Step 1: Identify the Core Problem</div>
+        <p>Look back at your empathy map. What challenges did you uncover about how people relate to clothing, fashion, and sustainability?</p>
+        
+        <div class="write-box write-box-small" data-label="The main problem or frustration I identified:"></div>
+        
+        <div class="write-box write-box-small" data-label="Why does this problem exist? (What causes it?)"></div>
+        
+        <div class="subsection-title">Step 2: Write Your POV Statement</div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>POV Statement Formula:</strong><br>
+            <span style="font-family: monospace; background: #e5e7eb; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                [User type] needs [a way to... / help with...] because [insight from your research]
+            </span>
+        </div>
+        
+        <p><strong>Examples:</strong></p>
+        <table class="data-table" style="font-size: 13px;">
+            <tr>
+                <th style="width: 50%;">POV Statement</th>
+                <th style="width: 50%;">Could lead to...</th>
+            </tr>
+            <tr>
+                <td><em>"A busy parent needs a way to give old clothes new purpose because they feel guilty throwing them away but don't have time to deal with them."</em></td>
+                <td>
+                    <strong>Physical:</strong> Quick-to-make upcycled item<br>
+                    <strong>Digital:</strong> App to easily donate/swap locally
+                </td>
+            </tr>
+            <tr>
+                <td><em>"A teenager needs help expressing their style sustainably because they want unique clothes but can't afford ethical brands."</em></td>
+                <td>
+                    <strong>Physical:</strong> Customised clothing item<br>
+                    <strong>Digital:</strong> Tutorial app for DIY fashion
+                </td>
+            </tr>
+        </table>
+        
+        <div class="write-box write-box-medium" data-label="My POV Statement:"></div>
+    </div>
+
+    <!-- A4.4: User Stories -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.4</div>
+        <div class="section-title">User Stories <span class="points-badge">2 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>User Story Formula:</strong><br>
+            <span style="font-family: monospace; background: #e5e7eb; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                As a [user type], I want [goal/feature] so that [benefit/reason]
+            </span>
+        </div>
+        
+        <p>Now translate your POV statement into <strong>two user stories</strong> — one for each solution you'll design.</p>
+        
+        <!-- Physical Product User Story -->
+        <div style="border: 2px solid #10b981; border-radius: 0.6em; padding: 15px; margin: 15px 0; background: #f0fdf4;">
+            <h4 style="color: #065f46; margin: 0 0 10px 0;">
+                <i class="fas fa-tshirt" style="margin-right: 8px;"></i>User Story A: Physical Upcycled Item
+            </h4>
+            <p style="font-size: 13px; margin: 0 0 10px 0;">
+                This describes what your <strong>physical product</strong> needs to do for ONE person.
+                Think about what type of item would solve your user's problem.
+            </p>
+            <p style="font-size: 13px; margin: 0 0 10px 0;"><strong>Example:</strong></p>
+            <p style="font-size: 13px; font-style: italic; background: white; padding: 8px 12px; border-radius: 6px; margin: 0 0 10px 0;">
+                "As a busy parent, I want a durable everyday bag made from my child's outgrown clothes 
+                so that I can carry my essentials while keeping a memory of their childhood."
+            </p>
+            <div class="write-box write-box-medium" data-label="My Physical Product User Story:" style="background: white;"></div>
+        </div>
+        
+        <!-- Digital App User Story -->
+        <div style="border: 2px solid #3b82f6; border-radius: 0.6em; padding: 15px; margin: 15px 0; background: #eff6ff;">
+            <h4 style="color: #1e40af; margin: 0 0 10px 0;">
+                <i class="fas fa-mobile-alt" style="margin-right: 8px;"></i>User Story B: Digital App
+            </h4>
+            <p style="font-size: 13px; margin: 0 0 10px 0;">
+                This describes what your <strong>app</strong> needs to do for MANY people.
+                Think about how technology could help solve the same underlying problem at a larger scale.
+            </p>
+            <p style="font-size: 13px; margin: 0 0 10px 0;"><strong>Example:</strong></p>
+            <p style="font-size: 13px; font-style: italic; background: white; padding: 8px 12px; border-radius: 6px; margin: 0 0 10px 0;">
+                "As a busy parent, I want an app that connects me with local people who want my 
+                child's outgrown clothes so that I can declutter quickly without the guilt of landfill."
+            </p>
+            <div class="write-box write-box-medium" data-label="My Digital App User Story:" style="background: white;"></div>
+        </div>
+    </div>
+
+    <!-- A4.4 Continued: Connecting Solutions -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.4</div>
+        <div class="section-title">Connecting Your Solutions</div>
+        
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Let's connect things</strong> How might your physical solution and your digital app proposal complement and work TOGETHER?
+        </div>
+
+        <div style="text-align: center; margin: 15px 0;">
+            <div style="display: inline-block; border: 2px dashed #ccc; border-radius: 0.6em; padding: 15px; background-color: #fafafa;">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/3a3f0d6ef15fe977f11539195a2d27d537c408d8a049a77f3ff197b6c753172c.jpg" alt="Shark Tank image" style="max-width: 100%; height: auto; display: block;">
+                <p style="color: #666; font-size: 12px; font-style: italic; margin: 10px 0 0 0;">Imagine you are pitching your fashion design and your mobile app as a single product proposal on a show like Shark Tank, where you need to quickly impress a panel of judges with your idea.</p>
+            </div>
+        </div>
+
+        <div class="write-box write-box-medium" data-label="How would your physical product and app complement each other? (1-2 sentences)"></div>
+        
+        <p><strong>Example connections:</strong></p>
+        <ul style="font-size: 13px;">
+            <li>The app could include tutorials for making products like yours</li>
+            <li>Your product could be the kind of thing people share/swap through the app</li>
+            <li>The app could help people source materials for upcycling projects</li>
+            <li>Your product demonstrates what's possible; the app helps others do the same</li>
+        </ul>
+    </div>
+    
+    <!-- A4.5: Design Criteria -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.5</div>
+        <div class="section-title">Design Criteria: Physical Product <span class="points-badge">1 pt</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>What are design criteria?</strong> These are the rules your final product 
+            must follow. You'll use these to guide your design AND evaluate your finished item in Checkpoint 4.
+        </div>
+        
+        <div class="tip-box">
+            <i class="fas fa-mobile-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Note:</strong> You'll develop separate design criteria for your app in 
+            Checkpoint 3 (C2.3). This section focuses on your <strong>physical upcycled item</strong>.
+        </div>
+        
+        
+        
+        <div class="subsection-title">Criteria Categories</div>
+        
+        <table class="data-table" style="font-size: 13px;">
+            <tr>
+                <th style="width: 22%;">Category</th>
+                <th style="width: 28%;">What it means</th>
+                <th style="width: 50%;">Example criteria</th>
+            </tr>
+            <tr>
+                <td><i class="fas fa-cog" style="color: #3b82f6;"></i> <strong>Function</strong></td>
+                <td>How well does it work?</td>
+                <td><em>"Must hold items up to 2kg without tearing"</em></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-palette" style="color: #ec4899;"></i> <strong>Aesthetic</strong></td>
+                <td>How does it look?</td>
+                <td><em>"Must have a cohesive colour scheme (max 3 colours)"</em></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-leaf" style="color: #10b981;"></i> <strong>Sustainability ♻️</strong></td>
+                <td>Environmental impact?</td>
+                <td><em>"Must use at least 80% upcycled/secondhand materials"</em></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-user" style="color: #f59e0b;"></i> <strong>User Need</strong></td>
+                <td>Does it suit your user?</td>
+                <td><em>"Must be lightweight enough for daily carrying"</em></td>
+            </tr>
+        </table>
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+            <strong>Requirement:</strong> At least <strong>1 of your 5 criteria</strong> must 
+            relate to sustainability (marked ♻️).
+        </div>
+    </div>
+
+    <!-- A4.5: My Design Criteria -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.5</div>
+        <div class="section-title">My Design Criteria</div>
+        
+        <p>Write 5 criteria for your physical upcycled item. Make sure they connect back to 
+        your <strong>Physical Product User Story</strong>.</p>
+        
+        <div class="subsection-title">Criterion 1 <span style="color: #10b981;">♻️ Sustainability</span></div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My product must..."></div>
+            <div style="background: #d1fae5; border: 2px solid #10b981; border-radius: 0.6em; padding: 8px; text-align: center; font-size: 13px; font-weight: 600; color: #065f46;">Sustainability</div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+        
+        <div class="subsection-title">Criterion 2</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My product must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+        
+        
+        
+        <div class="subsection-title">Criterion 3</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My product must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+    </div>
+
+    <!-- A4.5: My Design Criteria Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.5</div>
+        <div class="section-title">My Design Criteria (Continued)</div>
+        
+        <div class="subsection-title">Criterion 4</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My product must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+        
+        <div class="subsection-title">Criterion 5</div>
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 10px;">
+            <div class="write-box write-box-small" data-label="My product must..."></div>
+            <div class="write-box write-box-small" data-label="Category:"></div>
+        </div>
+        <div class="write-box write-box-small" data-label="How I'll measure/test this:"></div>
+        
+        <div class="success-box">
+            <i class="fas fa-check-circle" style="color: #10b981; margin-right: 8px;"></i>
+            <strong>Check your user story:</strong> Read your Physical Product User Story again. 
+            Do your criteria actually address what your user needs?
+        </div>
+    </div>
+    
+    <!-- A4.6: Gantt Chart -->
+    <div class="section-card page-break">
+        <div class="section-number">A4.6</div>
+        <div class="section-title">Project Gantt Chart <span class="points-badge">1 pt</span></div>
+        
+        <div class="tip-box">
+            <i class="fas fa-calendar-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Guide:</strong> Click <a href="">here</a> to see a tutorial video guide on how to make a Gantt chart.
+        </div>
+        
+        <p>Create a Gantt chart showing your project timeline. You will need to scroll through the document and observe the major requirements in your assessment. Include all major phases and key milestones.</p>
+        <div class="mega-placeholder-box">
+        </div>
+        
+        <div class="subsection-title">Key Milestones</div>
+        <div class="write-box write-box-small" data-label="List 2-3 important deadlines or milestones that you think you will need to be careful to successfully meet"></div>
+    </div>
+    
+    <!-- Checkpoint 1 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 1: Self-Assessment</div>
+        
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Completed wardrobe audit reflection (A1.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed documentary viewing guide with evidence (A1.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Analysed all four stakeholder groups (A1.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Created both linear and circular model diagrams with annotations (A1.4)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed burn test safely with detailed observations (A2.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Researched and compared two materials (A2.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Researched a fashion aesthetic and identified key characteristics (A3.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Created a mood board capturing your aesthetic (A3.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Shared and learned from 3 classmates with different aesthetics (A3.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Reflected on how aesthetics will inform your project (A3.4)</div>
+            <div class="assessment-item"><input type="checkbox"> Prepared empathy interview questions and summarised interview (A4.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed empathy map (A4.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Written POV statement (A4.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Created user stories for both solutions (A4.4)</div>
+            <div class="assessment-item"><input type="checkbox"> Developed 5 design criteria including 1 sustainability criterion (A4.5)</div>
+            <div class="assessment-item"><input type="checkbox"> Created project Gantt chart (A4.6)</div>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Teacher Feedback"></div>
+        
+        <p style="text-align: right;"><strong>Checkpoint 1 Self Evaluation Score: _______ / 34</strong></p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 2: SKILL BUILDING -->
+    <!-- ============================================ -->
+    
+    <div class="checkpoint-header page-break">
+        <h2><i class="fas fa-flag-checkered" style="margin-right: 10px;"></i>CHECKPOINT 2: Skill Building</h2>
+        <p>Total: 30 points</p>
+    </div>
+    
+    <!-- B1: Sewing Machine Knowledge -->
+    <div class="section-card page-break">
+        <div class="section-number">B1</div>
+        <div class="section-title">Sewing Machine Knowledge & Safety <span class="points-badge">8 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to identify sewing machine components and operate the machine safely.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can correctly label the main parts of a sewing machine</li>
+                <li>I can identify safety hazards and explain safe operating procedures</li>
+                <li>I can thread a sewing machine and adjust basic settings</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task B1.1: Sewing Machine Diagram</span>
+            <span class="points-badge">3 pts</span>
+        </div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Instructions:</strong> After your guided overview of the sewing machine, use the word bank to label the parts of the machine on the next page. You can Google to support your answers here.
+        </div>
+        
+        <!-- Sewing Machine Images - Side by Side -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin: 15px 0;">
+            <div style="border: 2px solid #ccc; border-radius: 0.6em; padding: 10px; background-color: #fafafa; text-align: center;">
+                <img src="sewing-machine.png" alt="Sewing machine" style="max-width: 100%; height: auto; display: block;">
+            </div>
+            <div style="border: 2px solid #ccc; border-radius: 0.6em; padding: 10px; background-color: #fafafa; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <img src="foot pedal.jpg" alt="Sewing machine foot pedal" style="max-width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+
+        <!-- Word Bank -->
+        <div style="background-color: #f0f7ff; border: 2px solid #0a2351; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
+            <h4 style="color: #0a2351; margin: 0 0 10px 0;"><i class="fas fa-list" style="margin-right: 8px;"></i>Word Bank</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Spool Pin</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Bobbin Winder</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Thread Take-Up Lever</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Thread Tension Dial</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Presser Foot</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Presser Foot Lever</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Needle</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Feed Dogs</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Handwheel</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Reverse Stitch Lever</span>
+                <span style="background: white; border: 1px solid #0a2351; border-radius: 20px; padding: 5px 12px; font-size: 12px;">Foot Pedal</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- B1.1 Continued: Label Answers -->
+    <div class="section-card page-break">
+        <div class="section-number">B1.1</div>
+        <div class="section-title">Sewing Machine Labels</div>
+        
+        <div class="tip-box">
+            <i class="fas fa-pencil-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Task:</strong> Write the correct part name from the word bank next to each number.
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div>
+                <p><strong>1.</strong> ________________________________</p>
+                <p><strong>2.</strong> ________________________________</p>
+                <p><strong>3.</strong> ________________________________</p>
+                <p><strong>4.</strong> ________________________________</p>
+                <p><strong>5.</strong> ________________________________</p>
+                <p><strong>6.</strong> ________________________________</p>
+            </div>
+            <div>
+                <p><strong>7.</strong> ________________________________</p>
+                <p><strong>8.</strong> ________________________________</p>
+                <p><strong>9.</strong> ________________________________</p>
+                <p><strong>10.</strong> ________________________________</p>
+                <p><strong>11.</strong> ________________________________</p>
+            </div>
+        </div>
+        
+        <div class="task-header" style="margin-top: 20px;">
+            <span class="task-title">Task B1.2: Part Functions</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        
+        <p>Choose 5 parts from the diagram and explain their function:</p>
+        
+        <div class="write-box write-box-small" data-label="Part 1 - Name and function:"></div>
+        <div class="write-box write-box-small" data-label="Part 2 - Name and function:"></div>
+        <div class="write-box write-box-small" data-label="Part 3 - Name and function:"></div>
+        <div class="write-box write-box-small" data-label="Part 4 - Name and function:"></div>
+        <div class="write-box write-box-small" data-label="Part 5 - Name and function:"></div>
+    </div>
+    
+    <!-- B1.3: Safety Hazards -->
+    <div class="section-card page-break">
+        <div class="section-number">B1.3</div>
+        <div class="section-title">Safety Hazards <span class="points-badge">3 pts</span></div>
+        <div class="tip-box">
+            <i class="fas fa-pencil-alt" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Task:</strong> Complete your assigned OnGuard safety training modules <a href="https://onguardv3.com.au/">here</a>.
+        </div>
+        <p>Once finished, paste screenshots with proof of your completed modules in the box below.</p>
+        
+        <div class="info-box">
+            <i class="fas fa-keyboard" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
+        </div>
+        
+        <div style="background-color: #faf5ff; border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 12px; margin: 12px 0;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="flex: 1;">
+                    <p style="margin: 0 0 8px 0; font-size: 14px;">
+                        <i class="fas fa-image" style="color: #8b5cf6; margin-right: 8px;"></i>
+                        <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
+                    </p>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <img src="move-images.png" alt="How to wrap image behind text" style="max-width: 360px; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="larger-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- B2: Sewing Practical Skills -->
+    <div class="section-card page-break">
+        <div class="section-number">B2</div>
+        <div class="section-title">Sewing Practical Skills <span class="points-badge">8 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to use sewing machine techniques to join and finish fabric.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can independently set up a sewing machine with thread</li>
+                <li>I can sew straight lines, curves and corners with reasonable accuracy</li>
+                <li>I can create different seam types appropriate for different purposes</li>
+                <li>I can construct a simple sewn item</li>
+            </ul>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            Before proceeding, you will need to observe how to set up a sewing machine with thread, and demonstrate that you can complete these skills independently.
+        </div>
+        <p>You can watch the below video if you were absent for the demonstration or need a reminder.</p>
+
+        <a href="https://youtu.be/PMTzXsyOVoI?si=w8h5rS8p6XJ6V0Xg&t=93" class="link-button youtube-button" target="_blank">
+            <i class="fab fa-youtube"></i>How to Set Up a Sewing Machine
+        </a>
+        
+
+        <!-- Teacher Sign-Off -->
+    <div class="option-container">
+        <div class="minimal-container">
+            <div class="minimal-header">
+                <div class="minimal-icon"><i class="fas fa-user-check"></i></div>
+                <div>
+                    <h4 class="minimal-title">Threading Competency Sign-Off</h4>
+                    <p class="minimal-subtitle">Ensure all skills are ticked and signed off by a teacher</p>
+                </div>
+            </div>
+            
+            <div class="minimal-skills">
+                <div class="minimal-skill">
+                    <input type="checkbox">
+                    <div class="minimal-skill-icon"><i class="fas fa-circle-notch"></i></div>
+                    <span class="minimal-skill-text">Load a new spool of thread</span>
+                </div>
+                <div class="minimal-skill">
+                    <input type="checkbox">
+                    <div class="minimal-skill-icon"><i class="fas fa-pen"></i></div>
+                    <span class="minimal-skill-text">Thread a needle</span>
+                </div>
+                <div class="minimal-skill">
+                    <input type="checkbox">
+                    <div class="minimal-skill-icon"><i class="fas fa-compact-disc"></i></div>
+                    <span class="minimal-skill-text">Load a bobbin</span>
+                </div>
+            </div>
+            
+            <div class="minimal-signoff">
+                <div class="minimal-field">
+                    <label>Teacher Signature</label>
+                    <div class="minimal-line"></div>
+                </div>
+                <div class="minimal-field">
+                    <label>Date</label>
+                    <div class="minimal-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- B2.1: Stitch Sampler -->
+    <div class="section-card page-break">
+        <div class="section-number">B2.1</div>
+        <div class="section-title">Stitch Sampler <span class="points-badge">4 pts</span></div>
+        
+        <div class="task-header">
+            <span class="task-title">Task B2.1: Sewing Line Practice</span>
+        </div>
+        
+        <p>Provide a photo of your sewing line practice sheet here:</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- B2.1 Continued: Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-number">B2.1</div>
+        <div class="section-title">Stitch Sampler Self-Assessment</div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Rating Scale:</strong> 1 = Developing, 2 = Competent, 3 = Proficient
+        </div>
+        
+        <div class="subsection-title">Straight Lines (Rating: ___ /3)</div>
+        <div class="write-box write-box-small" data-label="What I did well:"></div>
+        <div class="write-box write-box-small" data-label="What I could improve:"></div>
+        
+        <div class="subsection-title">Corners/Curves (Rating: ___ /3)</div>
+        <div class="write-box write-box-small" data-label="What I did well:"></div>
+        <div class="write-box write-box-small" data-label="What I could improve:"></div>
+        
+        <div class="subsection-title">Reverse Stitch (Rating: ___ /3)</div>
+        <div class="write-box write-box-small" data-label="What I did well:"></div>
+        <div class="write-box write-box-small" data-label="What I could improve:"></div>
+    </div>
+    
+    <!-- B2.2: Seam Analysis -->
+    <div class="section-card page-break">
+        <div class="section-number">B2.2</div>
+        <div class="section-title">Seam Analysis <span class="points-badge">4 pts</span></div>
+        
+        <div class="subsection-title">Seam 1</div>
+        <div class="write-box write-box-small" data-label="Seam type:"></div>
+        <div class="write-box write-box-small" data-label="When would you use this seam?"></div>
+        
+        <div class="subsection-title">Seam 2</div>
+        <div class="write-box write-box-small" data-label="Seam type:"></div>
+        <div class="write-box write-box-small" data-label="When would you use this seam?"></div>
+        
+        <div class="subsection-title">Seam 3</div>
+        <div class="write-box write-box-small" data-label="Seam type:"></div>
+        <div class="write-box write-box-small" data-label="When would you use this seam?"></div>
+    </div>
+
+    <!-- B2.2 Continued: Seam Samples Photo -->
+    <div class="section-card page-break">
+        <div class="section-number">B2.2</div>
+        <div class="section-title">Seam Samples</div>
+        
+        <p>Provide a photo of your three seam practice attempts here:</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- B3: Vinyl Cutting & Heat Press -->
+    <div class="section-card page-break">
+        <div class="section-number">B3</div>
+        <div class="section-title">Vinyl Cutting & Heat Press <span class="points-badge">8 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to design vector graphics and apply vinyl using heat transfer.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can create a design suitable for vinyl cutting</li>
+                <li>I can identify key design considerations for heat transfer vinyl</li>
+                <li>I can safely operate the vinyl cutter and heat press</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task B3.1: xTool Vector Tutorials</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        
+        <div class="tip-box">
+            <i class="fas fa-laptop" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Task:</strong> Complete the xTool vector design tutorials on Aidan's Central to learn how to create designs suitable for vinyl cutting.
+        </div>
+        
+        <p>Paste a screenshot proving completion of your xTool vector tutorials:</p>
+        
+        <div class="mega-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- B3.2: Design Considerations -->
+    <div class="section-card page-break">
+        <div class="section-number">B3.2</div>
+        <div class="section-title">Design Considerations for Vinyl Cutting <span class="points-badge">2 pts</span></div>
+        
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Research:</strong> Use the resource below to answer questions about important design considerations when working with heat transfer vinyl (HTV).
+        </div>
+        
+        <a href="" class="link-button" target="_blank" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+            <i class="fas fa-book-open"></i>HTV Considerations
+        </a>
+        
+        <p style="margin-top: 15px;">List 4 important design considerations when creating designs for vinyl cutting:</p>
+        
+        <div class="write-box write-box-small" data-label="Design Consideration 1:"></div>
+        <div class="write-box write-box-small" data-label="Design Consideration 2:"></div>
+        <div class="write-box write-box-small" data-label="Design Consideration 3:"></div>
+        <div class="write-box write-box-small" data-label="Design Consideration 4:"></div>
+    </div>
+    
+    <!-- B3.3: Heat Press Application -->
+    <div class="section-card page-break">
+        <div class="section-number">B3.3</div>
+        <div class="section-title">Heat Press Application <span class="points-badge">4 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-camera" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Documentation:</strong> Take a photo of your completed vinyl transfer and record the settings you used.
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-cog" style="margin-right: 8px;"></i>Heat Press Settings</div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Temperature:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Time:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Pressure:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Textile Type:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-image" style="margin-right: 8px;"></i>Vinyl Transfer Result</div>
+        <p>Insert a photo of your completed vinyl heat transfer:</p>
+        
+        <div class="larger-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- B4: Sublimation Printing -->
+    <div class="section-card page-break">
+        <div class="section-number">B4</div>
+        <div class="section-title">Sublimation Printing <span class="points-badge">6 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to create full-colour designs using sublimation printing and understand how material properties affect technique selection.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can explain how sublimation printing works</li>
+                <li>I can identify suitable materials for sublimation</li>
+                <li>I can compare decoration techniques and justify selections for different purposes</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task B4.1: Sublimation Science</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Research:</strong> Use the resource below to answer questions about important design considerations when working with sublimation ink.
+        </div>
+        
+        <a href="" class="link-button" target="_blank" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+            <i class="fas fa-book-open"></i>Sublimation Considerations
+        </a>
+
+        <div class="write-box write-box-medium" data-label="Explain in 2-3 sentences how sublimation ink transfers to fabric. What does the fabric need to contain in order to sublimate effectively?"></div>
+    </div>
+    
+    <!-- B4.2: Sublimation Heat Press -->
+    <div class="section-card page-break">
+        <div class="section-number">B4.2</div>
+        <div class="section-title">Heat Press Application <span class="points-badge">4 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-camera" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Documentation:</strong> Take a photo of your completed sublimation transfer and record the settings you used.
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-cog" style="margin-right: 8px;"></i>Heat Press Settings</div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Temperature:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Time:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Pressure:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 600; color: #0a2351; margin-bottom: 5px; font-size: 13px;">Textile Type:</span>
+                <div style="border: 2px dotted #999; border-radius: 0.4em; background-color: #fafafa; padding: 10px; min-height: 25px;"></div>
+            </div>
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-image" style="margin-right: 8px;"></i>Sublimation Transfer Result</div>
+        <p>Insert a photo of your completed sublimation press:</p>
+        
+        <div class="larger-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- Checkpoint 2 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 2: Self-Assessment</div>
+        
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Labelled all sewing machine parts (B1.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained functions of 5 parts (B1.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed OnGuard safety training with screenshot proof (B1.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed and self-assessed stitch sampler (B2.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Analysed 3 seam types with photos (B2.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed xTool vector tutorials with screenshot proof (B3.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Documented vinyl design considerations (B3.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Documented vinyl heat press settings and result photo (B3.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained sublimation science (B4.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Documented sublimation heat press settings and result photo (B4.2)</div>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Teacher Feedback"></div>
+        
+        <p style="text-align: right;"><strong>Checkpoint 2 Self Evaluation Score: _______ / 30</strong></p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 3: UX DESIGN -->
+    <!-- ============================================ -->
+    
+    <div class="checkpoint-header page-break">
+        <h2><i class="fas fa-flag-checkered" style="margin-right: 10px;"></i>CHECKPOINT 3: App Design</h2>
+        <p>Total: 25 points</p>
+    </div>
+    
+    <!-- C1: Analysing Existing Platforms -->
+    <div class="section-card page-break">
+        <div class="section-number">C1</div>
+        <div class="section-title">Analysing Existing Apps <span class="points-badge">10 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to analyse existing digital solutions to identify what works, what doesn't, and opportunities for improvement.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can identify key features of existing clothing/fashion platforms</li>
+                <li>I can evaluate strengths, weaknesses, opportunities and threats</li>
+                <li>I can identify gaps that a new app could fill</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task C1.1: Choose Two Apps to Analyse</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Research: </strong> Consider clothing and/or retail apps that already exist.
+        </div>
+        
+        <div class="subsection-title"><i class="fas fa-mobile-alt" style="margin-right: 8px;"></i>App 1</div>
+        <div class="write-box write-box-small" data-label="App name and what it does:"></div>
+        
+        <div class="subsection-title"><i class="fas fa-mobile-alt" style="margin-right: 8px;"></i>App 2</div>
+        <div class="write-box write-box-small" data-label="App name and what it does:"></div>
+    </div>
+    
+    <!-- C1.2: SWOT Analysis -->
+    <div class="section-card page-break">
+        <div class="section-number">C1.2</div>
+        <div class="section-title">SWOT Analysis: App 1 <span class="points-badge">4 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>What is SWOT?</strong> A framework for analysing: <strong>S</strong>trengths (what it does well), <strong>W</strong>eaknesses (what it does poorly), <strong>O</strong>pportunities (what could be improved/added), <strong>T</strong>hreats (competitors or challenges).
+        </div>
+        
+        <div class="write-box write-box-small" data-label="App name:"></div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px;">
+            <div style="background: #d1fae5; border: 2px solid #10b981; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #065f46; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>STRENGTHS
+                </h4>
+                <p style="font-size: 11px; color: #065f46; margin: 0 0 8px 0;">What does this app do really well?</p>
+                <div style="border: 2px dotted #10b981; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #991b1b; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-minus-circle" style="margin-right: 6px;"></i>WEAKNESSES
+                </h4>
+                <p style="font-size: 11px; color: #991b1b; margin: 0 0 8px 0;">What frustrates users? What's missing?</p>
+                <div style="border: 2px dotted #ef4444; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #1e40af; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-arrow-up" style="margin-right: 6px;"></i>OPPORTUNITIES
+                </h4>
+                <p style="font-size: 11px; color: #1e40af; margin: 0 0 8px 0;">What features could be added? What's trending?</p>
+                <div style="border: 2px dotted #3b82f6; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #92400e; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>THREATS
+                </h4>
+                <p style="font-size: 11px; color: #92400e; margin: 0 0 8px 0;">What competition exists? What could go wrong?</p>
+                <div style="border: 2px dotted #f59e0b; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- C1.3: SWOT Analysis App 2 -->
+    <div class="section-card page-break">
+        <div class="section-number">C1.3</div>
+        <div class="section-title">SWOT Analysis: App 2 <span class="points-badge">4 pts</span></div>
+        
+        <div class="write-box write-box-small" data-label="App name:"></div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px;">
+            <div style="background: #d1fae5; border: 2px solid #10b981; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #065f46; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-plus-circle" style="margin-right: 6px;"></i>STRENGTHS
+                </h4>
+                <p style="font-size: 11px; color: #065f46; margin: 0 0 8px 0;">What does this app do really well?</p>
+                <div style="border: 2px dotted #10b981; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #991b1b; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-minus-circle" style="margin-right: 6px;"></i>WEAKNESSES
+                </h4>
+                <p style="font-size: 11px; color: #991b1b; margin: 0 0 8px 0;">What frustrates users? What's missing?</p>
+                <div style="border: 2px dotted #ef4444; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #1e40af; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-arrow-up" style="margin-right: 6px;"></i>OPPORTUNITIES
+                </h4>
+                <p style="font-size: 11px; color: #1e40af; margin: 0 0 8px 0;">What features could be added? What's trending?</p>
+                <div style="border: 2px dotted #3b82f6; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+            <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 0.6em; padding: 12px;">
+                <h4 style="color: #92400e; margin: 0 0 8px 0; font-size: 14px;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 6px;"></i>THREATS
+                </h4>
+                <p style="font-size: 11px; color: #92400e; margin: 0 0 8px 0;">What competition exists? What could go wrong?</p>
+                <div style="border: 2px dotted #f59e0b; border-radius: 0.4em; min-height: 240px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- C2: Defining YOUR App -->
+    <div class="section-card page-break">
+        <div class="section-number">C2</div>
+        <div class="section-title">Defining Your App <span class="points-badge">7 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to define the purpose, features, and design criteria for our own sustainable fashion app.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can write a clear purpose statement for my app</li>
+                <li>I can identify and prioritise core features</li>
+                <li>I can develop design criteria including sustainability</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task C2.1: App Concept</span>
+            <span class="points-badge">2 pts</span>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="App name (be creative!):"></div>
+        
+        <div class="write-box write-box-medium" data-label="What does your app do? Describe its main purpose in 2-3 sentences."></div>
+        
+        <div class="write-box write-box-small" data-label="How does this app connect to your physical upcycled product?"></div>
+    </div>
+    
+    <!-- C2.2: Core Features -->
+    <div class="section-card page-break">
+        <div class="section-number">C2.2</div>
+        <div class="section-title">Core Features <span class="points-badge">3 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Priority levels:</strong> 
+            <span style="background: #d1fae5; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Must have</span> = essential for app to work |
+            <span style="background: #dbeafe; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Should have</span> = important but not critical |
+            <span style="background: #f3f4f6; padding: 2px 8px; border-radius: 4px; font-size: 12px;">Nice to have</span> = bonus features
+        </div>
+        
+        <p>List 5 features your app would have. At least 2 must be "Must have".</p>
+        
+        <table class="data-table">
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 55%;">Feature Description</th>
+                <th style="width: 20%;">Priority</th>
+                <th style="width: 20%;">Why include it?</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+                <td class="input-cell" style="min-height: 80px;"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- C2.3: App Design Criteria -->
+    <div class="section-card page-break">
+        <div class="section-number">C2.3</div>
+        <div class="section-title">App Design Criteria <span class="points-badge">2 pts</span></div>
+        
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+            <strong>Requirements:</strong> Include at least 1 <strong>accessibility</strong> criterion (how will it work for users with disabilities?) and at least 1 <strong>sustainability</strong> criterion (how does it help the environment?).
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Criterion 1 (Usability): The app must..."></div>
+        <div class="write-box write-box-small" data-label="Criterion 2 (Accessibility): The app must..."></div>
+        <div class="write-box write-box-small" data-label="Criterion 3 (Sustainability): The app must..."></div>
+        <div class="write-box write-box-small" data-label="Criterion 4 (Your choice): The app must..."></div>
+    </div>
+    
+    <!-- C3: Wireframes -->
+    <div class="section-card page-break">
+        <div class="section-number">C3</div>
+        <div class="section-title">Wireframe Designs <span class="points-badge">8 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to design user interfaces through wireframing.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can create digital wireframes using design software</li>
+                <li>I can explain how my designs meet user needs</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task C3.1: Digital Wireframes</span>
+            <span class="points-badge">8 pts</span>
+        </div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Tools you can use:</strong> Canva or <a href="https://wireframe.cc/">Wireframe.cc</a> (keep in mind this does not save without an account). Export 3-4 screens as images.
+        </div>
+        
+        <p>Insert screenshots/exports of your 3-4 digital wireframes here</p>
+        <div class="large-placeholder-box">
+        </div>
+        
+        <div class="subsection-title">Design Explanation</div>
+        <div class="write-box write-box-medium" data-label="In 3-4 sentences, explain: What is the main screen? How does a user navigate? How does your design meet at least 2 of your design criteria?"></div>
+    </div>
+    
+    <!-- Checkpoint 3 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 3: Self-Assessment</div>
+        
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Identified 2 existing apps to analyse (C1.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed SWOT analysis for App 1 (C1.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed SWOT analysis for App 2 (C1.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Named your app and described its purpose (C2.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained how app connects to your physical product (C2.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Listed 5 features with priorities (C2.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Written 4 design criteria including accessibility and sustainability (C2.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Created 3-4 digital wireframes (C3.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Written design explanation (C3.1)</div>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Teacher Feedback"></div>
+        
+        <p style="text-align: right;"><strong>Checkpoint 3 Self Evaluation Score: _______ / 25</strong></p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 4: FINAL PRODUCT & EVALUATION -->
+    <!-- ============================================ -->
+    
+    <div class="checkpoint-header page-break">
+        <h2><i class="fas fa-flag-checkered" style="margin-right: 10px;"></i>CHECKPOINT 4: Final Product & Evaluation</h2>
+        <p>Total: 42 points</p>
+    </div>
+    
+    <!-- D1: Ideation -->
+    <div class="section-card page-break">
+        <div class="section-number">D1</div>
+        <div class="section-title">Ideation <span class="points-badge">10 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to generate and develop design ideas that respond to user needs and design criteria.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can generate multiple design ideas through brainstorming</li>
+                <li>I can use SCAMPER to develop and refine ideas</li>
+                <li>I can create detailed technical sketches with measurements and labels</li>
+                <li>I can select and justify a concept against design criteria</li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+    
+<div class="section-card page-break">
+        <div class="section-number">D1.1</div>
+        <div class="section-title">Mood Board <span class="points-badge">2 pts</span></div>
+                    
+
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Aesthetics</strong> Ensure your mood board gives insight into a consistent design aesthetic or idea.
+        </div>
+        <p>            Include a mood board here.
+</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+
+    <!-- D1.1: Brainstorm Sketches Page -->
+    <div class="section-card page-break">
+        <div class="section-number">D1.2</div>
+        <div class="section-title">Brainstorm Sketches <span class="points-badge">2 pts</span></div>
+                    
+
+        <div class="tip-box">
+            <i class="fas fa-lightbulb" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Quantity over quality!</strong> Get as many ideas out as possible. Consider: tote bags, accessories, clothing modifications.
+        </div>
+        <p>            Sketch as many different ideas as possible here. Aim for at least 6 quick concepts.
+</p>
+        <div class="huge-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- D1.2: SCAMPER -->
+    <div class="section-card page-break">
+        <div class="section-number">D1.3</div>
+        <div class="section-title">SCAMPER Development <span class="points-badge">3 pts</span></div>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>SCAMPER</strong> is a creative thinking technique to help you develop and improve your ideas.
+        </div>
+        <p>Do some quick sketches to experiment with new ideas. <strong>You do not need to commit to making one of these changes</strong>, but you are being assessed on your ability to experiment with a variety of approaches and concepts.</p>
+                
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px;">
+            <div style="border: 2px solid #ec4899; border-radius: 0.6em; padding: 10px; background: #fdf2f8;">
+                <h4 style="color: #be185d; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>S</strong> - Substitute
+                </h4>
+                <p style="font-size: 11px; color: #9d174d; margin: 0 0 8px 0;">What materials or components could you swap?</p>
+                <div style="border: 2px dashed #ec4899; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+            
+            <div style="border: 2px solid #f59e0b; border-radius: 0.6em; padding: 10px; background: #fffbeb;">
+                <h4 style="color: #b45309; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>C</strong> - Combine
+                </h4>
+                <p style="font-size: 11px; color: #92400e; margin: 0 0 8px 0;">What ideas or features could you merge?</p>
+                <div style="border: 2px dashed #f59e0b; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+            
+            <div style="border: 2px solid #10b981; border-radius: 0.6em; padding: 10px; background: #ecfdf5;">
+                <h4 style="color: #047857; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>A</strong> - Adapt
+                </h4>
+                <p style="font-size: 11px; color: #065f46; margin: 0 0 8px 0;">What could you adjust or borrow from other designs?</p>
+                <div style="border: 2px dashed #10b981; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+            
+            <div style="border: 2px solid #3b82f6; border-radius: 0.6em; padding: 10px; background: #eff6ff;">
+                <h4 style="color: #1d4ed8; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>M</strong> - Modify
+                </h4>
+                <p style="font-size: 11px; color: #1e40af; margin: 0 0 8px 0;">What could you make bigger, smaller, or change?</p>
+                <div style="border: 2px dashed #3b82f6; border-radius: 0.4em; min-height: 280px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- D1.2: SCAMPER Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">D1.3</div>
+        <div class="section-title">SCAMPER Development (Continued)</div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div style="border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 10px; background: #f5f3ff;">
+                <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>P</strong> - Put to Another Use
+                </h4>
+                <p style="font-size: 11px; color: #5b21b6; margin: 0 0 8px 0;">Could it serve a different purpose or context?</p>
+                <div style="border: 2px dashed #8b5cf6; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+            </div>
+            
+            <div style="border: 2px solid #ef4444; border-radius: 0.6em; padding: 10px; background: #fef2f2;">
+                <h4 style="color: #b91c1c; margin: 0 0 5px 0; font-size: 13px;">
+                    <strong>E</strong> - Eliminate
+                </h4>
+                <p style="font-size: 11px; color: #991b1b; margin: 0 0 8px 0;">What could you remove or simplify?</p>
+                <div style="border: 2px dashed #ef4444; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+            </div>
+        </div>
+        
+        <div style="border: 2px solid #0ea5e9; border-radius: 0.6em; padding: 10px; margin-top: 12px; background: #f0f9ff;">
+            <h4 style="color: #0369a1; margin: 0 0 5px 0; font-size: 13px;">
+                <strong>R</strong> - Rearrange / Reverse
+            </h4>
+            <p style="font-size: 11px; color: #075985; margin: 0 0 8px 0;">What if you changed the order, layout, or flipped it around?</p>
+            <div style="border: 2px dashed #0ea5e9; border-radius: 0.4em; min-height: 340px; padding: 10px; background: white;"></div>
+        </div>
+    </div>
+    
+    <!-- D1.3: Technical Sketch -->
+    <div class="section-card page-break">
+        <div class="section-number">D1.4</div>
+        <div class="section-title">Technical Sketch <span class="points-badge">4 pts</span></div>
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+            A <strong>TECHNICAL SKETCH</strong> is a professionally done sketch which clearly outlines your final design. Another designer should theoretically be able to replicate your design by following all the information in your technical sketch.
+        </div>
+        <div class="info-box">
+            <i class="fas fa-ruler-combined" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Requirements:</strong> Your technical sketch must include:
+            <ul style="margin: 8px 0 0 0; font-size: 13px;">
+                <li><strong>Measurements</strong> (dimensions in cm or mm)</li>
+                <li><strong>Labels</strong> for all key parts and features</li>
+                <li><strong>Materials</strong> noted for each component</li>
+                <li><strong>Construction notes</strong> (seam types, attachment methods, decoration placement)</li>
+                <li><strong>Multiple views</strong> if needed (front, back, inside)</li>
+            </ul>
+        </div>
+        <p>            Draw your detailed technical sketch here with all measurements, labels, materials, and construction notes
+</p>
+        <div class="mega-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- D1.4: Concept Selection -->
+    <div class="section-card page-break">
+        <div class="section-number">D1.5</div>
+        <div class="section-title">Concept Selection & Justification <span class="points-badge">1 pt</span></div>
+        
+        <div class="tip-box">
+            <i class="fas fa-clipboard-check" style="color: #ffc107; margin-right: 8px;"></i>
+            <strong>Look back at your design criteria from A3.5.</strong> Explain how your final design concept meets at least 3 of your criteria.
+        </div>
+        
+        <div class="write-box write-box-medium" data-label="Justify your design selection against 3 or more of your design criteria. Be specific about how each criterion is met."></div>
+    </div>
+    
+    <!-- D2: Design Development -->
+    <div class="section-card page-break">
+        <div class="section-number">D2</div>
+        <div class="section-title">Design Development <span class="points-badge">10 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to develop and refine designs using feedback and technical documentation.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can gather and respond to user feedback on my designs</li>
+                <li>I can create technical drawings with measurements</li>
+                <li>I can plan materials, tools and equipment needed for production</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task D2.1: Peer Feedback</span>
+            <span class="points-badge">5 pts</span>
+        </div>
+        <p>Quickly get some feedback from a peer, or someone else you know. Jot down some rough notes on what they tell you.</p>
+        <p>You will use this information to make quick adjustments to your design based on their feedback.</p>
+        <div class="subsection-title">Person 1</div>
+        <div class="write-box write-box-small" data-label="Peer name:"></div>
+        <div class="write-box write-box-medium" data-label="What they like about your design:"></div>
+        <div class="write-box write-box-medium" data-label="Their suggestions for improvement:"></div>
+    </div>
+    
+    <!-- D2.1 Continued: Peer 2 Feedback -->
+    <div class="section-card page-break">
+        <div class="section-number">D2.1</div>
+        <div class="section-title">Peer Feedback (Continued)</div>
+        
+        <div class="subsection-title">Person 2</div>
+        <div class="write-box write-box-small" data-label="Peer name:"></div>
+        <div class="write-box write-box-medium" data-label="What they like about your design:"></div>
+        <div class="write-box write-box-medium" data-label="Their suggestions for improvement:"></div>
+    </div>
+    
+    <!-- D2.2: Design Refinement -->
+    <div class="section-card page-break">
+        <div class="section-number">D2.2</div>
+        <div class="section-title">Design Refinement <span class="points-badge">5 pts</span></div>
+        <p>Draw your refined design here. Just do a <strong>quick sketch</strong> - it does not have to be detailed.</p>
+        <p>You may wish to screenshot your technical sketch and quickly draw over it with your feeedback changes.</p>
+        <div class="info-box">
+            <i class="fas fa-keyboard" style="color: #3b82f6; margin-right: 8px;"></i>
+            <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
+        </div>
+        <div class="mega-placeholder-box">
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Briefly describe the changes made based on feedback:"></div>
+    </div>
+    
+    <!-- D3: Production Evidence -->
+    <div class="section-card page-break">
+        <div class="section-number">D3</div>
+        <div class="section-title">Production Evidence <span class="points-badge">10 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to safely produce designed solutions while documenting our process.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can follow safe procedures when using tools and equipment</li>
+                <li>I can document my production process with photos and notes</li>
+                <li>I can identify and respond to challenges during making</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task D3.1: Final Product Photos</span>
+            <span class="points-badge">10 pts</span>
+        </div>
+        
+        <div class="success-box">
+            <i class="fas fa-camera" style="color: #10b981; margin-right: 8px;"></i>
+            <strong>Photo tips:</strong> Good lighting, clean background, multiple angles showing key features.
+        </div>
+        <p>            Insert 2-3 high-quality photos of your final product from different angles. If your design goes through iterative changes, ensure you document them (e.g. cut fabric, sewn fabric, sublimated final design).
+</p>
+        <div class="mega-placeholder-box">
+        </div>
+    </div>
+    
+    <!-- D4: Evaluation & Reflection -->
+    <div class="section-card page-break">
+        <div class="section-number">D4</div>
+        <div class="section-title">Evaluation & Reflection <span class="points-badge">10 pts</span></div>
+        
+        <div class="learning-box">
+            <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to evaluate our solutions against design criteria and reflect on sustainability impact.</p>
+            <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+            <ul>
+                <li>I can evaluate my product against each design criterion</li>
+                <li>I can reflect on the sustainability impact of my design choices</li>
+            </ul>
+        </div>
+        
+        <div class="task-header">
+            <span class="task-title">Task D4.1: Criteria Evaluation Matrix</span>
+            <span class="points-badge">10 pts</span>
+        </div>
+        
+        <table class="data-table">
+            <tr>
+                <th style="width: 30%;">Design Criterion</th>
+                <th style="width: 15%;">Rating (1-5)</th>
+                <th style="width: 55%;">Evidence/Justification</th>
+            </tr>
+            <tr>
+                <td class="input-cell" style="min-height: 240px;">1.</td>
+                <td class="input-cell" style="text-align: center; min-height: 240px;"></td>
+                <td class="input-cell" style="min-height: 240px;"></td>
+            </tr>
+            <tr>
+                <td class="input-cell" style="min-height: 240px;">2.</td>
+                <td class="input-cell" style="text-align: center; min-height: 240px;"></td>
+                <td class="input-cell" style="min-height: 240px;"></td>
+            </tr>
+            <tr>
+                <td class="input-cell" style="min-height: 240px;">3.</td>
+                <td class="input-cell" style="text-align: center; min-height: 240px;"></td>
+                <td class="input-cell" style="min-height: 240px;"></td>
+            </tr>
+            <tr>
+                <td class="input-cell" style="min-height: 240px;">4.</td>
+                <td class="input-cell" style="text-align: center; min-height: 240px;"></td>
+                <td class="input-cell" style="min-height: 240px;"></td>
+            </tr>
+            <tr>
+                <td class="input-cell" style="min-height: 240px;">5.</td>
+                <td class="input-cell" style="text-align: center; min-height: 240px;"></td>
+                <td class="input-cell" style="min-height: 240px;"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Checkpoint 4 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 4: Self-Assessment</div>
+        
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created 6+ brainstorm sketches (D1.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed all 7 SCAMPER development sections (D1.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Created technical sketch with measurements and labels (D1.3)</div>
+            <div class="assessment-item"><input type="checkbox"> Justified concept selection against design criteria (D1.4)</div>
+            <div class="assessment-item"><input type="checkbox"> Collected peer feedback from 2 people (D2.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Refined design based on feedback (D2.2)</div>
+            <div class="assessment-item"><input type="checkbox"> Photographed final product from multiple angles (D3.1)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed criteria evaluation matrix (D4.1)</div>
+        </div>
+        
+        <div class="write-box write-box-small" data-label="Teacher Feedback"></div>
+        
+        <p style="text-align: right;"><strong>Checkpoint 4 Self Evaluation Score: _______ / 40</strong></p>
+    </div>
+
+    <!-- ============================================ -->
+<!-- CHECKPOINT 5: VIDEO PITCH & EXHIBITION -->
+<!-- ============================================ -->
+
+<div class="checkpoint-header page-break">
+    <h2><i class="fas fa-flag-checkered" style="margin-right: 10px;"></i>CHECKPOINT 5: Video Pitch & Exhibition</h2>
+    <p>Total: 15 points</p>
+</div>
+
+<!-- E1: Video Pitch Creation -->
+<div class="section-card page-break">
+    <div class="section-number">E1</div>
+    <div class="section-title">Video Pitch Creation <span class="points-badge">10 pts</span></div>
+    
+    <div class="learning-box">
+        <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+        <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to communicate our design solutions through recorded video presentations.</p>
+        <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+        <ul>
+            <li>I can record a clear and engaging video pitch (2-3 minutes)</li>
+            <li>I can edit my video to include visually engaging elements</li>
+            <li>I can present both my physical product and app concept cohesively</li>
+            <li>I can explain how my solutions address the fast fashion problem</li>
+        </ul>
+    </div>
+    
+    <div class="task-header">
+        <span class="task-title">Task E1.1: Recording & Editing Resources</span>
+        <span class="points-badge">10 pts</span>
+    </div>
+    
+    <div class="info-box">
+        <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+        <strong>Your pitch should include:</strong>
+        <ul style="margin: 8px 0 0 0; font-size: 13px;">
+            <li>Introduction of yourself and your design challenge</li>
+            <li>Demonstration of your physical upcycled product</li>
+            <li>Explanation of your app concept and how it connects to your product</li>
+            <li>How your solutions address the fast fashion problem</li>
+            <li>A compelling call to action for your "Shark Tank" audience</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <i class="fas fa-film" style="color: #ffc107; margin-right: 8px;"></i>
+        <strong>Resources:</strong> Use the guides below to help you record and edit your video pitch.
+    </div>
+    
+    <a href="" class="link-button youtube-button" target="_blank">
+        <i class="fab fa-youtube"></i>Video Recording Guide
+    </a>
+    
+    <a href="" class="link-button" target="_blank" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);">
+        <i class="fas fa-cut"></i>Video Editing Tutorial
+    </a>
+    
+    <div class="subsection-title"><i class="fas fa-link" style="margin-right: 8px;"></i>Submit Your Video</div>
+    
+    <div class="warning-box">
+        <i class="fas fa-exclamation-triangle" style="color: #ef4444; margin-right: 8px;"></i>
+        <strong>Important:</strong> Upload your video to OneDrive and paste a <strong>shared link</strong> below. Ensure the sharing settings allows your teacher to view the video.
+    </div>
+    
+    <div class="write-box write-box-small" data-label="Paste your shared video link here:"></div>
+    
+</div>
+
+<!-- E2: Exhibition Preparation -->
+<div class="section-card page-break">
+    <div class="section-number">E2</div>
+    <div class="section-title">Exhibition Preparation <span class="points-badge">5 pts</span></div>
+    
+    <div class="learning-box">
+        <h4><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Learning Intention</h4>
+        <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to professionally present our work for public exhibition.</p>
+        <h4><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Success Criteria</h4>
+        <ul>
+            <li>I can prepare my product and materials for display</li>
+            <li>I can set up an engaging exhibition space</li>
+            <li>I can present my work professionally to visitors</li>
+        </ul>
+    </div>
+    
+    <div class="task-header">
+        <span class="task-title">Task E2.1: Exhibition Setup Checklist</span>
+        <span class="points-badge">5 pts</span>
+    </div>
+    
+    <div class="info-box">
+        <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 8px;"></i>
+        Your design will be showcased in Eunice Plaza. Complete the below checklist to ensure you are prepared for the day.
+    </div>
+    
+    <div class="subsection-title"><i class="fas fa-clipboard-list" style="margin-right: 8px;"></i>Pre-Exhibition Checklist</div>
+    
+    <div style="background: #f8faff; border: 2px solid #0a2351; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
+        <p style="font-weight: 600; color: #0a2351; margin: 0 0 12px 0;">Complete the following before exhibition day:</p>
+        
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER </div>
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER</div>
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER</div>
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER</div>
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER</div>
+        <div class="assessment-item"><input type="checkbox"> PLACEHOLDER</div>
+    </div>
+    
+
+    
+</div>
+
+<div class="section-card page-break">
+    <div class="section-number">E2.1</div>
+    <div class="section-title">Exhibition Photo</div>
+    <p>Include photos of your exhibition setup here.</p>
+    <div class="huge-placeholder-box">
+        </div>
+</div>
+
+<!-- Checkpoint 5 Self-Assessment -->
+<div class="section-card page-break">
+    <div class="section-title" style="margin-left: 0;"><i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>Checkpoint 5: Self-Assessment</div>
+    
+    <div class="self-assessment">
+        <h4>Before submitting, check that you have:</h4>
+        <div class="assessment-item"><input type="checkbox"> Reviewed recording and editing resources (E1.1)</div>
+        <div class="assessment-item"><input type="checkbox"> Recorded a 2-3 minute video pitch</div>
+        <div class="assessment-item"><input type="checkbox"> Edited video with engaging visuals</div>
+        <div class="assessment-item"><input type="checkbox"> Uploaded video and pasted shared link (E1.1)</div>
+        <div class="assessment-item"><input type="checkbox"> Completed pre-exhibition checklist (E2.1)</div>
+        <div class="assessment-item"><input type="checkbox"> Included a photo of your exhibition stand (E2.1)</div>
+    </div>
+    
+    <div class="write-box write-box-small" data-label="Teacher Feedback"></div>
+    
+    <p style="text-align: right;"><strong>Checkpoint 5 Self Evaluation Score: _______ / 15</strong></p>
+</div>
+</body>
+</html>
