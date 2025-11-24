@@ -650,6 +650,154 @@
             margin-right: 8px;
             margin-top: 3px;
         }
+
+        /* Binary Visual Example Styles */
+        .binary-example-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 3px solid #0ea5e9;
+            border-radius: 0.8em;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .binary-example-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0369a1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .binary-visual-container {
+            background-color: white;
+            border-radius: 0.6em;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .binary-bit-display {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .binary-bit-box {
+            aspect-ratio: 1;
+            border: 3px solid #cbd5e1;
+            border-radius: 0.4em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f5f9;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .binary-bit-box.active {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #047857;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .binary-bit-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .binary-bit-box.active .binary-bit-value {
+            color: white;
+        }
+
+        .binary-place-value {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 4px;
+            color: #475569;
+        }
+
+        .binary-bit-box.active .binary-place-value {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .binary-power-label {
+            position: absolute;
+            bottom: -28px;
+            font-size: 11px;
+            color: #0369a1;
+            font-weight: 600;
+        }
+
+        .binary-calculation-steps {
+            background-color: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .calculation-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .calculation-step-number {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .calculation-formula {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .binary-result-box {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 15px;
+            border-radius: 0.6em;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .binary-result-label {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .binary-result-value {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+        }
+
+        .visual-explanation-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 15px 0;
+            font-size: 13px;
+            color: #065f46;
+        }
     </style>
 </head>
 <body>
@@ -1465,10 +1613,95 @@
         <div class="subsection-title">Part D: Decimal to Binary Translation (3 pts)</div>
         <p>Convert the following decimal integers to binary numbers. <strong>Show your working out</strong> using the format provided in the example below.</p>
 
-        <div class="info-box">
-            <strong>Example:</strong> Convert 13 to binary<br><br>
-            <strong>Working:</strong> 2⁰ + 2² + 2³ = 1 + 4 + 8 = 13<br>
-            <strong>Binary:</strong> 00001101
+        <div class="binary-example-card">
+            <div class="binary-example-title">📘 Visual Example: Convert 13 to Binary</div>
+
+            <div class="binary-visual-container">
+                <p style="text-align: center; font-weight: 600; margin-bottom: 15px; color: #0369a1;">
+                    8-Bit Binary Representation
+                </p>
+                <div class="binary-bit-display">
+                    <div class="binary-bit-box">
+                        <div class="binary-bit-value">0</div>
+                        <div class="binary-place-value">128</div>
+                        <div class="binary-power-label">2⁷</div>
+                    </div>
+                    <div class="binary-bit-box">
+                        <div class="binary-bit-value">0</div>
+                        <div class="binary-place-value">64</div>
+                        <div class="binary-power-label">2⁶</div>
+                    </div>
+                    <div class="binary-bit-box">
+                        <div class="binary-bit-value">0</div>
+                        <div class="binary-place-value">32</div>
+                        <div class="binary-power-label">2⁵</div>
+                    </div>
+                    <div class="binary-bit-box">
+                        <div class="binary-bit-value">0</div>
+                        <div class="binary-place-value">16</div>
+                        <div class="binary-power-label">2⁴</div>
+                    </div>
+                    <div class="binary-bit-box active">
+                        <div class="binary-bit-value">1</div>
+                        <div class="binary-place-value">8</div>
+                        <div class="binary-power-label">2³</div>
+                    </div>
+                    <div class="binary-bit-box active">
+                        <div class="binary-bit-value">1</div>
+                        <div class="binary-place-value">4</div>
+                        <div class="binary-power-label">2²</div>
+                    </div>
+                    <div class="binary-bit-box">
+                        <div class="binary-bit-value">0</div>
+                        <div class="binary-place-value">2</div>
+                        <div class="binary-power-label">2¹</div>
+                    </div>
+                    <div class="binary-bit-box active">
+                        <div class="binary-bit-value">1</div>
+                        <div class="binary-place-value">1</div>
+                        <div class="binary-power-label">2⁰</div>
+                    </div>
+                </div>
+
+                <div class="visual-explanation-box" style="margin-top: 45px;">
+                    <strong>💡 Key:</strong> Green boxes with <strong>1</strong> are "ON" (active). Grey boxes with <strong>0</strong> are "OFF" (inactive). Add up only the green values!
+                </div>
+            </div>
+
+            <div class="binary-calculation-steps">
+                <p style="font-weight: 700; color: #92400e; margin-bottom: 12px;">Working Out:</p>
+                <div class="calculation-step">
+                    <div class="calculation-step-number">1</div>
+                    <div>Identify which powers of 2 are needed:</div>
+                </div>
+                <div class="calculation-formula" style="margin-left: 45px;">
+                    2³ + 2² + 2⁰
+                </div>
+
+                <div class="calculation-step" style="margin-top: 15px;">
+                    <div class="calculation-step-number">2</div>
+                    <div>Calculate the decimal values:</div>
+                </div>
+                <div class="calculation-formula" style="margin-left: 45px;">
+                    8 + 4 + 1
+                </div>
+
+                <div class="calculation-step" style="margin-top: 15px;">
+                    <div class="calculation-step-number">3</div>
+                    <div>Add them together:</div>
+                </div>
+                <div class="calculation-formula" style="margin-left: 45px;">
+                    8 + 4 + 1 = 13 ✓
+                </div>
+            </div>
+
+            <div class="binary-result-box">
+                <div class="binary-result-label">Binary Representation:</div>
+                <div class="binary-result-value">0000 1101</div>
+                <div style="margin-top: 8px; font-size: 14px; opacity: 0.9;">
+                    (Written as: <strong>00001101</strong> in decimal: <strong>13</strong>)
+                </div>
+            </div>
         </div>
 
         <div style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
