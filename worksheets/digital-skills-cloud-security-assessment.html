@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Skills, Cloud Infrastructure & Security - Assessment Workbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+    <style>
+        /* =================================
+           CORE A4 PRINT-FRIENDLY TEMPLATE
+           ================================= */
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #191919;
+            background-color: white;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            width: 210mm;
+            margin: 0 auto;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            body {
+                width: 190mm;
+                padding: 0;
+            }
+
+            .section-card {
+                page-break-inside: avoid;
+            }
+
+            .concept-cards-container {
+                page-break-inside: avoid;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .title-underline {
+            border-bottom: 3px solid #0a2351;
+            margin-bottom: 16px;
+        }
+
+        .section-card {
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            margin-bottom: 18px;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 0.15em 0 #191919;
+            page-break-inside: avoid;
+            background-color: white;
+        }
+
+        .section-number {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a2351;
+        }
+
+        .section-title {
+            margin-left: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2351;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 18px 0 12px 0;
+            color: #0a2351;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 6px;
+            page-break-after: avoid;
+        }
+
+        .student-info-box {
+            background-color: #f8f9fa;
+            border: 2px solid #0a2351;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0a2351;
+            margin-bottom: 5px;
+        }
+
+        .info-line {
+            border-bottom: 1px solid #0a2351;
+            height: 25px;
+        }
+
+        /* Concept Cards */
+        .concept-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+            page-break-inside: avoid;
+        }
+
+        .concept-card {
+            background-color: white;
+            border: 2px solid #191919;
+            border-radius: 0.6em;
+            padding: 12px;
+            box-shadow: 0 0.15em 0 #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .concept-card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            text-align: center;
+            color: #191919;
+            line-height: 1.2;
+        }
+
+        /* Card Themes */
+        .card-theme-1::before { background-color: #ec4899; }
+
+        .card-theme-2::before { background-color: #3b82f6; }
+
+        .card-theme-3::before { background-color: #0ea5e9; }
+
+        .card-theme-4::before { background-color: #10b981; }
+
+        .card-theme-5::before { background-color: #f59e0b; }
+
+        .card-theme-6::before { background-color: #8b5cf6; }
+
+        /* Content Boxes */
+        .tip-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .success-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            border-radius: 0.6em;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .learning-box {
+            background-color: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .learning-box h4 {
+            color: #8b5cf6;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+        }
+
+        .learning-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .learning-box li {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        /* Writing Areas */
+        .write-box {
+            border: 2px dotted #999;
+            border-radius: 0.6em;
+            background-color: #fafafa;
+            margin: 15px 0;
+            position: relative;
+            min-height: 60px;
+        }
+
+        .write-box::before {
+            content: attr(data-label);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: white;
+            padding: 0 8px;
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .write-box-small {
+            min-height: 70px;
+            padding: 12px;
+        }
+
+        .write-box-medium {
+            min-height: 120px;
+            padding: 15px;
+        }
+
+        .write-box-large {
+            min-height: 280px;
+            padding: 20px;
+        }
+
+        .mega-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 60px;
+            background-color: rgba(0,0,0,0.02);
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 15px 0;
+            min-height: 450px;
+        }
+
+        .large-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            margin: 15px 0;
+            min-height: 280px;
+        }
+
+        .larger-placeholder-box {
+            border: 2px dashed #ccc;
+            border-radius: 0.6em;
+            padding: 40px;
+            background-color: rgba(0,0,0,0.02);
+            margin: 15px 0;
+            min-height: 360px;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            background-color: #0a2351;
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8faff;
+        }
+
+        .data-table .input-cell {
+            min-height: 80px;
+            height: 80px;
+            padding: 15px 10px;
+            vertical-align: top;
+            background-color: #fafafa;
+        }
+
+        /* Link Buttons */
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0a2351 0%, #1e40af 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(10, 35, 81, 0.3);
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .youtube-button {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        }
+
+        .research-button {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .azure-button {
+            background: linear-gradient(135deg, #0078d4 0%, #004e8c 100%);
+        }
+
+        /* Points Badge */
+        .points-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .checkpoint-header {
+            background-color: #0a2351;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 0.6em;
+            margin: 25px 0 18px 0;
+            text-align: center;
+        }
+
+        .checkpoint-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .checkpoint-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* Overview Card */
+        .overview-card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #0a2351;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+            border-radius: 0.6em;
+        }
+
+        .overview-header {
+            margin: -20px -20px 15px -20px;
+            padding: 15px 20px;
+            background-color: #0a2351;
+            border-radius: 0.4em 0.4em 0 0;
+        }
+
+        .overview-header h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Checklist Styles */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Task Card Styles */
+        .task-card {
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            border: 2px solid #3b82f6;
+            border-left: 6px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+        }
+
+        .task-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .task-number-badge {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .task-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .task-steps {
+            background-color: white;
+            border-radius: 0.4em;
+            padding: 15px;
+            margin-top: 12px;
+        }
+
+        .task-steps ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .task-steps li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .task-image-placeholder {
+            margin-top: 15px;
+            text-align: center;
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.6em;
+            padding: 40px 20px;
+            background-color: #f8fafc;
+        }
+
+        .task-image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        /* Task Header */
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-title {
+            font-weight: 700;
+            color: #0a2351;
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            font-size: 14px;
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Scenario Box */
+        .scenario-box {
+            background-color: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .scenario-box strong {
+            color: #92400e;
+        }
+
+        /* Phishing Response */
+        .phishing-response {
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 12px 0;
+        }
+
+        .phishing-choice {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .phishing-choice label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .phishing-choice input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Directory Structure */
+        .directory-box {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 0.6em;
+            margin: 15px 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .directory-box .blank {
+            display: inline-block;
+            border-bottom: 2px solid #60a5fa;
+            min-width: 120px;
+            margin: 0 4px;
+        }
+
+        /* Journal Table */
+        .journal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .journal-table th {
+            background-color: #0a2351;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .journal-table td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            vertical-align: top;
+            min-height: 60px;
+        }
+
+        /* Self Assessment */
+        .self-assessment {
+            background-color: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 0.6em;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .self-assessment h4 {
+            color: #065f46;
+            margin: 0 0 10px 0;
+            font-size: 14px;
+        }
+
+        .assessment-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 6px 0;
+            font-size: 13px;
+        }
+
+        .assessment-item input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <h1 style="text-align: center;">Digital Skills, Cloud Infrastructure & Security</h1>
+    <div class="title-underline"></div>
+
+    <!-- Student Information -->
+    <div class="student-info-box">
+        <div class="info-field">
+            <div class="info-label">Student Name:</div>
+            <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+            <div class="info-label">Class:</div>
+            <div class="info-line"></div>
+        </div>
+    </div>
+
+    <!-- Unit Overview -->
+    <div class="overview-card">
+        <div class="overview-header">
+            <h2>Assessment Overview</h2>
+        </div>
+
+        <p style="font-size: 15px; margin-bottom: 15px;">
+            This assessment covers essential digital literacy skills including cloud storage management,
+            understanding data center infrastructure, cybersecurity awareness, and collaborative research
+            on emerging technologies.
+        </p>
+
+        <div class="concept-cards-container" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="concept-card card-theme-2">
+                <div class="concept-card-title">Checkpoint 1</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Digital Skills & Cloud
+                </p>
+            </div>
+            <div class="concept-card card-theme-1">
+                <div class="concept-card-title">Checkpoint 2</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Security & Citizenship
+                </p>
+            </div>
+            <div class="concept-card card-theme-6">
+                <div class="concept-card-title">Checkpoint 3</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Binary
+                </p>
+            </div>
+            <div class="concept-card card-theme-4">
+                <div class="concept-card-title">Checkpoint 4</div>
+                <p style="font-size: 11px; text-align: center; margin: 5px 0 0 0;">
+                    Group Inquiry Video
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Setup -->
+    <div class="section-card">
+        <div class="section-title" style="margin-left: 0;">Document Setup</div>
+        <p>As soon as you set this document up, <strong>ensure you have shared a link to it and pasted it in your Aidan's Central submission point and/or emailed to your teacher as directed.</strong></p>
+        <p>This way, you <strong>do not need to worry about submitting your assessment on the due date.</strong></p>
+        <div class="tip-box">
+            <strong>Guide:</strong> Click <a href="">here</a> to watch a video on how to get a shared document link.
+            <br><br>Ensure you rename your document using this format:
+            <p style="margin: 0; font-family: monospace; font-size: 15px; background-color: #e5e7eb; padding: 8px 12px; border-radius: 4px; display: inline-block;">
+                Firstname-Lastname-ClassLetter-TECH-Term1
+            </p>
+            <p style="margin: 8px 0 0 0; font-size: 13px; color: #666;">
+                Example: <code style="background-color: #e5e7eb; padding: 2px 6px; border-radius: 4px;">Sarah-Smith-7A-TECH-Term1</code>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 15px 0;">
+            <div style="display: inline-block; border: 2px dashed #ccc; border-radius: 0.6em; padding: 15px; background-color: #fafafa;">
+                <img src="shared document.png" alt="Screenshot showing how to share document link" style="max-width: 100%; height: auto; display: block;">
+                <p style="color: #666; font-size: 12px; font-style: italic; margin: 10px 0 0 0;">Always look for this icon at the top near the file name to see if you are working on a shared document.</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>IMPORTANT!</strong> You are responsible for ensuring all your work is contained within this file. <strong>Do not download and put work into new files. Rename this document so you can come back to it easily.</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 1: DIGITAL SKILLS & CLOUD INFRASTRUCTURE -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2>CHECKPOINT 1: Digital Skills & Cloud Infrastructure</h2>
+        <p>Total: 16 points</p>
+    </div>
+
+    <!-- Q1: OneDrive Practical Skills Checklist -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">OneDrive Practical Skills Checklist <span class="points-badge">6 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to organise, manage, and share files using cloud storage platforms like OneDrive.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can create a logical nested folder structure in OneDrive</li>
+                <li>I can share documents with specific permissions</li>
+                <li>I can explain what a nested directory structure means</li>
+            </ul>
+        </div>
+
+        <p>Complete the following tasks and provide screenshot evidence.</p>
+    </div>
+
+    <!-- Q1 Part A -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Folder Structure Creation <span class="points-badge">2 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part A: Folder Structure Creation</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Task:</strong> In your OneDrive, create the following nested directory structure:
+        </div>
+
+        <p style="font-size: 15px; margin: 15px 0;">
+            <strong>2026</strong> (main folder) &rarr; <strong>Technologies</strong> (inside 2026) &rarr; <strong>Term 1</strong> (inside Technologies)
+        </p>
+
+        <ol>
+            <li>Save this assessment document inside the <strong>Term 1</strong> folder</li>
+            <li>Take a screenshot showing the complete folder path in the navigation bar</li>
+        </ol>
+
+        <div class="info-box">
+            <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
+        </div>
+
+        <div style="background-color: #faf5ff; border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 12px; margin: 12px 0;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="flex: 1;">
+                    <p style="margin: 0 0 8px 0; font-size: 14px;">
+                        <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
+                    </p>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <img src="move-images.png" alt="How to wrap image behind text" style="max-width: 360px; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+
+        <p>Paste your folder structure screenshot here:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Q1 Part B -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Sharing & Permissions <span class="points-badge">2 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part B: Sharing & Permissions</span>
+        </div>
+
+        <ol>
+            <li>Share this assessment document with your teacher</li>
+            <li>Set permissions to <strong>"Can edit"</strong></li>
+            <li>Take a screenshot showing the sharing panel with the correct email and permissions displayed</li>
+        </ol>
+
+        <p>Paste your sharing permissions screenshot here:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Q1 Part C -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Folder Directory Outline <span class="points-badge">2 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part C: Folder Directory Outline</span>
+        </div>
+
+        <p>Write out your complete folder directory structure by filling in the blanks:</p>
+
+        <div class="directory-box">
+            <span class="blank"></span> &rarr; <span class="blank"></span> &rarr; <span class="blank"></span> &rarr; <span class="blank"></span>.docx
+        </div>
+
+        <div class="write-box write-box-small" data-label="Fill in the folder structure above:"></div>
+
+        <div class="subsection-title">Nested Directory Explanation</div>
+        <p>Look at this structure. Estimate and explain what is likely meant when someone mentions a 'nested' folder directory.</p>
+
+        <div class="write-box write-box-medium" data-label="Explain what a 'nested' folder directory means:"></div>
+    </div>
+
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 1 -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Keyboard Shortcuts Mini-Challenge <span class="points-badge">0 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part D: Keyboard Shortcuts Mini-Challenge</span>
+        </div>
+
+        <div class="info-box">
+            <strong>Goal:</strong> Practice essential Windows keyboard shortcuts and file management skills. Complete all tasks below.
+        </div>
+
+        <!-- Task 1 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">1</div>
+                <h3 class="task-card-title">Create a new folder using File Explorer</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd> to open File Explorer</li>
+                    <li>Navigate to your <strong>Documents</strong> folder</li>
+                    <li>Right-click in an empty space and select <strong>New</strong> → <strong>Folder</strong></li>
+                    <li>Name it <strong>"Keyboard-Shortcuts-Practice"</strong></li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 1 reference image">
+            </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">2</div>
+                <h3 class="task-card-title">Create a new Word document</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Open the <strong>Keyboard-Shortcuts-Practice</strong> folder you just created</li>
+                    <li>Right-click in an empty space and select <strong>New</strong> → <strong>Microsoft Word Document</strong></li>
+                    <li>Name it <strong>"Shortcuts-Test"</strong></li>
+                    <li>Double-click to open the document</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 2 reference image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 2 -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Keyboard Shortcuts Mini-Challenge (Continued)</div>
+
+        <!-- Task 3 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">3</div>
+                <h3 class="task-card-title">Practice Copy and Paste</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>In your Word document, type this sentence: <em>"I am practicing keyboard shortcuts to become more efficient."</em></li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">A</kbd> to select the entire sentence</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">C</kbd> to copy</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd> twice to create space, then press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste</li>
+                    <li>Repeat pasting 2 more times so you have the sentence 4 times total</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 3 reference image">
+            </div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">4</div>
+                <h3 class="task-card-title">Practice Find function</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>With your Word document still open, press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">F</kbd> to open the Find dialog</li>
+                    <li>Type the word <strong>"keyboard"</strong> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd></li>
+                    <li>Notice how Word highlights all instances of the word</li>
+                    <li>Close the Find dialog</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 4 reference image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 3 -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Keyboard Shortcuts Mini-Challenge (Continued)</div>
+
+        <!-- Task 5 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">5</div>
+                <h3 class="task-card-title">Practice Alt+Tab window switching</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Keep your Word document open</li>
+                    <li>Open File Explorer again (press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd>)</li>
+                    <li>Now hold <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd> repeatedly to cycle between open windows</li>
+                    <li>Release both keys when Word is highlighted to switch to it</li>
+                    <li>Practice switching back and forth between Word and File Explorer a few times</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 5 reference image">
+            </div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">6</div>
+                <h3 class="task-card-title">Take a screenshot using Snipping Tool</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Make sure your Word document with the repeated sentences is visible on screen</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to activate the Snipping Tool</li>
+                    <li>Click and drag to select the area showing your document with the repeated text</li>
+                    <li>The screenshot will be copied to your clipboard automatically</li>
+                    <li>Switch to this assessment document (using <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd>!)</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste your screenshot in the box below</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 6 reference image">
+            </div>
+        </div>
+
+        <div class="subsection-title">Evidence of Completion</div>
+        <p>Paste your screenshot showing your Word document with the repeated sentences (proof you completed Tasks 1-6):</p>
+
+        <div class="large-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Q2: Data Center Physical Location Investigation -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Physical Location Investigation <span class="points-badge">10 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand what the 'cloud' actually is and investigate the physical infrastructure that stores our data.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can identify the physical hardware that stores cloud data</li>
+                <li>I can explain what the 'cloud' really means in simple terms</li>
+                <li>I can identify sustainability challenges facing data centers and propose solutions</li>
+            </ul>
+        </div>
+
+        <a href="https://datacenters.microsoft.com/tour/" class="link-button azure-button" target="_blank">
+            Explore Azure Data Center Virtual Tour
+        </a>
+
+        <p>Independently explore the Azure Data Center virtual tour to find answers for the following questions.</p>
+    </div>
+
+    <!-- Q2 Part A -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Screenshot <span class="points-badge">2 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part A: Where is your data stored?</span>
+        </div>
+
+        <p>Take and paste <strong>ONE screenshot</strong> showing where your data is physically stored when you save a document to OneDrive. Label your screenshot explaining what physical hardware component stores the data.</p>
+
+        <div class="info-box">
+            <strong>Screenshot Tip:</strong> Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to open the Snipping Tool, then select the area you want to capture. You can then paste directly into this document with <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd>.
+        </div>
+
+        <div style="background-color: #faf5ff; border: 2px solid #8b5cf6; border-radius: 0.6em; padding: 12px; margin: 12px 0;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="flex: 1;">
+                    <p style="margin: 0 0 8px 0; font-size: 14px;">
+                        <strong>Moving Images:</strong> After pasting, click on the blue button that appears at the top right of your image and select <em>"Behind Text"</em> or <em>"In Front of Text"</em> to position it freely.
+                    </p>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <img src="move-images.png" alt="How to wrap image behind text" style="max-width: 360px; height: auto; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+
+        <p>Paste your screenshot here:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Q2 Part A - Hardware Component Question -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Screenshot (Continued)</div>
+
+        <div class="info-box">
+            <strong>Instructions:</strong> Access the hardware resources page and look at the different hardware components in a computer. Then, answer the question below.
+        </div>
+
+        <a href="" class="link-button research-button" target="_blank">
+            Hardware
+        </a>
+
+        <div class="write-box write-box-small" data-label="What physical hardware component stores your data?"></div>
+    </div>
+
+    <!-- Q2 Part B & C -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Exploration <span class="points-badge">2 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part B: Something Interesting (1 pt)</span>
+        </div>
+
+        <p>Take a moment to explore the data center. Take and paste <strong>ONE screenshot</strong> of something you found interesting in the data center tour. Explain why.</p>
+
+        <p>Paste your interesting screenshot here:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+
+        <div class="write-box write-box-small" data-label="Explain why you found this interesting:"></div>
+
+        <div class="task-header" style="margin-top: 20px;">
+            <span class="task-title">Part C: Explain the Cloud (1 pt)</span>
+        </div>
+
+        <p>Pretend you are explaining this to a student in the junior school. In 2 sentences, in your own words, explain what the 'cloud' really is made up of.</p>
+
+        <div class="write-box write-box-medium" data-label="Explain what the 'cloud' really is (2 sentences):"></div>
+    </div>
+
+    <!-- Q2 Part D - First Page -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Sustainability <span class="points-badge">6 pts</span></div>
+
+        <div class="task-header">
+            <span class="task-title">Part D: Power and Sustainability</span>
+        </div>
+
+        <p>Take and paste <strong>ONE screenshot</strong> showing which part of the data center likely consumes the most power.</p>
+
+        <p>Paste your power consumption screenshot here:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+
+        <div class="subsection-title">a) Sustainability Challenges (2 pts)</div>
+        <p>Identify <strong>TWO</strong> sustainability challenges that data centers face.</p>
+
+        <div class="write-box write-box-small" data-label="Challenge 1:"></div>
+        <div class="write-box write-box-small" data-label="Challenge 2:"></div>
+    </div>
+
+    <!-- Q2 Part D - Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">Q2</div>
+        <div class="section-title">Data Center Sustainability (Continued)</div>
+
+        <div class="subsection-title">b) Why These Are Problems (2 pts)</div>
+        <p>For each challenge, explain <strong>WHY</strong> it is a problem.</p>
+
+        <div class="write-box write-box-small" data-label="Why Challenge 1 is a problem:"></div>
+        <div class="write-box write-box-small" data-label="Why Challenge 2 is a problem:"></div>
+
+        <div class="subsection-title">c) Solution (2 pts)</div>
+        <p>Describe <strong>ONE</strong> solution that data center designers/engineers use to address these sustainability challenges.</p>
+
+        <div class="write-box write-box-medium" data-label="Describe one solution:"></div>
+    </div>
+
+    <!-- Checkpoint 1 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 1: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created the nested folder structure in OneDrive (Q1 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of folder path (Q1 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Shared document with teacher with "Can edit" permissions (Q1 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of sharing panel (Q1 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Filled in folder directory structure (Q1 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained what "nested" folder directory means (Q1 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Completed all 6 keyboard shortcuts practice tasks (Q1 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot showing Word document with repeated sentences (Q1 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of data storage hardware (Q2 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Answered what physical hardware component stores data (Q2 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of something interesting (Q2 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained the cloud in simple terms (Q2 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of power consumption area (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified two sustainability challenges (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained why each challenge is a problem (Q2 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Described one solution to sustainability challenges (Q2 Part D)</div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 2: SECURITY & DIGITAL CITIZENSHIP -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2>CHECKPOINT 2: Security & Digital Citizenship</h2>
+        <p>Total: 15 points</p>
+    </div>
+
+    <!-- Q3: Multi-Factor Authentication -->
+    <div class="section-card page-break">
+        <div class="section-number">Q3</div>
+        <div class="section-title">Multi-Factor Authentication <span class="points-badge">3 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand how multi-factor authentication (MFA) protects our digital accounts and data.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can give an example of multi-factor authentication</li>
+                <li>I can explain how MFA protects accounts even when passwords are compromised</li>
+            </ul>
+        </div>
+
+        <p>Watch this short 2 minute video on multi-factor authentication (MFA) and read the article by the Australian Government:</p>
+
+        <a href="https://youtube.com/shorts/8kNPu9qTevk?si=AfYMFRWLAZadg5wD" class="link-button youtube-button" target="_blank">
+            Watch: What is Multi-Factor Authentication?
+        </a>
+
+        <a href="https://www.cyber.gov.au/protect-yourself/securing-your-accounts/multi-factor-authentication" class="link-button research-button" target="_blank">
+            Read: Australian Government - MFA Guide
+        </a>
+
+        <div class="write-box write-box-small" data-label="What's one example of multi-factor authentication?"></div>
+
+        <div class="scenario-box">
+            <strong>Scenario:</strong> Someone discovers your password written on a piece of paper in your bag.
+        </div>
+
+        <p>In your own words, explain how multi-factor authentication would protect your OneDrive account from being accessed by this person.</p>
+
+        <div class="write-box write-box-medium" data-label="How would MFA protect your account?"></div>
+    </div>
+
+    <!-- Q4: Phishing Scenario Identification -->
+    <div class="section-card page-break">
+        <div class="section-number">Q4</div>
+        <div class="section-title">Phishing Scenario Identification <span class="points-badge">6 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to identify phishing attempts and understand the tactics used by scammers.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can identify whether a communication is a phishing attempt</li>
+                <li>I can explain specific indicators that reveal phishing scams</li>
+                <li>I can describe techniques to verify suspicious communications</li>
+            </ul>
+        </div>
+
+        <p>For each scenario below, identify if it is a phishing attempt and explain <strong>TWO specific indicators</strong> that helped you make this decision.</p>
+
+        <div class="scenario-box">
+            <strong>Scenario 1:</strong> You receive an email from "microsoftsupport@outlook-verify.com" saying your OneDrive storage is full and you need to click a link immediately to upgrade or lose your files within 24 hours.
+        </div>
+
+        <div class="phishing-response">
+            <div class="phishing-choice">
+                <span>Is this phishing?</span>
+                <label><input type="checkbox"> Yes</label>
+                <label><input type="checkbox"> No</label>
+            </div>
+            <div class="write-box write-box-small" data-label="Indicator 1:"></div>
+            <div class="write-box write-box-small" data-label="Indicator 2:"></div>
+        </div>
+    </div>
+
+    <!-- Q4 Continued -->
+    <div class="section-card page-break">
+        <div class="section-number">Q4</div>
+        <div class="section-title">Phishing Scenarios (Continued)</div>
+
+        <div class="scenario-box">
+            <strong>Scenario 2:</strong> You get a message from your friend at 2am saying "hey check out this funny video" with a link to "totall-ynotavirus.exe"
+        </div>
+
+        <div class="phishing-response">
+            <div class="phishing-choice">
+                <span>Is this phishing?</span>
+                <label><input type="checkbox"> Yes</label>
+                <label><input type="checkbox"> No</label>
+            </div>
+            <div class="write-box write-box-small" data-label="Indicator 1:"></div>
+            <div class="write-box write-box-small" data-label="Indicator 2:"></div>
+        </div>
+
+        <div class="scenario-box">
+            <strong>Scenario 3:</strong> You receive an email from your bank asking you to provide personal information via a link in the email. The sender and the email look legitimate.
+        </div>
+
+        <p>Read the information on the page below under the header 'How do I stay secure?' and provide two things you can do regarding links:</p>
+
+        <a href="https://www.cyber.gov.au/protect-yourself/spotting-scams" class="link-button research-button" target="_blank">
+            Read: Spotting Scams - Australian Government
+        </a>
+
+        <div class="write-box write-box-small" data-label="Technique 1:"></div>
+        <div class="write-box write-box-small" data-label="Technique 2:"></div>
+    </div>
+
+    <!-- Q5: Loss of Control & Data Persistence - Part A -->
+    <div class="section-card page-break">
+        <div class="section-number">Q5</div>
+        <div class="section-title">Loss of Control & Data Persistence <span class="points-badge">6 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand digital data persistence and why deleting files doesn't guarantee their removal from the internet.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can identify ways that shared digital content can be permanently copied</li>
+                <li>I can explain why deleting shared files doesn't remove them completely</li>
+            </ul>
+        </div>
+
+        <div class="scenario-box">
+            <strong>Scenario:</strong> You create a highlight reel containing photos from your weekend and share it with three friends via a message.
+        </div>
+
+        <div class="task-header">
+            <span class="task-title">Part A: Technical Actions (3 pts)</span>
+        </div>
+
+        <p>Identify <strong>THREE</strong> technical actions someone could take to keep a permanent copy of your document and photos, even if you later delete the original file.</p>
+
+        <div class="write-box write-box-small" data-label="Action 1:"></div>
+        <div class="write-box write-box-small" data-label="Action 2:"></div>
+        <div class="write-box write-box-small" data-label="Action 3:"></div>
+    </div>
+
+    <!-- Q5: Part B -->
+    <div class="section-card page-break">
+        <div class="section-number">Q5</div>
+        <div class="section-title">Loss of Control & Data Persistence (Continued)</div>
+
+        <div class="task-header">
+            <span class="task-title">Part B: Explanation (3 pts)</span>
+        </div>
+
+        <p>Explain why pressing "delete" on a shared file does NOT remove the information from the internet or from others' devices. Use specific technical reasoning in your answer. <strong>(50-75 words)</strong></p>
+
+        <div class="write-box write-box-large" data-label="Explain why 'delete' doesn't truly remove shared content (50-75 words):"></div>
+    </div>
+
+    <!-- Checkpoint 2 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 2: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Watched the MFA video (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Read the Australian Government MFA guide (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Given an example of multi-factor authentication (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained how MFA would protect your account in the scenario (Q3)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified phishing status for Scenario 1 with two indicators (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified phishing status for Scenario 2 with two indicators (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Read the Spotting Scams guide (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Provided two techniques for dealing with suspicious links (Q4)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified three technical actions for keeping permanent copies (Q5 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained why delete doesn't truly remove shared content (Q5 Part B)</div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 3: BINARY -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2>CHECKPOINT 3: Binary</h2>
+        <p>Total: 20 points</p>
+    </div>
+
+    <!-- Q6: Gantt Chart -->
+    <div class="section-card page-break">
+        <div class="section-number">Q6</div>
+        <div class="section-title">Project Gantt Chart <span class="points-badge">1 pt</span></div>
+
+        <div class="tip-box">
+            <strong>Guide:</strong> Click <a href="">here</a> to see a tutorial video guide on how to make a Gantt chart.
+        </div>
+
+        <p>Create a Gantt chart showing your project timeline. You will need to scroll through the document and observe the major requirements in your assessment. Include all major phases and key milestones.</p>
+        <div class="mega-placeholder-box">
+        </div>
+
+        <div class="subsection-title">Key Milestones</div>
+        <div class="write-box write-box-small" data-label="List 2-3 important deadlines or milestones that you think you will need to be careful to successfully meet"></div>
+    </div>
+
+    <!-- Q7: Base Counting Systems -->
+    <div class="section-card page-break">
+        <div class="section-number">Q7</div>
+        <div class="section-title">Base Counting Systems <span class="points-badge">2 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand different base counting systems and how they compare to our standard decimal (base 10) system.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can explain the difference between base counting systems</li>
+                <li>I can compare the efficiency of different base systems</li>
+            </ul>
+        </div>
+
+        <a href="" class="link-button research-button" target="_blank">
+            Base Counting Systems Resource
+        </a>
+
+        <p>Read about different base counting systems, paying particular attention to base 10 (traditional finger counting) and base 60 (Sumerian finger joint counting).</p>
+
+        <div class="subsection-title">Counting System Comparison</div>
+        <p>In your own words, explain the difference between the efficiency of counting with base 60 (Sumerian finger joints) and base 10 (traditional finger counting).</p>
+
+        <div class="write-box write-box-medium" data-label="Explain the efficiency difference between base 60 and base 10 counting:"></div>
+    </div>
+
+    <!-- Q8: Binary Counting Game -->
+    <div class="section-card page-break">
+        <div class="section-number">Q8</div>
+        <div class="section-title">Binary Counting Practice <span class="points-badge">2 pts</span></div>
+
+        <div class="info-box">
+            <strong>Activity:</strong> Play the binary counting game to practice converting between binary and decimal numbers.
+        </div>
+
+        <a href="https://learningcontent.cisco.com/games/binary/index.html" class="link-button azure-button" target="_blank">
+            Play Binary Counting Game
+        </a>
+
+        <p>Play the game and try to achieve your highest score. Take a screenshot of your final score.</p>
+
+        <div class="subsection-title">Your Best Score</div>
+        <p>Paste your screenshot showing your highest score:</p>
+
+        <div class="large-placeholder-box">
+        </div>
+    </div>
+
+    <!-- Q9: Binary Representation & Translation -->
+    <div class="section-card page-break">
+        <div class="section-number">Q9</div>
+        <div class="section-title">Binary Representation & Translation <span class="points-badge">10 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand how binary (base 2) represents numbers and how to convert between binary and decimal.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can identify the place values in an 8-bit binary number</li>
+                <li>I can convert binary numbers to decimal integers</li>
+                <li>I can convert decimal integers to binary numbers</li>
+            </ul>
+        </div>
+
+        <div class="subsection-title">Part A: Binary Place Values (2 pts)</div>
+        <p>Below is a diagram showing 8 bits. Annotate the image by writing the correct base numbers (powers of 2) in order.</p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="" alt="8-bit binary diagram for annotation" style="max-width: 100%; border: 2px solid #ccc; border-radius: 0.6em; padding: 10px; background-color: #fafafa;">
+        </div>
+
+        <div class="subsection-title">Part B: 8-Bit Range (2 pts)</div>
+
+        <div class="write-box write-box-small" data-label="What is the highest number that 8 bits can represent?"></div>
+
+        <div class="write-box write-box-small" data-label="What is the lowest number that 8 bits can represent?"></div>
+
+        <div class="subsection-title">Part C: Binary to Decimal Translation (3 pts)</div>
+        <p>Convert the following binary numbers to decimal integers:</p>
+
+        <div class="write-box write-box-small" data-label="1. Binary: 00001010 = Decimal: _____"></div>
+
+        <div class="write-box write-box-small" data-label="2. Binary: 00110101 = Decimal: _____"></div>
+
+        <div class="write-box write-box-small" data-label="3. Binary: 01111111 = Decimal: _____"></div>
+    </div>
+
+    <!-- Q9 Continued: Decimal to Binary -->
+    <div class="section-card page-break">
+        <div class="section-number">Q9</div>
+        <div class="section-title">Binary Translation (Continued)</div>
+
+        <div class="subsection-title">Part D: Decimal to Binary Translation (3 pts)</div>
+        <p>Convert the following decimal integers to binary numbers. <strong>Show your working out</strong> using the format provided in the example below.</p>
+
+        <div class="info-box">
+            <strong>Example:</strong> Convert 13 to binary<br><br>
+            <strong>Working:</strong> 2⁰ + 2² + 2³ = 1 + 4 + 8 = 13<br>
+            <strong>Binary:</strong> 00001101
+        </div>
+
+        <div style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
+            <p style="margin: 0 0 8px 0; font-weight: 600;">1. Convert 9 to binary</p>
+            <div class="write-box write-box-small" data-label="Working (e.g., 2⁰ + 2³ = 1 + 8 = 9):"></div>
+            <div class="write-box write-box-small" data-label="Binary:"></div>
+        </div>
+
+        <div style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
+            <p style="margin: 0 0 8px 0; font-weight: 600;">2. Convert 20 to binary</p>
+            <div class="write-box write-box-small" data-label="Working:"></div>
+            <div class="write-box write-box-small" data-label="Binary:"></div>
+        </div>
+
+        <div style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-radius: 0.6em; padding: 15px; margin: 15px 0;">
+            <p style="margin: 0 0 8px 0; font-weight: 600;">3. Convert 31 to binary</p>
+            <div class="write-box write-box-small" data-label="Working:"></div>
+            <div class="write-box write-box-small" data-label="Binary:"></div>
+        </div>
+    </div>
+
+    <!-- Q10: Why Binary? -->
+    <div class="section-card page-break">
+        <div class="section-number">Q10</div>
+        <div class="section-title">Why Computers Use Binary <span class="points-badge">5 pts</span></div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to understand why computers use binary to represent data and numbers.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can explain why binary is used in computer systems</li>
+            </ul>
+        </div>
+
+        <a href="" class="link-button research-button" target="_blank">
+            Why Computers Use Binary - Resource
+        </a>
+
+        <p>Read the resource above, then answer the following question in your own words.</p>
+
+        <div class="subsection-title">Explanation (50-75 words)</div>
+        <p>In your own words, explain why you think computers use binary to represent integers and data. Consider the physical properties of computer circuits in your answer.</p>
+
+        <div class="write-box write-box-large" data-label="Why do computers use binary? (50-75 words)"></div>
+    </div>
+
+    <!-- Checkpoint 3 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 3: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created Gantt chart showing project timeline (Q6)</div>
+            <div class="assessment-item"><input type="checkbox"> Listed 2-3 key milestones (Q6)</div>
+            <div class="assessment-item"><input type="checkbox"> Read about base counting systems (Q7)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained efficiency difference between base 60 and base 10 (Q7)</div>
+            <div class="assessment-item"><input type="checkbox"> Played the binary counting game (Q8)</div>
+            <div class="assessment-item"><input type="checkbox"> Taken screenshot of highest score (Q8)</div>
+            <div class="assessment-item"><input type="checkbox"> Annotated 8-bit diagram with place values (Q9 Part A)</div>
+            <div class="assessment-item"><input type="checkbox"> Identified highest and lowest 8-bit numbers (Q9 Part B)</div>
+            <div class="assessment-item"><input type="checkbox"> Converted 3 binary numbers to decimal (Q9 Part C)</div>
+            <div class="assessment-item"><input type="checkbox"> Converted 3 decimal numbers to binary with working (Q9 Part D)</div>
+            <div class="assessment-item"><input type="checkbox"> Read resource about why computers use binary (Q10)</div>
+            <div class="assessment-item"><input type="checkbox"> Explained why computers use binary in 50-75 words (Q10)</div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CHECKPOINT 4: GROUP INQUIRY VIDEO PROJECT -->
+    <!-- ============================================ -->
+
+    <div class="checkpoint-header page-break">
+        <h2>CHECKPOINT 4: Group Inquiry Video Project</h2>
+        <p>Total: 25 points</p>
+    </div>
+
+    <!-- Project Overview -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Project Overview</div>
+
+        <div class="learning-box">
+            <h4>Learning Intention</h4>
+            <p style="margin: 0 0 8px 0; font-size: 13px;">We are learning to research, collaborate, and communicate complex technical concepts through video presentation.</p>
+            <h4>Success Criteria</h4>
+            <ul>
+                <li>I can research and explain how the internet, encryption, and binary work</li>
+                <li>I can work collaboratively in a group and maintain a progress journal</li>
+                <li>I can create an engaging video presentation that explains technical concepts clearly</li>
+            </ul>
+        </div>
+
+        <div class="two-column-grid">
+            <div>
+                <div class="subsection-title">Group Size</div>
+                <p>2-3 students</p>
+            </div>
+            <div>
+                <div class="subsection-title">Duration</div>
+                <p>3-5 minutes</p>
+            </div>
+        </div>
+
+        <div class="subsection-title">Format</div>
+        <p>Video presentation (filmed explanation, screen recording with voiceover, or animated presentation)</p>
+
+        <div class="subsection-title">Deliverables</div>
+        <ul>
+            <li>Video file submitted via OneDrive</li>
+            <li>Completed research workbook</li>
+            <li>Group journal</li>
+        </ul>
+    </div>
+
+    <!-- Group Journal -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Group Progress Journal</div>
+
+        <div class="info-box">
+            <strong>Instructions:</strong> Create a document (OneNote or Word) that you will use and maintain as a journal of your group progress. Ensure your group members all have access to this document and contribute to it each lesson.
+        </div>
+
+        <p>Each group member will contribute to the document in their own table. Use the following structure:</p>
+
+        <div class="tip-box">
+            <strong>Note:</strong> The table below is an example only. You need to create this table in your journal document.
+        </div>
+
+        <table class="journal-table">
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>What I did today</th>
+                <th>What I need to do next</th>
+                <th>Screenshot of evidence</th>
+            </tr>
+            <tr>
+                <td style="height: 80px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="height: 80px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="height: 80px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="write-box write-box-small" data-label="Paste a link to your shared group journal document here:"></div>
+    </div>
+
+    <!-- Research Topics -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Research Topics</div>
+
+        <div class="tip-box">
+            <strong>Note:</strong> Your video must address the following five topics in a logical sequence. A planning guide is provided to you in a different document for greater guidance.
+        </div>
+
+        <div class="subsection-title">Topic 1: How the Internet Works</div>
+        <p>Research and explain:</p>
+        <ul>
+            <li>How data travels in packets across the internet</li>
+            <li>The role of routers in directing traffic</li>
+            <li>Underwater internet cables connecting continents</li>
+            <li>How WiFi transmits data wirelessly</li>
+        </ul>
+
+        <div class="subsection-title">Topic 2: Encryption & Data Security</div>
+        <p>Research and explain:</p>
+        <ul>
+            <li>What encryption is and why it's necessary</li>
+            <li>How encryption protects data during transmission</li>
+            <li>Real-world example of where encryption is used (e.g., HTTPS)</li>
+        </ul>
+
+        <div class="subsection-title">Topic 3: Binary Number System</div>
+        <p>Research and explain:</p>
+        <ul>
+            <li>What binary is and how it differs from decimal (base 10)</li>
+            <li>How to convert between binary and decimal numbers</li>
+            <li>Why computers use binary instead of other number systems</li>
+        </ul>
+    </div>
+
+    <!-- Research Topics Continued -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Research Topics (Continued)</div>
+
+        <div class="subsection-title">Topic 4: Binary in Computing</div>
+        <p>Research and explain:</p>
+        <ul>
+            <li>How binary represents data in computer memory</li>
+            <li>What bits and bytes are</li>
+            <li>Examples of how binary is used to represent text, images, and other data</li>
+        </ul>
+
+        <div class="subsection-title">Topic 5: Binary Applications & Future</div>
+        <p>Research and discuss:</p>
+        <ul>
+            <li>How binary relates to digital storage capacity (KB, MB, GB, TB)</li>
+            <li>The role of binary in modern digital communication</li>
+            <li>How understanding binary helps in programming and computer science</li>
+            <li>Future developments in computing that still rely on binary</li>
+        </ul>
+    </div>
+
+    <!-- Video Submission -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Video Submission</div>
+
+        <div class="success-box">
+            <strong>Final Step:</strong> Upload your group's video to OneDrive and provide a shared link below.
+        </div>
+
+        <div class="write-box write-box-medium" data-label="Paste your OneDrive video link here:"></div>
+
+        <div class="tip-box">
+            <strong>Remember:</strong> Make sure your video link has sharing permissions set so your teacher can access it!
+        </div>
+    </div>
+
+    <!-- Checkpoint 4 Self-Assessment -->
+    <div class="section-card page-break">
+        <div class="section-title" style="margin-left: 0;">Checkpoint 4: Self-Assessment</div>
+
+        <div class="self-assessment">
+            <h4>Before submitting, check that you have:</h4>
+            <div class="assessment-item"><input type="checkbox"> Created a shared group journal document</div>
+            <div class="assessment-item"><input type="checkbox"> Pasted link to group journal in this document</div>
+            <div class="assessment-item"><input type="checkbox"> Contributed to the journal each lesson with date, work completed, and evidence</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 1: How the Internet Works</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 2: Encryption & Data Security</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 3: Binary Number System</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 4: Binary in Computing</div>
+            <div class="assessment-item"><input type="checkbox"> Researched Topic 5: Binary Applications & Future</div>
+            <div class="assessment-item"><input type="checkbox"> Created video presentation (3-5 minutes)</div>
+            <div class="assessment-item"><input type="checkbox"> Uploaded video to OneDrive</div>
+            <div class="assessment-item"><input type="checkbox"> Set sharing permissions on video</div>
+            <div class="assessment-item"><input type="checkbox"> Pasted video link in this document</div>
+        </div>
+    </div>
+
+</body>
+</html>
