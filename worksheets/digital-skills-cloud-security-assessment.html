@@ -439,6 +439,76 @@
             height: 18px;
         }
 
+        /* Task Card Styles */
+        .task-card {
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            border: 2px solid #3b82f6;
+            border-left: 6px solid #3b82f6;
+            border-radius: 0.6em;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+        }
+
+        .task-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .task-number-badge {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .task-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .task-steps {
+            background-color: white;
+            border-radius: 0.4em;
+            padding: 15px;
+            margin-top: 12px;
+        }
+
+        .task-steps ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .task-steps li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .task-image-placeholder {
+            margin-top: 15px;
+            text-align: center;
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.6em;
+            padding: 40px 20px;
+            background-color: #f8fafc;
+        }
+
+        .task-image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .page-break {
             page-break-before: always;
         }
@@ -778,7 +848,7 @@
         <div class="write-box write-box-medium" data-label="Explain what a 'nested' folder directory means:"></div>
     </div>
 
-    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge -->
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 1 -->
     <div class="section-card page-break">
         <div class="section-number">Q1</div>
         <div class="section-title">Keyboard Shortcuts Mini-Challenge <span class="points-badge">0 pts</span></div>
@@ -788,81 +858,143 @@
         </div>
 
         <div class="info-box">
-            <strong>Goal:</strong> Practice essential Windows keyboard shortcuts and file management skills. Complete all tasks below and take a final screenshot showing your completed work.
+            <strong>Goal:</strong> Practice essential Windows keyboard shortcuts and file management skills. Complete all tasks below.
         </div>
 
-        <div class="tip-box">
-            <strong>Note:</strong> This is a practice activity to build your digital skills. Complete each task in order and check them off as you go. <strong>No points are awarded, but mastering these skills will make you much more efficient!</strong>
+        <!-- Task 1 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">1</div>
+                <h3 class="task-card-title">Create a new folder using File Explorer</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd> to open File Explorer</li>
+                    <li>Navigate to your <strong>Documents</strong> folder</li>
+                    <li>Right-click in an empty space and select <strong>New</strong> → <strong>Folder</strong></li>
+                    <li>Name it <strong>"Keyboard-Shortcuts-Practice"</strong></li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 1 reference image">
+            </div>
         </div>
 
-        <div class="subsection-title">Challenge Tasks</div>
+        <!-- Task 2 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">2</div>
+                <h3 class="task-card-title">Create a new Word document</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Open the <strong>Keyboard-Shortcuts-Practice</strong> folder you just created</li>
+                    <li>Right-click in an empty space and select <strong>New</strong> → <strong>Microsoft Word Document</strong></li>
+                    <li>Name it <strong>"Shortcuts-Test"</strong></li>
+                    <li>Double-click to open the document</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 2 reference image">
+            </div>
+        </div>
+    </div>
 
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 1: Create a new folder using File Explorer</strong><br>
-            1. Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd> to open File Explorer<br>
-            2. Navigate to your <strong>Documents</strong> folder<br>
-            3. Right-click in an empty space and select <strong>New</strong> &rarr; <strong>Folder</strong><br>
-            4. Name it <strong>"Keyboard-Shortcuts-Practice"</strong></span>
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 2 -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Keyboard Shortcuts Mini-Challenge (Continued)</div>
+
+        <!-- Task 3 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">3</div>
+                <h3 class="task-card-title">Practice Copy and Paste</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>In your Word document, type this sentence: <em>"I am practicing keyboard shortcuts to become more efficient."</em></li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">A</kbd> to select the entire sentence</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">C</kbd> to copy</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd> twice to create space, then press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste</li>
+                    <li>Repeat pasting 2 more times so you have the sentence 4 times total</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 3 reference image">
+            </div>
         </div>
 
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 2: Create a new Word document</strong><br>
-            1. Open the <strong>Keyboard-Shortcuts-Practice</strong> folder you just created<br>
-            2. Right-click in an empty space and select <strong>New</strong> &rarr; <strong>Microsoft Word Document</strong><br>
-            3. Name it <strong>"Shortcuts-Test"</strong><br>
-            4. Double-click to open the document</span>
+        <!-- Task 4 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">4</div>
+                <h3 class="task-card-title">Practice Find function</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>With your Word document still open, press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">F</kbd> to open the Find dialog</li>
+                    <li>Type the word <strong>"keyboard"</strong> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd></li>
+                    <li>Notice how Word highlights all instances of the word</li>
+                    <li>Close the Find dialog</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 4 reference image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Q1 Part D: Keyboard Shortcuts Mini-Challenge - Page 3 -->
+    <div class="section-card page-break">
+        <div class="section-number">Q1</div>
+        <div class="section-title">Keyboard Shortcuts Mini-Challenge (Continued)</div>
+
+        <!-- Task 5 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">5</div>
+                <h3 class="task-card-title">Practice Alt+Tab window switching</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Keep your Word document open</li>
+                    <li>Open File Explorer again (press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd>)</li>
+                    <li>Now hold <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd> repeatedly to cycle between open windows</li>
+                    <li>Release both keys when Word is highlighted to switch to it</li>
+                    <li>Practice switching back and forth between Word and File Explorer a few times</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 5 reference image">
+            </div>
         </div>
 
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 3: Practice Copy and Paste</strong><br>
-            1. In your Word document, type this sentence: <em>"I am practicing keyboard shortcuts to become more efficient."</em><br>
-            2. Select the entire sentence by triple-clicking on it or holding <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> and using arrow keys<br>
-            3. Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">C</kbd> to copy<br>
-            4. Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd> twice to create space, then press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste<br>
-            5. Repeat pasting 2 more times so you have the sentence 4 times total</span>
-        </div>
-
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 4: Practice Find function</strong><br>
-            1. With your Word document still open, press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">F</kbd> to open the Find dialog<br>
-            2. Type the word <strong>"keyboard"</strong> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Enter</kbd><br>
-            3. Notice how Word highlights all instances of the word<br>
-            4. Close the Find dialog</span>
-        </div>
-
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 5: Practice Alt+Tab window switching</strong><br>
-            1. Keep your Word document open<br>
-            2. Open File Explorer again (press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">E</kbd>)<br>
-            3. Now hold <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> and press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd> repeatedly to cycle between open windows<br>
-            4. Release both keys when Word is highlighted to switch to it<br>
-            5. Practice switching back and forth between Word and File Explorer a few times</span>
-        </div>
-
-        <div class="checklist-item">
-            <input type="checkbox">
-            <span><strong>Task 6: Take a screenshot using Snipping Tool</strong><br>
-            1. Make sure your Word document with the repeated sentences is visible on screen<br>
-            2. Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to activate the Snipping Tool<br>
-            3. Click and drag to select the area showing your document with the repeated text<br>
-            4. The screenshot will be copied to your clipboard automatically<br>
-            5. Switch to this assessment document (using <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd>!)<br>
-            6. Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste your screenshot in the box below</span>
+        <!-- Task 6 -->
+        <div class="task-card">
+            <div class="task-card-header">
+                <div class="task-number-badge">6</div>
+                <h3 class="task-card-title">Take a screenshot using Snipping Tool</h3>
+            </div>
+            <div class="task-steps">
+                <ol>
+                    <li>Make sure your Word document with the repeated sentences is visible on screen</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Win</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Shift</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">S</kbd> to activate the Snipping Tool</li>
+                    <li>Click and drag to select the area showing your document with the repeated text</li>
+                    <li>The screenshot will be copied to your clipboard automatically</li>
+                    <li>Switch to this assessment document (using <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Alt</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Tab</kbd>!)</li>
+                    <li>Press <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">Ctrl</kbd> + <kbd style="background-color: #e5e7eb; border: 1px solid #9ca3af; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 12px;">V</kbd> to paste your screenshot in the box below</li>
+                </ol>
+            </div>
+            <div class="task-image-placeholder">
+                <img src="" alt="Task 6 reference image">
+            </div>
         </div>
 
         <div class="subsection-title">Evidence of Completion</div>
         <p>Paste your screenshot showing your Word document with the repeated sentences (proof you completed Tasks 1-6):</p>
 
         <div class="large-placeholder-box">
-        </div>
-
-        <div class="success-box">
-            <strong>Congratulations!</strong> You've just practiced 6 essential keyboard shortcuts that will help you work faster and more efficiently. These skills are fundamental for any digital work environment.
         </div>
     </div>
 
